@@ -10,7 +10,7 @@ import java.util.Comparator;
  * Bean属性排序器<br>
  * 支持读取Bean多层次下的属性
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 被比较的Bean
  */

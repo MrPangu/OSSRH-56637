@@ -15,8 +15,8 @@ import java.nio.charset.Charset;
  * 128-bit Java port of https://code.google.com/p/smhasher/source/browse/trunk/MurmurHash3.cpp#255
  * </p>
  * 
- * @author looly,Simhash4J
- * @since 4.3.3
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MurmurHash implements Serializable{
 	private static final long serialVersionUID = 1L;

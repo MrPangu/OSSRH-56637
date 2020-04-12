@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/1/31 16:52
  */
 @SuppressWarnings("all")

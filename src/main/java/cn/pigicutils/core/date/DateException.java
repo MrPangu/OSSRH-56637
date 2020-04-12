@@ -2,12 +2,13 @@ package cn.pigicutils.core.date;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 工具类异常
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class DateException extends RuntimeException{
+public class DateException extends CommonException {
 	private static final long serialVersionUID = 8247610319171014183L;
 
 	public DateException(Throwable e) {

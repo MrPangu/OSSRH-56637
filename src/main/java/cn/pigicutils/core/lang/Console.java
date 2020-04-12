@@ -12,7 +12,7 @@ import static java.lang.System.out;
  * 命令行（控制台）工具方法类<br>
  * 此类主要针对{@link System#out} 和 {@link System#err} 做封装。
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 
@@ -38,7 +38,7 @@ public class Console {
 				Throwable e = (Throwable) obj;
 				log(e, e.getMessage());
 			} else {
-				log("{}", obj);
+				logT("{}", obj);
 			}
 		}
 	}
@@ -47,7 +47,7 @@ public class Console {
 	 * 同 System.out.print()方法，打印控制台日志
 	 * 
 	 * @param obj 要打印的对象
-	 * @since 3.3.1
+	 *
 	 */
 	public static void print(Object obj) {
 		print("{}", obj);
@@ -58,7 +58,7 @@ public class Console {
 	 * 
 	 * @param showChar 进度条提示字符，例如“#”
 	 * @param len 打印长度
-	 * @since 4.5.6
+	 *
 	 */
 	public static void printProgress(char showChar, int len) {
 		print("{}{}", CharUtil.CR, StrUtil.repeat(showChar, len));
@@ -70,7 +70,7 @@ public class Console {
 	 * @param showChar 进度条提示字符，例如“#”
 	 * @param totalLen 总长度
 	 * @param rate 总长度所占比取值0~1
-	 * @since 4.5.6
+	 *
 	 */
 	public static void printProgress(char showChar, int totalLen, double rate) {
 		Assert.isTrue(rate >= 0 && rate <= 1, "Rate must between 0 and 1 (both include)");
@@ -83,7 +83,7 @@ public class Console {
 	 * @param template 文本模板，被替换的部分用 {} 表示
 	 * @param values 值
 	 */
-	public static void log(String template, Object... values) {
+	public static void logT(String template, Object... values) {
 		log(null, template, values);
 	}
 
@@ -92,7 +92,7 @@ public class Console {
 	 * 
 	 * @param template 文本模板，被替换的部分用 {} 表示
 	 * @param values 值
-	 * @since 3.3.1
+	 *
 	 */
 	public static void print(String template, Object... values) {
 		out.print(StrUtil.format(template, values));
@@ -165,7 +165,7 @@ public class Console {
 	 * 创建从控制台读取内容的{@link Scanner}
 	 * 
 	 * @return {@link Scanner}
-	 * @since 3.3.1
+	 *
 	 */
 	public static Scanner scanner() {
 		return new Scanner(System.in);
@@ -175,7 +175,7 @@ public class Console {
 	 * 读取用户输入的内容（在控制台敲回车前的内容）
 	 * 
 	 * @return 用户输入的内容
-	 * @since 3.3.1
+	 *
 	 */
 	public static String input() {
 		return scanner().next();

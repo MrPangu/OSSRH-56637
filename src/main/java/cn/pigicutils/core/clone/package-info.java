@@ -1,7 +1,7 @@
 /**
  * 克隆封装
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.clone;

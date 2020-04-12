@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Map值提供者
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class MapValueProvider implements ValueProvider<String> {

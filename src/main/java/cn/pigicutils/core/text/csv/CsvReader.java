@@ -19,8 +19,8 @@ import java.util.Objects;
 /**
  * CSV文件读取器，参考：FastCSV
  *
- * @author Looly
- * @since 4.0.1
+ * @author guchang.pan@hand-china.com
+ *
  */
 public final class CsvReader implements Serializable{
 	private static final long serialVersionUID = 1L;

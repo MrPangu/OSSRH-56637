@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Bean属性缓存<br>
  * 缓存用于防止多次反射造成的性能问题
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public enum BeanInfoCache {

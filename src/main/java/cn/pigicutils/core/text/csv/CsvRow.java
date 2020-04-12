@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * CSV中一行的表示
  *
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public final class CsvRow implements List<String> {
 

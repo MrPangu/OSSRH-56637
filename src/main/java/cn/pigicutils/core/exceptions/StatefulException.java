@@ -1,21 +1,19 @@
 package cn.pigicutils.core.exceptions;
 
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 带有状态码的异常
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  *
  */
-public class StatefulException extends RuntimeException {
+public class StatefulException extends CommonException {
 	private static final long serialVersionUID = 6057602589533840889L;
 
 	// 异常状态码
 	private int status;
-
-	public StatefulException() {
-	}
 
 	public StatefulException(String msg) {
 		super(msg);

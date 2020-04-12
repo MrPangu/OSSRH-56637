@@ -6,9 +6,9 @@ import cn.pigicutils.core.convert.ConvertException;
 /**
  * 强转转换器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  * @param <T> 强制转换到的类型
- * @since 4.0.2
+ *
  */
 public class CastConverter<T> extends AbstractConverter<T> {
 	private static final long serialVersionUID = 1L;

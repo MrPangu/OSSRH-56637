@@ -12,7 +12,7 @@ import java.util.Map;
  * 2、是否忽略空值，当源对象的值为null时，true: 忽略而不注入此值，false: 注入null<br>
  * 3、忽略的属性列表，设置一个属性列表，不拷贝这些属性值<br>
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public class CopyOptions implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -96,7 +96,7 @@ public class CopyOptions implements Serializable{
 	 * 设置忽略空值，当源对象的值为null时，忽略而不注入此值
 	 * 
 	 * @return CopyOptions
-	 * @since 4.5.7
+	 *
 	 */
 	public CopyOptions ignoreNullValue() {
 		return setIgnoreNullValue(true);
@@ -128,7 +128,7 @@ public class CopyOptions implements Serializable{
 	 * 设置忽略字段的注入错误
 	 * 
 	 * @return CopyOptions
-	 * @since 4.5.7
+	 *
 	 */
 	public CopyOptions ignoreError() {
 		return setIgnoreError(true);
@@ -149,7 +149,7 @@ public class CopyOptions implements Serializable{
 	 * 设置忽略字段的大小写
 	 * 
 	 * @return CopyOptions
-	 * @since 4.5.7
+	 *
 	 */
 	public CopyOptions ignoreCase() {
 		return setIgnoreCase(true);
@@ -169,7 +169,7 @@ public class CopyOptions implements Serializable{
 	/**
 	 * 获取反转之后的映射
 	 * @return 反转映射
-	 * @since 4.1.10
+	 *
 	 */
 	protected Map<String, String> getReversedMapping() {
 		 return (null != this.fieldMapping) ? MapUtil.reverse(this.fieldMapping) : null;

@@ -11,8 +11,8 @@ import java.util.Collection;
 /**
  * 各种集合类转换器
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class CollectionConverter implements Converter<Collection<?>> {
 

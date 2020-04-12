@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/9/10 10:39
  */
 @Component

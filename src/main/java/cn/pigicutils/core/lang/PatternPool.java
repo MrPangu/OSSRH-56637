@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * 常用正则表达式集合
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class PatternPool {
@@ -114,7 +114,7 @@ public class PatternPool {
 	/**
 	 * 正则表达式和正则标识位的包装
 	 * 
-	 * @author Looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	private static class RegexWithFlag {

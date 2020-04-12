@@ -7,8 +7,8 @@ import cn.pigicutils.core.util.StrUtil;
 /**
  * 资源文件或资源不存在异常
  * 
- * @author xiaoleilu
- * @since 4.0.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class NoResourceException extends IORuntimeException {
 	private static final long serialVersionUID = -623254467603299129L;

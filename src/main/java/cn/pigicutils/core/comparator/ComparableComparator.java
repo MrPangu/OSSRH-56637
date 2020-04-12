@@ -7,8 +7,8 @@ import java.util.Comparator;
  * 针对 {@link Comparable}对象的默认比较器
  * 
  * @param <E> 比较对象类型
- * @author Looly
- * @since 3.0.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ComparableComparator<E extends Comparable<? super E>> implements Comparator<E>, Serializable {
 	private static final long serialVersionUID = 3020871676147289162L;

@@ -1,7 +1,7 @@
 package com.pigic.hzeropigic.utils;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/1/26 10:22
  */
 
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * redis分布式锁帮助类
- * @author 潘顾昌
+ * @author guchang.pan@hand-china.com
  *
  */
 public class LockUtil {

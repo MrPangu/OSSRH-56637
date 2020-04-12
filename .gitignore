@@ -30,3 +30,4 @@ HELP.md
 /classes/
 /.mvn/
 /jrebel-classpath-14552.jar
+/src/test/java/com/pigic/hzeropigic/RefectTest.java

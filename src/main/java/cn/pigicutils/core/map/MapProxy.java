@@ -18,8 +18,8 @@ import java.util.Set;
 /**
  * Map代理，提供各种getXXX方法，并提供默认值支持
  * 
- * @author looly
- * @since 3.2.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MapProxy extends OptNullBasicTypeFromObjectGetter<Object> implements Map<Object, Object>, InvocationHandler, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -169,7 +169,7 @@ public class MapProxy extends OptNullBasicTypeFromObjectGetter<Object> implement
 	 * 
 	 * @param interfaceClass 接口
 	 * @return 代理对象
-	 * @since 4.5.2
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public <T> T toProxyBean(Class<T> interfaceClass) {

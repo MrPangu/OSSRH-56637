@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * 外部接口监控
  *
- * @author guchang.pan@hand-china.com 2019-06-29 11:23:53
+ * @author guchang.pan@hand-china.com
  */
 @ApiModel("外部接口监控")
 @VersionAudit

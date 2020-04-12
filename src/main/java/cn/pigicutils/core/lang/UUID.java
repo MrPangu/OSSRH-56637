@@ -39,7 +39,7 @@ import java.util.Random;
  * version 字段保存描述此 UUID 类型的值。有 4 种不同的基本 UUID 类型：基于时间的 UUID、DCE 安全 UUID、基于名称的 UUID 和随机生成的 UUID。<br>
  * 这些类型的 version 值分别为 1、2、3 和 4。
  *
- * @since 4.1.11
+ *
  */
 public final class UUID implements java.io.Serializable, Comparable<UUID> {
 	private static final long serialVersionUID = -1185015143654744140L;
@@ -47,7 +47,7 @@ public final class UUID implements java.io.Serializable, Comparable<UUID> {
 	/**
 	 * {@link SecureRandom} 的单例
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	private static class Holder {

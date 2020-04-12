@@ -12,15 +12,15 @@ import java.nio.charset.Charset;
  * 资源接口定义<br>
  * 资源可以是文件、URL、ClassPath中的文件亦或者jar包中的文件
  * 
- * @author looly
- * @since 3.2.1
+ * @author guchang.pan@hand-china.com
+ *
  */
 public interface Resource {
 	
 	/**
 	 * 获取资源名，例如文件资源的资源名为文件名
 	 * @return 资源名
-	 * @since 4.0.13
+	 *
 	 */
 	String getName();
 	

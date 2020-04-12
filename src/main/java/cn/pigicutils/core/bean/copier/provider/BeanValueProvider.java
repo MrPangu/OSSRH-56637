@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Bean的值提供者
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class BeanValueProvider implements ValueProvider<String> {

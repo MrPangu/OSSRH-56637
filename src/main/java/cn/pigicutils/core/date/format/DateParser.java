@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 日期解析接口，用于解析日期字符串为 {@link Date} 对象<br>
  * Thanks to Apache Commons Lang 3.5
- * @since 2.16.2
+ *
  */
 public interface DateParser extends DateBasic{
 

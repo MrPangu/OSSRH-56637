@@ -6,7 +6,7 @@ import cn.pigicutils.core.util.NumberUtil;
  * 可变 <code>double</code> 类型
  * 
  * @see Double
- * @since 3.0.1
+ *
  */
 public class MutableDouble extends Number implements Comparable<MutableDouble>, Mutable<Number> {
 	private static final long serialVersionUID = 1L;

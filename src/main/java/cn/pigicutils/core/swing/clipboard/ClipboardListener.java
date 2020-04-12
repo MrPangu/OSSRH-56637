@@ -7,8 +7,8 @@ import java.awt.datatransfer.Transferable;
  * 剪贴板监听事件处理接口<br>
  * 用户通过实现此接口，实现监听剪贴板内容变化
  * 
- * @author looly
- *@since 4.5.6
+ * @author guchang.pan@hand-china.com
+ *
  */
 public interface ClipboardListener {
 	/**

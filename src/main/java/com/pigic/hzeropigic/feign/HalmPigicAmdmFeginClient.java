@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/7/2 18:49
  */
 @FeignClient(name = "halm-mdm")

@@ -2,7 +2,7 @@ package cn.pigicutils.core.io;
 
 /**
  * Stream进度条
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public interface StreamProgress {

@@ -1,35 +1,39 @@
 package cn.pigicutils.core.lang;
 
+import cn.pigicutils.core.bean.BeanPath;
 import cn.pigicutils.core.bean.BeanUtil;
+import cn.pigicutils.core.bean.copier.CopyOptions;
 import cn.pigicutils.core.collection.CollectionUtil;
 import cn.pigicutils.core.convert.Convert;
 import cn.pigicutils.core.exceptions.UtilException;
 import cn.pigicutils.core.getter.BasicTypeGetter;
 import cn.pigicutils.core.lang.func.ConvertFun;
+import cn.pigicutils.core.util.ObjectUtil;
 import cn.pigicutils.core.util.StrUtil;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.pigic.hzeropigic.api.vo.UserVO;
-import com.pigic.hzeropigic.app.service.PigicService;
-import com.pigic.hzeropigic.app.service.impl.PigicServiceImpl;
 import com.pigic.hzeropigic.feign.PigicIamFeignClient;
+import com.pigic.hzeropigic.feign.PigicPlatFormFeignClient;
+import com.pigic.hzeropigic.infra.constant.Constants;
 import com.pigic.hzeropigic.utils.SpringUtils;
-import io.choerodon.core.oauth.DetailsHelper;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import io.choerodon.core.exception.CommonException;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * 字典对象，扩充了HashMap中的方法
  * 
- * @author loolly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGetter<String> {
@@ -117,7 +121,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * @param initialCapacity 初始容量
 	 * @param loadFactor 容量增长因子，0~1，即达到容量的百分之多少时扩容
 	 * @param caseInsensitive 是否大小写不敏感
-	 * @since 4.5.16
+	 *
 	 */
 	public Dict(int initialCapacity, float loadFactor, boolean caseInsensitive) {
 		super(initialCapacity, loadFactor);
@@ -152,7 +156,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * @param <T> Bean类型
 	 * @param bean Bean
 	 * @return Bean
-	 * @since 3.3.1
+	 *
 	 */
 	public <T> T toBeanIgnoreCase(T bean) {
 		BeanUtil.fillBeanWithMapIgnoreCase(this, bean, false);
@@ -309,7 +313,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * 
 	 * @param keys 键列表
 	 * @return Dict 结果
-	 * @since 4.0.10
+	 *
 	 */
 	public Dict filter(String... keys) {
 		final Dict result = new Dict(keys.length, 1);
@@ -380,14 +384,14 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	public static List<Dict> parseJsonArrayWithDict(String json){
 		JSONArray jsonArray = JSONArray.parseArray(json);
 		Dict dict = Dict.create().set("___", jsonArray);
-		List<Dict> dictList = dict.getLevelList("___", Dict.class);
+		List<Dict> dictList = dict.getPathList("___", Dict.class);
 		return dictList;
 	}
 
 	public static List<Object> parseJsonArray(String json){
 		JSONArray jsonArray = JSONArray.parseArray(json);
 		Dict dict = Dict.create().set("___", jsonArray);
-		List<Object> objectList = dict.getLevelList("___");
+		List<Object> objectList = dict.getPathList("___");
 		List<Object> objectList1 = objectList.stream().map(obj -> {
 			if (obj instanceof JSONObject) {
 				return new Dict((JSONObject) obj);
@@ -404,13 +408,13 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 
 	public static List<Dict> parseJsonArrayWithDict(JSONArray jsonArray){
 		Dict dict = Dict.create().set("___", jsonArray);
-		List<Dict> dictList = dict.getLevelList("___", Dict.class);
+		List<Dict> dictList = dict.getPathList("___", Dict.class);
 		return dictList;
 	}
 
 	public static List<Object> parseJsonArray(JSONArray jsonArray){
 		Dict dict = Dict.create().set("___", jsonArray);
-		List<Object> objectList = dict.getLevelList("___");
+		List<Object> objectList = dict.getPathList("___");
 		List<Object> objectList1 = objectList.stream().map(obj -> {
 			if (obj instanceof JSONObject) {
 				return new Dict((JSONObject) obj);
@@ -520,6 +524,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * @param attr 字段名
 	 * @return 字段值
 	 */
+	@Override
 	public Date getDate(String attr) {
 		return get(attr, null);
 	}
@@ -577,6 +582,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * @param levelKey
 	 * @return
 	 */
+	@Deprecated
 	public <T> T getLevelVal(String levelKey, Class<T> clazz){
 		String[] keys = StrUtil.splitToArray(levelKey, '.');
 		Map map=this;
@@ -601,6 +607,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return Convert.convert(clazz, new Dict(map));
 	}
 
+	@Deprecated
 	public Object getLevelVal(String levelKey){
 		String[] keys = StrUtil.splitToArray(levelKey, '.');
 		Map map=this;
@@ -624,6 +631,29 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return new Dict(map);
 	}
 
+	public <T> T getPathVal(String path, Class<T> clazz){
+		Object pathVal = getPathVal(path);
+		return Convert.convert(clazz,pathVal);
+	}
+
+	public Object getPathVal(String path){
+		BeanPath pattern = BeanPath.create(path);
+		Object o = pattern.get(this);
+		return o;
+	}
+
+	public Dict setPathVal(String path, Object val){
+		BeanPath pattern = BeanPath.create(path);
+		pattern.set(this, val);
+		return this;
+	}
+
+	public Dict getPathDict(String path){
+		Object pathVal = getPathVal(path);
+		return Convert.convert(Dict.class, pathVal);
+	}
+
+	@Deprecated
 	public Dict getLevelDict(String levelKey){
 		String[] keys = StrUtil.splitToArray(levelKey, '.');
 		Map map=this;
@@ -645,7 +675,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 				}
 			}
 		}
-		return Convert.convert(Dict.class, new Dict(map));
+		return new Dict(map);
 	}
 
 	/**
@@ -653,6 +683,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 * @param levelKey
 	 * @return
 	 */
+	@Deprecated
 	public Dict setLevelVal(String levelKey, Object obj){
 		String[] keys = StrUtil.splitToArray(levelKey, '.');
 		if (keys.length == 1){
@@ -686,6 +717,30 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return this;
 	}
 
+	public Dict convertFieldCamelCase(){
+		Iterator<String> keys = this.keySet().iterator();
+		Dict dict = Dict.create();
+		while (keys.hasNext()){
+			String sk = keys.next();
+			String camelCase = StrUtil.toCamelCase(sk);
+			dict.set(sk, camelCase);
+		}
+		Dict dict1 = convertFieldLR(() -> dict);
+		return dict1;
+	}
+
+	public Dict convertFieldUnderLine(){
+		Iterator<String> keys = this.keySet().iterator();
+		Dict dict = Dict.create();
+		while (keys.hasNext()){
+			String sk = keys.next();
+			String camelCase = StrUtil.toUnderlineCase(sk);
+			dict.set(sk, camelCase);
+		}
+		Dict dict1 = convertFieldLR(() -> dict);
+		return dict1;
+	}
+
 	public Dict convertFieldLR(ConvertFun convertFun){
 		Map<String, String> dict = new HashMap(convertFun.call());
 		Iterator<String> keys = dict.keySet().iterator();
@@ -716,21 +771,62 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		}
 		return this;
 	}
-
-	public static void handleLovMeaningList(List<Dict> dicts, String lovName, String codeField, String nameField){
-		PigicService pigicService = SpringUtils.getBean(PigicServiceImpl.class);
-		for (Dict dict: dicts){
-			String code = dict.getStr(codeField);
-			String meaning = pigicService.GetLovMeaningByCode(lovName, code, 0L);
-			dict.set(nameField, meaning);
+	@Deprecated
+	public static void handleLovMeaningList(List<Dict> dictList, ConvertFun convertFun){
+		for (Dict dict: dictList){
+			dict.handleLovMeaning(convertFun);
 		}
 	}
-	public void handleLovMeaning(String lovName, String codeField, String nameField){
-		PigicService pigicService = SpringUtils.getBean(PigicServiceImpl.class);
-		String code = this.getStr(codeField);
-		String meaning = pigicService.GetLovMeaningByCode(lovName, code, 0L);
-		this.set(nameField, meaning);
+
+	public static void handleLovMeaningList(List<Dict> dictList, List<LovConvert> lovList){
+		for (Dict dict: dictList){
+			dict.handleLovMeaning(lovList);
+		}
 	}
+
+	@Deprecated
+	public void handleLovMeaning(ConvertFun convertFun){
+		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
+		Map<String, String> map = new HashMap(convertFun.call());
+		Iterator<String> keys = map.keySet().iterator();
+		Iterator<String> values = map.values().iterator();
+		for (int i=0; i<map.size();i++){
+			String lovName = keys.next();
+			String value = values.next();
+			String[] splits = StrUtil.split(value, "->");
+			String code = splits[0];
+			String meaning = splits[1];
+			List<Dict> dicts = platFormFeignClient.queryLovValue(lovName, Constants.Common.TENANTID);
+			dicts.stream().forEach(dict->{
+				if (StrUtil.equals(this.getStr(code), dict.getStr("value"))){
+					this.set(meaning, dict.getStr("meaning"));
+				}
+			});
+			if (ObjectUtil.isNull(this.get(meaning))){
+				this.set(meaning, "");
+			}
+		}
+	}
+
+	public void handleLovMeaning(List<LovConvert> lovList){
+		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
+		for (LovConvert lovConvert: lovList){
+			String lovCode = lovConvert.getLovCode();
+			String meaningFiled = lovConvert.getMeaningFiled();
+			String valueFiled = lovConvert.getValueFiled();
+			List<Dict> dicts = platFormFeignClient.queryLovValue(lovCode, Constants.Common.TENANTID);
+			dicts.stream().forEach(dict->{
+				if (StrUtil.equals(this.getStr(valueFiled), dict.getStr("value"))){
+					this.set(meaningFiled, dict.getStr("meaning"));
+				}
+			});
+			if (ObjectUtil.isNull(this.get(meaningFiled))){
+				this.set(meaningFiled, "");
+			}
+		}
+	}
+
+
 
 	public static List<Dict> parseList(Object obj){
 		List<Object> objectList= (List<Object>) obj;
@@ -739,6 +835,23 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 			return dict;
 		}).collect(Collectors.toList());
 		return dictList;
+	}
+
+	public static <T> Dict parse(Map<String, T> obj){
+		Dict dict = Dict.create();
+		obj.forEach((k,v)->{
+			T t = obj.get(k);
+			dict.set(k,t);
+		});
+		return dict;
+	}
+
+	public Map<String, String> toMapStr(){
+		Map<String, String> map=Maps.newHashMap();
+		this.forEach((key, val)->{
+			map.put(key, Convert.convert(String.class, val));
+		});
+		return map;
 	}
 
 	public List<Dict> parseListBean(Object obj){
@@ -750,6 +863,23 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return dictList;
 	}
 
+	public <T> List<T> getPathList(String key, Class<T> clazz){
+		List<Object> objects = getPathList(key);
+		if (clazz.equals(Map.class)){
+			List<T> dictList = objects.stream().map(obj -> {
+				Dict dict = Dict.parse(obj);
+				return (T)dict;
+			}).collect(Collectors.toList());
+			return dictList;
+		}else{
+			List<T> objList = objects.stream().map(obj -> {
+				return Convert.convert(clazz, obj);
+			}).collect(Collectors.toList());
+			return objList;
+		}
+	}
+
+	@Deprecated
 	public <T> List<T> getLevelList(String key, Class<T> clazz){
 		Object levelVal = getLevelVal(key);
 		List<Object> objects= (List<Object>) levelVal;
@@ -767,6 +897,13 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		}
 	}
 
+	public List<Object> getPathList(String key){
+		Object pathVal = getPathVal(key);
+		List<Object> objects= (List<Object>) pathVal;
+		return objects;
+	}
+
+	@Deprecated
 	public List<Object> getLevelList(String key){
 		Object levelVal = getLevelVal(key);
 		List<Object> objects= (List<Object>) levelVal;
@@ -776,6 +913,85 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	public static UserVO getCurrentUser(){
 		PigicIamFeignClient feignClient = SpringUtils.getBean(PigicIamFeignClient.class);
 		UserVO userVO = feignClient.selectSelf();
+		UserVO userVO1 = feignClient.selectSelfDetail();
+		BeanUtil.copyProperties(userVO1,userVO,CopyOptions.create().ignoreNullValue());
 		return userVO;
+	}
+
+	public static String getProfileValue(String profileName){
+		UserVO userVO = getCurrentUser();
+		Long roleId = userVO.getCurrentRoleId();
+		Long id = userVO.getId();
+		Long organizationId = userVO.getOrganizationId();
+		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
+		String profileVal = platFormFeignClient.selectProfile(organizationId, profileName, id, roleId);
+		return profileVal;
+	}
+
+	public static String getCommonProfileValue(String profileName){
+		Long organizationId = Constants.Common.TENANTID;
+		Long id = -1L;
+		Long roleId = -1L;
+		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
+		String profileVal = platFormFeignClient.selectProfile(organizationId, profileName, id, roleId);
+		return profileVal;
+	}
+
+	public <T> T get(String key, Class<T> clazz){
+		Object o = this.get(key);
+		return Convert.convert(clazz,o);
+	}
+
+	public static List<Lov> getLovList(String lovCode){
+		List<Lov> lovList = new ArrayList();
+		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
+		List<Dict> dicts = platFormFeignClient.queryLovValue(lovCode, Constants.Common.TENANTID);
+		for (Dict dict: dicts){
+			String value = dict.getStr("value");
+			String meaning = dict.getStr("meaning");
+			String tag = dict.getStr("tag");
+			String parentValue = dict.getStr("parentValue");
+			String description = dict.getStr("description");
+			Integer orderSeq = dict.getInt("orderSeq");
+			Lov lov = new Lov()
+					.setValue(value)
+					.setTag(tag)
+					.setParentValue(parentValue)
+					.setDescription(description)
+					.setOrderSeq(orderSeq)
+					.setMeaning(meaning);
+			lovList.add(lov);
+		}
+		return lovList;
+	}
+
+	public static Lov getLovInfo(String lovCode, String value){
+		List<Lov> lovList = getLovList(lovCode);
+		Assert.notNull(lovList,"找不对该值集编码：{}",lovCode);
+		Assert.isTrue(lovList.size()>0,"值集编码：{}，没有数据",lovCode);
+		for (Lov lov: lovList){
+			if (lov.getValue().equals(value)){
+				return lov;
+			}
+		}
+		throw new CommonException("值集：{}，找不到对应的值：{}", lovCode, value);
+	}
+
+	public Dict handleDate(String format){
+		Set<String> keySet = this.keySet();
+		for (String str: keySet){
+			Object val = this.get(str);
+			if (val instanceof Date){
+				Date date = (Date) val;
+				SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+				String newVal = dateFormat.format(date);
+				this.set(str, newVal);
+			}
+		}
+		return this;
+	}
+
+	public Dict handleDate(){
+		return handleDate("yyyy-MM-dd HH:mm:dd");
 	}
 }

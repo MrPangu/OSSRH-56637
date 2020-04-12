@@ -5,7 +5,7 @@ import cn.pigicutils.core.text.replacer.ReplacerChain;
 
 /**
  * HTML4的ESCAPE
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Html4Escape extends ReplacerChain {

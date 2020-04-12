@@ -47,8 +47,8 @@ import java.util.Comparator;
  *
  *TODO 待整理
  * 来自于Apache-Commons-Lang3
- * @author looly，Apache-Commons
- * @since 4.2.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class CompareToBuilder implements Builder<Integer> {
 	private static final long serialVersionUID = 1L;
@@ -149,7 +149,7 @@ public class CompareToBuilder implements Builder<Integer> {
      *  (but not both) is <code>null</code>
      * @throws ClassCastException  if <code>rhs</code> is not assignment-compatible
      *  with <code>lhs</code>
-     * @since 2.2
+     *
      */
     public static int reflectionCompare(final Object lhs, final Object rhs, final Collection<String> excludeFields) {
         return reflectionCompare(lhs, rhs, ArrayUtil.toArray(excludeFields, String.class));
@@ -182,7 +182,7 @@ public class CompareToBuilder implements Builder<Integer> {
      *  (but not both) is <code>null</code>
      * @throws ClassCastException  if <code>rhs</code> is not assignment-compatible
      *  with <code>lhs</code>
-     * @since 2.2
+     *
      */
     public static int reflectionCompare(final Object lhs, final Object rhs, final String... excludeFields) {
         return reflectionCompare(lhs, rhs, false, null, excludeFields);
@@ -218,7 +218,7 @@ public class CompareToBuilder implements Builder<Integer> {
      *  (but not both) is <code>null</code>
      * @throws ClassCastException  if <code>rhs</code> is not assignment-compatible
      *  with <code>lhs</code>
-     * @since 2.2 (2.0 as <code>reflectionCompare(Object, Object, boolean, Class)</code>)
+     *
      */
     public static int reflectionCompare(
         final Object lhs, 
@@ -291,7 +291,7 @@ public class CompareToBuilder implements Builder<Integer> {
      *
      * @param superCompareTo  result of calling <code>super.compareTo(Object)</code>
      * @return this - used to chain append calls
-     * @since 2.0
+     *
      */
     public CompareToBuilder appendSuper(final int superCompareTo) {
         if (comparison != 0) {
@@ -348,7 +348,7 @@ public class CompareToBuilder implements Builder<Integer> {
      * @return this - used to chain append calls
      * @throws ClassCastException  if <code>rhs</code> is not assignment-compatible
      *  with <code>lhs</code>
-     * @since 2.0
+     *
      */
     public CompareToBuilder append(final Object lhs, final Object rhs, final Comparator<?> comparator) {
         if (comparison != 0) {
@@ -597,7 +597,7 @@ public class CompareToBuilder implements Builder<Integer> {
      * @return this - used to chain append calls
      * @throws ClassCastException  if <code>rhs</code> is not assignment-compatible
      *  with <code>lhs</code>
-     * @since 2.0
+     *
      */
     public CompareToBuilder append(final Object[] lhs, final Object[] rhs, final Comparator<?> comparator) {
         if (comparison != 0) {
@@ -966,7 +966,7 @@ public class CompareToBuilder implements Builder<Integer> {
      * 
      * @return final comparison result as an Integer
      * @see #toComparison()
-     * @since 3.0
+     *
      */
     @Override
     public Integer build() {

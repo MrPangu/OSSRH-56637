@@ -27,10 +27,10 @@ import java.util.Map;
 /**
  * Bean拷贝
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 目标对象类型
- * @since 3.2.3
+ *
  */
 public class BeanCopier<T> implements Copier<T>, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -148,7 +148,7 @@ public class BeanCopier<T> implements Copier<T>, Serializable {
 	 * 
 	 * @param bean bean对象
 	 * @param targetMap 目标的Map
-	 * @since 4.1.22
+	 *
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void beanToMap(Object bean, Map targetMap) {
@@ -289,7 +289,7 @@ public class BeanCopier<T> implements Copier<T>, Serializable {
 	 * @param mapping 反向映射Map
 	 * @param fieldName 字段名
 	 * @return 映射值，无对应值返回字段名
-	 * @since 4.1.10
+	 *
 	 */
 	private static String mappingKey(Map<String, String> mapping, String fieldName) {
 		if (MapUtil.isEmpty(mapping)) {

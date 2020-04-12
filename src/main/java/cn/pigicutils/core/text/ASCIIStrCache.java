@@ -3,8 +3,8 @@ package cn.pigicutils.core.text;
 /**
  * ASCII字符对应的字符串缓存
  * 
- * @author looly
- * @since 4.0.1
+ * @author guchang.pan@hand-china.com
+ *
  *
  */
 public class ASCIIStrCache {

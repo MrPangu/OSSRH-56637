@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/6/27 9:24
  */
 public class HttpUtil {

@@ -19,7 +19,7 @@ import cn.pigicutils.core.util.StrUtil;
  * 		<li><code>boolean</code></li>
  * </ul>
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class PrimitiveConverter extends AbstractConverter<Object> {

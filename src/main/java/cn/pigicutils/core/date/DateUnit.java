@@ -2,7 +2,7 @@ package cn.pigicutils.core.date;
 
 /**
  * 日期时间单位，每个单位都是以毫秒为基数
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public enum DateUnit {

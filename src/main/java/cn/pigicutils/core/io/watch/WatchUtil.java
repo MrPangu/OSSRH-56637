@@ -13,8 +13,8 @@ import java.nio.file.WatchEvent;
  * 监听工具类<br>
  * 主要负责文件监听器的快捷创建
  * 
- * @author Looly
- * @since 3.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class WatchUtil {
 	/**
@@ -257,7 +257,7 @@ public class WatchUtil {
 	 * @param url URL
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(URL url, Watcher watcher) {
 		return createModify(url, 0, watcher);
@@ -270,7 +270,7 @@ public class WatchUtil {
 	 * @param maxDepth 当监听目录时，监听目录的最大深度，当设置值为1（或小于1）时，表示不递归监听子目录
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(URL url, int maxDepth, Watcher watcher) {
 		return createModify(URLUtil.toURI(url), maxDepth, watcher);
@@ -282,7 +282,7 @@ public class WatchUtil {
 	 * @param uri URI
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(URI uri, Watcher watcher) {
 		return createModify(uri, 0, watcher);
@@ -295,7 +295,7 @@ public class WatchUtil {
 	 * @param maxDepth 当监听目录时，监听目录的最大深度，当设置值为1（或小于1）时，表示不递归监听子目录
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(URI uri, int maxDepth, Watcher watcher) {
 		return createModify(Paths.get(uri), maxDepth, watcher);
@@ -307,7 +307,7 @@ public class WatchUtil {
 	 * @param file 被监听文件
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(File file, Watcher watcher) {
 		return createModify(file, 0, watcher);
@@ -320,7 +320,7 @@ public class WatchUtil {
 	 * @param maxDepth 当监听目录时，监听目录的最大深度，当设置值为1（或小于1）时，表示不递归监听子目录
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(File file, int maxDepth, Watcher watcher) {
 		return createModify(file.toPath(), 0, watcher);
@@ -332,7 +332,7 @@ public class WatchUtil {
 	 * @param path 路径
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(String path, Watcher watcher) {
 		return createModify(path, 0, watcher);
@@ -345,7 +345,7 @@ public class WatchUtil {
 	 * @param maxDepth 当监听目录时，监听目录的最大深度，当设置值为1（或小于1）时，表示不递归监听子目录
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(String path, int maxDepth, Watcher watcher) {
 		return createModify(Paths.get(path), maxDepth, watcher);
@@ -357,7 +357,7 @@ public class WatchUtil {
 	 * @param path 路径
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(Path path, Watcher watcher) {
 		return createModify(path, 0, watcher);
@@ -370,7 +370,7 @@ public class WatchUtil {
 	 * @param maxDepth 当监听目录时，监听目录的最大深度，当设置值为1（或小于1）时，表示不递归监听子目录
 	 * @param watcher {@link Watcher}
 	 * @return {@link WatchMonitor}
-	 * @since 4.5.2
+	 *
 	 */
 	public static WatchMonitor createModify(Path path, int maxDepth, Watcher watcher) {
 		final WatchMonitor watchMonitor = create(path, maxDepth, WatchMonitor.ENTRY_MODIFY);

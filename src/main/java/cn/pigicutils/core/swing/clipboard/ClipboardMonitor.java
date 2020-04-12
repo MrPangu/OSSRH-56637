@@ -13,8 +13,8 @@ import java.util.Set;
 /**
  * 剪贴板监听
  * 
- * @author looly
- * @since 4.5.6
+ * @author guchang.pan@hand-china.com
+ *
  */
 public enum ClipboardMonitor implements ClipboardOwner, Runnable, Closeable {
 	INSTANCE;

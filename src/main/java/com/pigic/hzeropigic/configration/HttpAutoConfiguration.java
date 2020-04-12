@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Collections;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/6/29 13:58
  */
 @Configuration

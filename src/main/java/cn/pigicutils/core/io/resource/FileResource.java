@@ -10,7 +10,7 @@ import java.nio.file.Path;
 /**
  * 文件资源访问对象
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class FileResource extends UrlResource {
@@ -21,7 +21,7 @@ public class FileResource extends UrlResource {
 	 * 构造
 	 * 
 	 * @param path 文件
-	 * @since 4.4.1
+	 *
 	 */
 	public FileResource(Path path) {
 		this(path.toFile());

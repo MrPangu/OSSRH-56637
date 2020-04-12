@@ -6,7 +6,7 @@ import cn.pigicutils.core.text.replacer.ReplacerChain;
 /**
  * HTML4的UNESCAPE
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Html4Unescape extends ReplacerChain {

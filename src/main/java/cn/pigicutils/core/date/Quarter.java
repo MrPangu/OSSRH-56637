@@ -8,7 +8,7 @@ package cn.pigicutils.core.date;
  * @see #Q3
  * @see #Q4
  * 
- * @author zhfish(https://github.com/zhfish)
+ * @author guchang.pan@hand-china.com
  *
  */
 public enum Quarter {

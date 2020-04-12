@@ -27,8 +27,8 @@ import java.util.concurrent.LinkedBlockingDeque;
  * <p>
  * 由于{@link Collection} 实现了{@link Iterable}接口，因此部分工具此类不提供，而是在{@link IterUtil} 中提供
  * 
- * @author xiaoleilu
- * @since 3.1.1
+ * @author guchang.pan@hand-china.com
+ *
  * @see IterUtil
  */
 public class CollUtil {
@@ -184,7 +184,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param value 需要查找的值
 	 * @return 如果集合为空（null或者空），返回{@code false}，否则找到元素返回{@code true}
-	 * @since 4.1.10
+	 *
 	 */
 	public static boolean contains(Collection<?> collection, Object value) {
 		return isNotEmpty(collection) && collection.contains(value);
@@ -196,7 +196,7 @@ public class CollUtil {
 	 * @param coll1 集合1
 	 * @param coll2 集合2
 	 * @return 其中一个集合在另一个集合中是否至少包含一个元素
-	 * @since 2.1
+	 *
 	 * @see #intersection
 	 */
 	public static boolean containsAny(Collection<?> coll1, Collection<?> coll2) {
@@ -225,7 +225,7 @@ public class CollUtil {
 	 * @param coll1 集合1
 	 * @param coll2 集合2
 	 * @return 集合1中是否包含集合2中所有的元素
-	 * @since 4.5.12
+	 *
 	 */
 	public static boolean containsAll(Collection<?> coll1, Collection<?> coll2) {
 		if (isEmpty(coll1) || isEmpty(coll2) || coll1.size() < coll2.size()) {
@@ -364,7 +364,7 @@ public class CollUtil {
 	 * @param size 初始大小，由于默认负载因子0.75，传入的size会实际初始大小为size / 0.75
 	 * @param isOrder Map的Key是否有序，有序返回 {@link LinkedHashMap}，否则返回 {@link HashMap}
 	 * @return HashMap对象
-	 * @since 3.0.4
+	 *
 	 * @see MapUtil#newHashMap(int, boolean)
 	 */
 	public static <K, V> HashMap<K, V> newHashMap(int size, boolean isOrder) {
@@ -403,7 +403,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param ts 元素数组
 	 * @return HashSet对象
-	 * @since 4.1.10
+	 *
 	 */
 	@SafeVarargs
 	public static <T> LinkedHashSet<T> newLinkedHashSet(T... ts) {
@@ -461,7 +461,7 @@ public class CollUtil {
 	 * @param isSorted 是否有序，有序返回 {@link LinkedHashSet}，否则返回{@link HashSet}
 	 * @param iter {@link Iterator}
 	 * @return HashSet对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> HashSet<T> newHashSet(boolean isSorted, Iterator<T> iter) {
 		if (null == iter) {
@@ -481,7 +481,7 @@ public class CollUtil {
 	 * @param isSorted 是否有序，有序返回 {@link LinkedHashSet}，否则返回{@link HashSet}
 	 * @param enumration {@link Enumeration}
 	 * @return HashSet对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> HashSet<T> newHashSet(boolean isSorted, Enumeration<T> enumration) {
 		if (null == enumration) {
@@ -501,7 +501,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param isLinked 是否新建LinkedList
 	 * @return List对象
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> List<T> list(boolean isLinked) {
 		return isLinked ? new LinkedList<T>() : new ArrayList<T>();
@@ -514,7 +514,7 @@ public class CollUtil {
 	 * @param isLinked 是否新建LinkedList
 	 * @param values 数组
 	 * @return List对象
-	 * @since 4.1.2
+	 *
 	 */
 	@SafeVarargs
 	public static <T> List<T> list(boolean isLinked, T... values) {
@@ -535,7 +535,7 @@ public class CollUtil {
 	 * @param isLinked 是否新建LinkedList
 	 * @param collection 集合
 	 * @return List对象
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> List<T> list(boolean isLinked, Collection<T> collection) {
 		if (null == collection) {
@@ -552,7 +552,7 @@ public class CollUtil {
 	 * @param isLinked 是否新建LinkedList
 	 * @param iterable {@link Iterable}
 	 * @return List对象
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> List<T> list(boolean isLinked, Iterable<T> iterable) {
 		if (null == iterable) {
@@ -569,7 +569,7 @@ public class CollUtil {
 	 * @param isLinked 是否新建LinkedList
 	 * @param iter {@link Iterator}
 	 * @return ArrayList对象
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> List<T> list(boolean isLinked, Iterator<T> iter) {
 		final List<T> list = list(isLinked);
@@ -589,7 +589,7 @@ public class CollUtil {
 	 * @param isLinked 是否新建LinkedList
 	 * @param enumration {@link Enumeration}
 	 * @return ArrayList对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> List<T> list(boolean isLinked, Enumeration<T> enumration) {
 		final List<T> list = list(isLinked);
@@ -619,7 +619,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param values 数组
 	 * @return ArrayList对象
-	 * @since 4.0.11
+	 *
 	 */
 	@SafeVarargs
 	public static <T> ArrayList<T> toList(T... values) {
@@ -644,7 +644,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param iterable {@link Iterable}
 	 * @return ArrayList对象
-	 * @since 3.1.0
+	 *
 	 */
 	public static <T> ArrayList<T> newArrayList(Iterable<T> iterable) {
 		return (ArrayList<T>) list(false, iterable);
@@ -657,7 +657,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param iter {@link Iterator}
 	 * @return ArrayList对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> ArrayList<T> newArrayList(Iterator<T> iter) {
 		return (ArrayList<T>) list(false, iter);
@@ -670,7 +670,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param enumration {@link Enumeration}
 	 * @return ArrayList对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> ArrayList<T> newArrayList(Enumeration<T> enumration) {
 		return (ArrayList<T>) list(false, enumration);
@@ -683,7 +683,7 @@ public class CollUtil {
 	 * @param values 数组
 	 * @param <T> 类型
 	 * @return LinkedList
-	 * @since 4.1.2
+	 *
 	 */
 	@SafeVarargs
 	public static <T> LinkedList<T> newLinkedList(T... values) {
@@ -708,7 +708,7 @@ public class CollUtil {
 	 * @param capacity 容量
 	 * @param isLinked 是否为链表形式
 	 * @return {@link BlockingQueue}
-	 * @since 3.3.0
+	 *
 	 */
 	public static <T> BlockingQueue<T> newBlockingQueue(int capacity, boolean isLinked) {
 		BlockingQueue<T> queue;
@@ -726,7 +726,7 @@ public class CollUtil {
 	 * @param <T> 集合类型
 	 * @param collectionType 集合类型
 	 * @return 集合类型对应的实例
-	 * @since 3.0.8
+	 *
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static <T> Collection<T> create(Class<?> collectionType) {
@@ -818,7 +818,7 @@ public class CollUtil {
 	 * @param end 结束位置（不包含）
 	 * @param step 步进
 	 * @return 截取后的数组，当开始位置超过最大时，返回空的List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> sub(List<T> list, int start, int end, int step) {
 		if (list == null) {
@@ -884,7 +884,7 @@ public class CollUtil {
 	 * @param end 结束位置（不包含）
 	 * @param step 步进
 	 * @return 截取后的数组，当开始位置超过最大时，返回空集合
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> sub(Collection<T> list, int start, int end, int step) {
 		if (list == null || list.isEmpty()) {
@@ -967,7 +967,7 @@ public class CollUtil {
 	 * @param list 集合
 	 * @param editor 编辑器接口
 	 * @return 过滤后的数组
-	 * @since 4.1.8
+	 *
 	 */
 	public static <T> List<T> filter(List<T> list, Editor<T> editor) {
 		if (null == list || null == editor) {
@@ -997,7 +997,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param filter 过滤器
 	 * @return 过滤后的数组
-	 * @since 3.1.0
+	 *
 	 */
 	public static <T> Collection<T> filter(Collection<T> collection, Filter<T> filter) {
 		if (null == collection || null == filter) {
@@ -1032,7 +1032,7 @@ public class CollUtil {
 	 * @param list 集合
 	 * @param filter 过滤器
 	 * @return 过滤后的数组
-	 * @since 4.1.8
+	 *
 	 */
 	public static <T> List<T> filter(List<T> list, Filter<T> filter) {
 		if (null == list || null == filter) {
@@ -1052,7 +1052,7 @@ public class CollUtil {
 	 * 
 	 * @param collection 集合
 	 * @return 处理后的集合
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T> Collection<T> removeNull(Collection<T> collection) {
 		return filter(collection, new Editor<T>() {
@@ -1070,7 +1070,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param elesRemoved 被去掉的元素数组
 	 * @return 原集合
-	 * @since 4.1.0
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> Collection<T> removeAny(Collection<T> collection, T... elesRemoved) {
@@ -1083,7 +1083,7 @@ public class CollUtil {
 	 * 
 	 * @param collection 集合
 	 * @return 处理后的集合
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T extends CharSequence> Collection<T> removeEmpty(Collection<T> collection) {
 		return filter(collection, new Filter<T>() {
@@ -1099,7 +1099,7 @@ public class CollUtil {
 	 * 
 	 * @param collection 集合
 	 * @return 处理后的集合
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T extends CharSequence> Collection<T> removeBlank(Collection<T> collection) {
 		return filter(collection, new Filter<T>() {
@@ -1130,7 +1130,7 @@ public class CollUtil {
 	 * @param editor 编辑器
 	 * @param ignoreNull 是否忽略空值
 	 * @return 抽取后的新列表
-	 * @since 4.5.7
+	 *
 	 */
 	public static List<Object> extract(Iterable<?> collection, Editor<Object> editor, boolean ignoreNull) {
 		final List<Object> fieldValueList = new ArrayList<>();
@@ -1152,7 +1152,7 @@ public class CollUtil {
 	 * @param collection Bean集合或Map集合
 	 * @param fieldName 字段名或map的键
 	 * @return 字段值列表
-	 * @since 3.1.0
+	 *
 	 */
 	public static List<Object> getFieldValues(Iterable<?> collection, final String fieldName) {
 		return getFieldValues(collection, fieldName, false);
@@ -1166,7 +1166,7 @@ public class CollUtil {
 	 * @param fieldName 字段名或map的键
 	 * @param ignoreNull 是否忽略值为{@code null}的字段
 	 * @return 字段值列表
-	 * @since 4.5.7
+	 *
 	 */
 	public static List<Object> getFieldValues(Iterable<?> collection, final String fieldName, boolean ignoreNull) {
 		return extract(collection, new Editor<Object>() {
@@ -1190,7 +1190,7 @@ public class CollUtil {
 	 * @param fieldName 字段名或map的键
 	 * @param elementType 元素类型类
 	 * @return 字段值列表
-	 * @since 4.5.6
+	 *
 	 */
 	public static <T> List<T> getFieldValues(Iterable<?> collection, final String fieldName, final Class<T> elementType) {
 		List<Object> fieldValues = getFieldValues(collection, fieldName);
@@ -1204,7 +1204,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param filter 过滤器，满足过滤条件的第一个元素将被返回
 	 * @return 满足过滤条件的第一个元素
-	 * @since 3.1.0
+	 *
 	 */
 	public static <T> T findOne(Iterable<T> collection, Filter<T> filter) {
 		if (null != collection) {
@@ -1228,7 +1228,7 @@ public class CollUtil {
 	 * @param fieldName 集合元素对象的字段名或map的键
 	 * @param fieldValue 集合元素对象的字段值或map的值
 	 * @return 满足条件的第一个元素
-	 * @since 3.1.0
+	 *
 	 */
 	public static <T> T findOneByField(Iterable<T> collection, final String fieldName, final Object fieldValue) {
 		return findOne(collection, new Filter<T>() {
@@ -1281,7 +1281,7 @@ public class CollUtil {
 	 * @param map Map
 	 * @param filter 编辑器接口
 	 * @return 过滤后的Map
-	 * @since 3.1.0
+	 *
 	 * @see MapUtil#filter(Map, Filter)
 	 */
 	public static <K, V> Map<K, V> filter(Map<K, V> map, Filter<Entry<K, V>> filter) {
@@ -1422,7 +1422,7 @@ public class CollUtil {
 	 * 
 	 * @param iterable 被检查的Iterable对象，如果为{@code null} 返回false
 	 * @return 是否包含{@code null}元素
-	 * @since 3.0.7
+	 *
 	 * @see IterUtil#hasNull(Iterable)
 	 */
 	public static boolean hasNull(Iterable<?> iterable) {
@@ -1444,7 +1444,7 @@ public class CollUtil {
 	 * @param delimiter 分隔符
 	 * @param isOrder 是否有序
 	 * @return Map
-	 * @since 3.0.4
+	 *
 	 */
 	public static Map<String, String> zip(String keys, String values, String delimiter, boolean isOrder) {
 		return ArrayUtil.zip(StrUtil.split(keys, delimiter), StrUtil.split(values, delimiter), isOrder);
@@ -1532,7 +1532,7 @@ public class CollUtil {
 	 * 
 	 * @param array 数组。元素类型为Map.Entry、数组、Iterable、Iterator
 	 * @return {@link HashMap}
-	 * @since 3.0.8
+	 *
 	 * @see MapUtil#of(Object[])
 	 */
 	public static HashMap<Object, Object> toMap(Object[] array) {
@@ -1601,7 +1601,7 @@ public class CollUtil {
 	 * @param <E> 集合元素类型
 	 * @param iterable {@link Iterable}
 	 * @return {@link Collection} 或者 {@link ArrayList}
-	 * @since 3.0.9
+	 *
 	 */
 	public static <E> Collection<E> toCollection(Iterable<E> iterable) {
 		return (iterable instanceof Collection) ? (Collection<E>) iterable : newArrayList(iterable.iterator());
@@ -1787,7 +1787,7 @@ public class CollUtil {
 	 * @param collection 被加入的集合 {@link Collection}
 	 * @param values 要加入的内容数组
 	 * @return 原集合
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> Collection<T> addAll(Collection<T> collection, T[] values) {
 		if (null != collection && null != values) {
@@ -1823,7 +1823,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param index 下标，支持负数
 	 * @return 元素值
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> T get(Collection<T> collection, int index) {
 		if (null == collection) {
@@ -1868,7 +1868,7 @@ public class CollUtil {
 	 * @param collection 集合
 	 * @param indexes 下标，支持负数
 	 * @return 元素值列表
-	 * @since 4.0.6
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> List<T> getAny(Collection<T> collection, int... indexes) {
@@ -1900,7 +1900,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param iterable {@link Iterable}
 	 * @return 第一个元素
-	 * @since 3.0.1
+	 *
 	 * @see IterUtil#getFirst(Iterable)
 	 */
 	public static <T> T getFirst(Iterable<T> iterable) {
@@ -1913,7 +1913,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param iterator {@link Iterator}
 	 * @return 第一个元素
-	 * @since 3.0.1
+	 *
 	 * @see IterUtil#getFirst(Iterator)
 	 */
 	public static <T> T getFirst(Iterator<T> iterator) {
@@ -1926,7 +1926,7 @@ public class CollUtil {
 	 * @param <T> 集合元素类型
 	 * @param collection {@link Collection}
 	 * @return 最后一个元素
-	 * @since 4.1.10
+	 *
 	 */
 	public static <T> T getLast(Collection<T> collection) {
 		return get(collection, -1);
@@ -1937,7 +1937,7 @@ public class CollUtil {
 	 * 
 	 * @param iterable {@link Iterable}
 	 * @return 元素类型，当列表为空或元素全部为null时，返回null
-	 * @since 3.0.8
+	 *
 	 * @see IterUtil#getElementType(Iterable)
 	 */
 	public static Class<?> getElementType(Iterable<?> iterable) {
@@ -1949,7 +1949,7 @@ public class CollUtil {
 	 * 
 	 * @param iterator {@link Iterator}
 	 * @return 元素类型，当列表为空或元素全部为null时，返回null
-	 * @since 3.0.8
+	 *
 	 * @see IterUtil#getElementType(Iterator)
 	 */
 	public static Class<?> getElementType(Iterator<?> iterator) {
@@ -1965,7 +1965,7 @@ public class CollUtil {
 	 * @param map {@link Map}
 	 * @param keys 键列表
 	 * @return 值列表
-	 * @since 3.0.8
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <K, V> ArrayList<V> valuesOfKeys(Map<K, V> map, K... keys) {
@@ -1985,7 +1985,7 @@ public class CollUtil {
 	 * @param map {@link Map}
 	 * @param keys 键列表
 	 * @return 值列表
-	 * @since 3.0.9
+	 *
 	 */
 	public static <K, V> ArrayList<V> valuesOfKeys(Map<K, V> map, Iterable<K> keys) {
 		return valuesOfKeys(map, keys.iterator());
@@ -2000,7 +2000,7 @@ public class CollUtil {
 	 * @param map {@link Map}
 	 * @param keys 键列表
 	 * @return 值列表
-	 * @since 3.0.9
+	 *
 	 */
 	public static <K, V> ArrayList<V> valuesOfKeys(Map<K, V> map, Iterator<K> keys) {
 		final ArrayList<V> values = new ArrayList<>();
@@ -2043,7 +2043,7 @@ public class CollUtil {
 	 * @param pageSize 每页的条目数
 	 * @param list 列表
 	 * @return 分页后的段落内容
-	 * @since 4.1.20
+	 *
 	 */
 	public static <T> List<T> page(int pageNo, int pageSize, List<T> list) {
 		if (isEmpty(list)) {
@@ -2102,7 +2102,7 @@ public class CollUtil {
 	 * @param collection 集合，会被转换为List
 	 * @param property 属性名
 	 * @return 排序后的List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> sortByProperty(Collection<T> collection, String property) {
 		return sort(collection, new PropertyComparator<>(property));
@@ -2115,7 +2115,7 @@ public class CollUtil {
 	 * @param list List
 	 * @param property 属性名
 	 * @return 排序后的List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> sortByProperty(List<T> list, String property) {
 		return sort(list, new PropertyComparator<>(property));
@@ -2126,7 +2126,7 @@ public class CollUtil {
 	 * 
 	 * @param collection 集合，会被转换为List
 	 * @return 排序后的List
-	 * @since 4.0.8
+	 *
 	 */
 	public static <T> List<String> sortByPinyin(Collection<String> collection) {
 		return sort(collection, new PinyinComparator());
@@ -2137,7 +2137,7 @@ public class CollUtil {
 	 * 
 	 * @param list List
 	 * @return 排序后的List
-	 * @since 4.0.8
+	 *
 	 */
 	public static <T> List<String> sortByPinyin(List<String> list) {
 		return sort(list, new PinyinComparator());
@@ -2151,7 +2151,7 @@ public class CollUtil {
 	 * @param map Map
 	 * @param comparator Entry比较器
 	 * @return {@link TreeMap}
-	 * @since 3.0.9
+	 *
 	 */
 	public static <K, V> TreeMap<K, V> sort(Map<K, V> map, Comparator<? super K> comparator) {
 		final TreeMap<K, V> result = new TreeMap<K, V>(comparator);
@@ -2167,7 +2167,7 @@ public class CollUtil {
 	 * @param entryCollection Entry集合
 	 * @param comparator {@link Comparator}
 	 * @return {@link LinkedList}
-	 * @since 3.0.9
+	 *
 	 */
 	public static <K, V> LinkedHashMap<K, V> sortToMap(Collection<Entry<K, V>> entryCollection, Comparator<Entry<K, V>> comparator) {
 		List<Entry<K, V>> list = new LinkedList<>(entryCollection);
@@ -2188,7 +2188,7 @@ public class CollUtil {
 	 * @param map 被排序的Map
 	 * @param comparator {@link Comparator}
 	 * @return {@link LinkedList}
-	 * @since 3.0.9
+	 *
 	 */
 	public static <K, V> LinkedHashMap<K, V> sortByEntry(Map<K, V> map, Comparator<Entry<K, V>> comparator) {
 		return sortToMap(map.entrySet(), comparator);
@@ -2350,7 +2350,7 @@ public class CollUtil {
 	 * @param <T> 元素类型
 	 * @param list 被反转的List
 	 * @return 反转后的List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> reverse(List<T> list) {
 		Collections.reverse(list);
@@ -2363,7 +2363,7 @@ public class CollUtil {
 	 * @param <T> 元素类型
 	 * @param list 被反转的List
 	 * @return 反转后的List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> List<T> reverseNew(List<T> list) {
 		final List<T> list2 = ObjectUtil.clone(list);
@@ -2377,7 +2377,7 @@ public class CollUtil {
 	 * @param index 位置
 	 * @param element 新元素
 	 * @return 原List
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> List<T> setOrAppend(List<T> list, int index, T element) {
 		if (index < list.size()) {
@@ -2394,7 +2394,7 @@ public class CollUtil {
 	 * @param <K> 键类型
 	 * @param mapCollection Map列表
 	 * @return key集合
-	 * @since 4.5.12
+	 *
 	 */
 	public static <K> Set<K> keySet(Collection<Map<K, ?>> mapCollection){
 		if(isEmpty(mapCollection)) {
@@ -2414,7 +2414,7 @@ public class CollUtil {
 	 * @param <V> 值类型
 	 * @param mapCollection Map列表
 	 * @return Value集合
-	 * @since 4.5.12
+	 *
 	 */
 	public static <V> List<V> values(Collection<Map<?, V>> mapCollection){
 		final List<V> values = new ArrayList<>();
@@ -2429,7 +2429,7 @@ public class CollUtil {
 	/**
 	 * 针对一个参数做相应的操作
 	 * 
-	 * @author Looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <T> 处理参数类型
 	 */
@@ -2446,7 +2446,7 @@ public class CollUtil {
 	/**
 	 * 针对两个参数做相应的操作，例如Map中的KEY和VALUE
 	 * 
-	 * @author Looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <K> KEY类型
 	 * @param <V> VALUE类型
@@ -2465,10 +2465,10 @@ public class CollUtil {
 	/**
 	 * Hash计算接口
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <T> 被计算hash的对象类型
-	 * @since 3.2.2
+	 *
 	 */
 	public static interface Hash<T> {
 		/**

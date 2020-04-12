@@ -16,7 +16,7 @@ import java.nio.charset.Charset;
 
 /**
  * URL资源访问类
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class UrlResource implements Resource, Serializable{
@@ -77,7 +77,7 @@ public class UrlResource implements Resource, Serializable{
 	 * 获得Reader
 	 * @param charset 编码
 	 * @return {@link BufferedReader}
-	 * @since 3.0.1
+	 *
 	 */
 	public BufferedReader getReader(Charset charset){
 		return URLUtil.getReader(this.url, charset);

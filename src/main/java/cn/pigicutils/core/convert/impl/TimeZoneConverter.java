@@ -6,7 +6,7 @@ import java.util.TimeZone;
 
 /**
  * TimeZone转换器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class TimeZoneConverter extends AbstractConverter<TimeZone>{

@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/9/10 13:59
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -95,6 +95,7 @@ public class UserVO implements SecurityToken {
     private String defaultRoleName;
     private Long defaultCompanyId;
     private String defaultCompanyName;
+    private String defaultCompanyCode;
     @JsonFormat(
             pattern = "yyyy-MM-dd HH:mm:ss"
     )
@@ -161,6 +162,14 @@ public class UserVO implements SecurityToken {
     public static String generateCacheKey(String configCode, Long tenantId) {
         StringBuilder sb = new StringBuilder();
         return sb.append("hpfm").append(":config").append(":").append(configCode).append(".").append(tenantId).toString();
+    }
+
+    public String getDefaultCompanyCode() {
+        return defaultCompanyCode;
+    }
+
+    public void setDefaultCompanyCode(String defaultCompanyCode) {
+        this.defaultCompanyCode = defaultCompanyCode;
     }
 
     public String getMenuLayout() {

@@ -2,13 +2,14 @@ package cn.pigicutils.core.io.watch;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 监听异常
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
-public class WatchException extends RuntimeException {
+public class WatchException extends CommonException {
 	private static final long serialVersionUID = 8068509879445395353L;
 
 	public WatchException(Throwable e) {

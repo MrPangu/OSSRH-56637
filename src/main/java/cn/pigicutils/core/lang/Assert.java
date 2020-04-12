@@ -11,7 +11,7 @@ import java.util.Map;
  * 断言<br>
  * 断言某些对象或值是否符合规定，否则抛出异常。经常用于做变量检查
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Assert {
@@ -533,7 +533,7 @@ public class Assert {
 	 * @return 检查后的下标
 	 * @throws IllegalArgumentException 如果size < 0 抛出此异常
 	 * @throws IndexOutOfBoundsException 如果index < 0或者 index >= size 抛出此异常
-	 * @since 4.1.9
+	 *
 	 */
 	public static int checkIndex(int index, int size) throws IllegalArgumentException, IndexOutOfBoundsException {
 		return checkIndex(index, size, "[Assertion failed]");
@@ -553,7 +553,7 @@ public class Assert {
 	 * @return 检查后的下标
 	 * @throws IllegalArgumentException 如果size < 0 抛出此异常
 	 * @throws IndexOutOfBoundsException 如果index < 0或者 index >= size 抛出此异常
-	 * @since 4.1.9
+	 *
 	 */
 	public static int checkIndex(int index, int size, String errorMsgTemplate, Object... params) throws IllegalArgumentException, IndexOutOfBoundsException {
 		if (index < 0 || index >= size) {
@@ -569,7 +569,7 @@ public class Assert {
 	 * @param min 最小值（包含）
 	 * @param max 最大值（包含）
 	 * @return 检查后的长度值
-	 * @since 4.1.10
+	 *
 	 */
 	public static int checkBetween(int value, int min, int max) {
 		if (value < min || value > max) {
@@ -585,7 +585,7 @@ public class Assert {
 	 * @param min 最小值（包含）
 	 * @param max 最大值（包含）
 	 * @return 检查后的长度值
-	 * @since 4.1.10
+	 *
 	 */
 	public static long checkBetween(long value, long min, long max) {
 		if (value < min || value > max) {
@@ -601,7 +601,7 @@ public class Assert {
 	 * @param min 最小值（包含）
 	 * @param max 最大值（包含）
 	 * @return 检查后的长度值
-	 * @since 4.1.10
+	 *
 	 */
 	public static double checkBetween(double value, double min, double max) {
 		if (value < min || value > max) {
@@ -617,7 +617,7 @@ public class Assert {
 	 * @param min 最小值（包含）
 	 * @param max 最大值（包含）
 	 * @return 检查后的长度值
-	 * @since 4.1.10
+	 *
 	 */
 	public static Number checkBetween(Number value, Number min, Number max) {
 		notNull(value);

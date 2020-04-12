@@ -6,8 +6,8 @@ import java.util.Date;
 /**
  * 日期格式化输出接口<br>
  * Thanks to Apache Commons Lang 3.5
- * @author Looly
- * @since 2.16.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public interface DatePrinter extends DateBasic {
 
@@ -16,7 +16,7 @@ public interface DatePrinter extends DateBasic {
 	 *
 	 * @param millis 日期毫秒数
 	 * @return the formatted string
-	 * @since 2.1
+	 *
 	 */
 	String format(long millis);
 

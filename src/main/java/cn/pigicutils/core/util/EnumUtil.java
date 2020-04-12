@@ -12,8 +12,8 @@ import java.util.Map;
 /**
  * 枚举工具类
  *
- * @author looly
- * @since 3.3.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class EnumUtil {
 
@@ -44,7 +44,7 @@ public class EnumUtil {
 	 *
 	 * @param e Enum
 	 * @return name值
-	 * @since 4.1.13
+	 *
 	 */
 	public static String toString(Enum<?> e) {
 		return null != e ? e.name() : null;
@@ -57,7 +57,7 @@ public class EnumUtil {
 	 * @param enumClass 枚举类
 	 * @param value 值
 	 * @return 枚举值
-	 * @since 4.1.13
+	 *
 	 */
 	public static <T extends Enum<T>> T fromString(Class<T> enumClass, String value) {
 		return Enum.valueOf(enumClass, value);
@@ -72,7 +72,7 @@ public class EnumUtil {
 	 * @param value 值
 	 * @param defaultValue 无对应枚举值返回的默认值
 	 * @return 枚举值
-	 * @since 4.5.18
+	 *
 	 */
 	public static <T extends Enum<T>> T fromString(Class<T> enumClass, String value, T defaultValue) {
 		return ObjectUtil.defaultIfNull(fromStringQuietly(enumClass, value), defaultValue);
@@ -85,7 +85,7 @@ public class EnumUtil {
 	 * @param enumClass 枚举类
 	 * @param value 值
 	 * @return 枚举值
-	 * @since 4.5.18
+	 *
 	 */
 	public static <T extends Enum<T>> T fromStringQuietly(Class<T> enumClass, String value) {
 		if(null == enumClass || StrUtil.isBlank(value)) {
@@ -177,7 +177,7 @@ public class EnumUtil {
 	 *
 	 * @param clazz 枚举类
 	 * @return 字段名列表
-	 * @since 4.1.20
+	 *
 	 */
 	public static List<String> getFieldNames(Class<? extends Enum<?>> clazz) {
 		final List<String> names = new ArrayList<>();
@@ -201,7 +201,7 @@ public class EnumUtil {
 	 *
 	 * @param enumClass 枚举类
 	 * @return 枚举字符串值和枚举对象的Map对应，使用LinkedHashMap保证有序
-	 * @since 4.0.2
+	 *
 	 */
 	public static <E extends Enum<E>> LinkedHashMap<String, E> getEnumMap(final Class<E> enumClass) {
 		final LinkedHashMap<String, E> map = new LinkedHashMap<String, E>();

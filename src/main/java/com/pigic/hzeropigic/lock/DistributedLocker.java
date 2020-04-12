@@ -1,7 +1,7 @@
 package com.pigic.hzeropigic.lock;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/1/25 12:31
  */
 

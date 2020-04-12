@@ -19,8 +19,8 @@ import java.util.List;
  * 
  *
  * @param <E> 元素类型
- * @author Looly
- * @since 3.0.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class CopiedIter<E> implements Iterator<E>, Iterable<E>, Serializable {
 	private static final long serialVersionUID = 1L;

@@ -5,7 +5,7 @@ import cn.pigicutils.core.util.BooleanUtil;
 
 /**
  * 波尔转换器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class BooleanConverter extends AbstractConverter<Boolean>{

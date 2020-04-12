@@ -65,7 +65,7 @@ public class CompareUtil {
 			//如果bean可比较，直接比较bean
 			return ((Comparable)o1).compareTo(o2);
 		}
-		
+
 		if(o1.equals(o2)) {
 			return 0;
 		}

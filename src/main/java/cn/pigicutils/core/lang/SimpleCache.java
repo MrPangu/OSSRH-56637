@@ -1,6 +1,7 @@
 package cn.pigicutils.core.lang;
 
 import cn.pigicutils.core.lang.func.Func0;
+import io.choerodon.core.exception.CommonException;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 
 /**
  * 简单缓存，无超时实现，使用{@link WeakHashMap}实现缓存自动清理
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K> 键类型
  * @param <V> 值类型
@@ -62,7 +63,7 @@ public class SimpleCache<K, V> implements Serializable{
 					try {
 						v = supplier.call();
 					} catch (Exception e) {
-						throw new RuntimeException(e);
+						throw new CommonException(e);
 					}
 					cache.put(key, v);
 				}

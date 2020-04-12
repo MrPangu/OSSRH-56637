@@ -18,8 +18,8 @@ import java.util.Set;
  * 此类通过维护一个Set将短时间内相同文件多次modify的事件合并处理触发，从而避免以上问题。<br>
  * 注意：延迟只针对modify事件，其它事件无效
  * 
- * @author Looly
- * @since 3.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class DelayWatcher implements Watcher {
 	

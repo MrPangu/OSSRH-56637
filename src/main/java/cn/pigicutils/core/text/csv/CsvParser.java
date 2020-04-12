@@ -16,7 +16,7 @@ import java.util.*;
 /**
  * CSV行解析器，参考：FastCSV
  *
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public final class CsvParser implements Closeable, Serializable {
 	private static final long serialVersionUID = 1L;

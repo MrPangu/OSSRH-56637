@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 /**
  * 固定大小的{@link LinkedHashMap} 实现
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K> 键类型
  * @param <V> 值类型

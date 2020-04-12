@@ -1,7 +1,7 @@
 /**
  * Bean拷贝实现，包括拷贝选项等
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.bean.copier;

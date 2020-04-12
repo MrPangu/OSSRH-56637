@@ -3,7 +3,7 @@ package cn.pigicutils.core.util;
 /**
  * 分页工具类
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  * 
  */
 public class PageUtil {

@@ -7,8 +7,8 @@ import java.io.File;
 /**
  * Web root资源访问对象
  * 
- * @author looly
- * @since 4.1.11
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class WebAppResource extends FileResource {
 	private static final long serialVersionUID = 1L;

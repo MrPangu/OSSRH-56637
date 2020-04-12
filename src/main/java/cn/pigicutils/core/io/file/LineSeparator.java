@@ -12,8 +12,8 @@ package cn.pigicutils.core.io.file;
  * @see #MAC
  * @see #LINUX
  * @see #WINDOWS
- * @author Looly
- * @since 3.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public enum LineSeparator {
 	/** Mac系统换行符："\r" */

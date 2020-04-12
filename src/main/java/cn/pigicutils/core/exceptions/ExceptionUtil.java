@@ -5,6 +5,7 @@ import cn.pigicutils.core.io.FastByteArrayOutputStream;
 import cn.pigicutils.core.util.ArrayUtil;
 import cn.pigicutils.core.util.ReflectUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
@@ -15,7 +16,7 @@ import java.util.Map;
 /**
  * 异常工具类
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class ExceptionUtil {
@@ -49,14 +50,14 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @return 运行时异常
 	 */
-	public static RuntimeException wrapRuntime(Throwable throwable) {
-		if (throwable instanceof RuntimeException) {
-			return (RuntimeException) throwable;
+	public static CommonException wrapRuntime(Throwable throwable) {
+		if (throwable instanceof CommonException) {
+			return (CommonException) throwable;
 		}
 		if (throwable instanceof Error) {
 			throw (Error) throwable;
 		}
-		return new RuntimeException(throwable);
+		return new CommonException(throwable);
 	}
 
 	/**
@@ -65,7 +66,7 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @param wrapThrowable 包装后的异常类
 	 * @return 包装后的异常
-	 * @since 3.3.0
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends Throwable> T wrap(Throwable throwable, Class<T> wrapThrowable) {
@@ -108,7 +109,7 @@ public class ExceptionUtil {
 	 * 获取指定层的堆栈信息
 	 * 
 	 * @return 指定层的堆栈信息
-	 * @since 4.1.4
+	 *
 	 */
 	public static StackTraceElement getStackElement(int i) {
 		return getStackElements()[i];
@@ -118,7 +119,7 @@ public class ExceptionUtil {
 	 * 获取入口堆栈信息
 	 * 
 	 * @return 入口堆栈信息
-	 * @since 4.1.4
+	 *
 	 */
 	public static StackTraceElement getRootStackElement() {
 		final StackTraceElement[] stackElements = getStackElements();
@@ -214,7 +215,7 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @param causeClasses 定义的引起异常的类
 	 * @return 是否由指定异常类引起
-	 * @since 4.1.13
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static boolean isCausedBy(Throwable throwable, Class<? extends Exception>... causeClasses) {
@@ -227,7 +228,7 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @param causeClasses 定义的引起异常的类
 	 * @return 是否由指定异常类引起
-	 * @since 4.1.13
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static Throwable getCausedBy(Throwable throwable, Class<? extends Exception>... causeClasses) {
@@ -249,7 +250,7 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @param exceptionClass 定义的引起异常的类
 	 * @return true 来自或者包含
-	 * @since 4.3.2
+	 *
 	 */
 	public static boolean isFromOrSuppressedThrowable(Throwable throwable, Class<? extends Throwable> exceptionClass) {
 		return convertFromOrSuppressedThrowable(throwable, exceptionClass, true) != null;
@@ -262,7 +263,7 @@ public class ExceptionUtil {
 	 * @param exceptionClass 定义的引起异常的类
 	 * @param checkCause 判断cause
 	 * @return true 来自或者包含
-	 * @since 4.4.1
+	 *
 	 */
 	public static boolean isFromOrSuppressedThrowable(Throwable throwable, Class<? extends Throwable> exceptionClass, boolean checkCause) {
 		return convertFromOrSuppressedThrowable(throwable, exceptionClass, checkCause) != null;
@@ -275,7 +276,7 @@ public class ExceptionUtil {
 	 * @param throwable 异常
 	 * @param exceptionClass 定义的引起异常的类
 	 * @return 结果为null 不是来自或者包含
-	 * @since 4.3.2
+	 *
 	 */
 	public static <T extends Throwable> T convertFromOrSuppressedThrowable(Throwable throwable, Class<T> exceptionClass) {
 		return convertFromOrSuppressedThrowable(throwable, exceptionClass, true);
@@ -289,7 +290,7 @@ public class ExceptionUtil {
 	 * @param exceptionClass 定义的引起异常的类
 	 * @param checkCause 判断cause
 	 * @return 结果为null 不是来自或者包含
-	 * @since 4.4.1
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends Throwable> T convertFromOrSuppressedThrowable(Throwable throwable, Class<T> exceptionClass, boolean checkCause) {

@@ -3,7 +3,7 @@ package com.pigic.hzeropigic.utils;
 import java.io.*;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/7/1 21:18
  */
 public class DeepCopyUtil {

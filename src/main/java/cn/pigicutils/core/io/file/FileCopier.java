@@ -23,8 +23,8 @@ import java.util.ArrayList;
  * 4、目录下的文件和目录复制到另一个目录
  * </pre>
  * 
- * @author Looly
- * @since 3.0.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class FileCopier extends SrcToDestCopier<File, FileCopier>{
 	private static final long serialVersionUID = 1L;
@@ -129,7 +129,7 @@ public class FileCopier extends SrcToDestCopier<File, FileCopier>{
 	 * 当拷贝来源是目录时是否只拷贝文件而忽略子目录
 	 * 
 	 * @return 当拷贝来源是目录时是否只拷贝文件而忽略子目录
-	 * @since 4.1.5
+	 *
 	 */
 	public boolean isOnlyCopyFile() {
 		return isOnlyCopyFile;
@@ -139,7 +139,7 @@ public class FileCopier extends SrcToDestCopier<File, FileCopier>{
 	 * 设置当拷贝来源是目录时是否只拷贝文件而忽略子目录
 	 * 
 	 * @param isOnlyCopyFile 当拷贝来源是目录时是否只拷贝文件而忽略子目录
-	 * @since 4.1.5
+	 *
 	 */
 	public FileCopier setOnlyCopyFile(boolean isOnlyCopyFile) {
 		this.isOnlyCopyFile = isOnlyCopyFile;

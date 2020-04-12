@@ -21,10 +21,11 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.nio.charset.UnsupportedCharsetException;
+import java.util.Date;
 import java.util.Map;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/7/1 20:34
  */
 @Slf4j
@@ -123,6 +124,7 @@ public class HttpClientResponseInterceptor implements HttpResponseInterceptor {
                 interfaceMonitor.setRequestUrl(registerUrl);
                 interfaceMonitor.setInterfaceName(interfaceRegister.getInterfaceName());
                 interfaceMonitor.setRequestMethod(method);
+                interfaceMonitor.setCreationDate(new Date());
                 interfaceMonitor.setRegisterId(interfaceRegister.getInterfaceId());
                 interfaceMonitor.setTenantId(interfaceRegister.getTenantId());
                 Map<String, Object> map1 = ObjectUtils.objectNotNullFieldToMap(interfaceMonitor);

@@ -4,7 +4,7 @@ package cn.pigicutils.core.convert;
  * 转换器接口，实现类型转换
  * 
  * @param <T> 转换到的目标类型
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public interface Converter<T> {
 

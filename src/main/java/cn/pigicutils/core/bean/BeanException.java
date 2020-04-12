@@ -2,12 +2,13 @@ package cn.pigicutils.core.bean;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * Bean异常
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class BeanException extends RuntimeException{
+public class BeanException extends CommonException {
 	private static final long serialVersionUID = -8096998667745023423L;
 
 	public BeanException(Throwable e) {

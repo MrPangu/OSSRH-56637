@@ -28,8 +28,8 @@ import java.util.NoSuchElementException;
  * 
  * 此类来自于Apache Commons io
  *
- * @author looly
- * @since 4.1.1
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class LineIter implements Iterator<String>, Iterable<String>, Closeable, Serializable {
 	private static final long serialVersionUID = 1L;

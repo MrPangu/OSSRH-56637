@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Conditional;
 import java.lang.annotation.*;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/8/11 21:26
  */
 @Retention(RetentionPolicy.RUNTIME)

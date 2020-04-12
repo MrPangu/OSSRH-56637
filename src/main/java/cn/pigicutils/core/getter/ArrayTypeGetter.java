@@ -5,7 +5,7 @@ import java.math.BigInteger;
 
 /**
  * 数组类型的Get接口
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public interface ArrayTypeGetter {

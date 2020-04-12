@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 有界优先队列<br>
  * 按照给定的排序规则，排序元素，当队列满时，按照给定的排序规则淘汰末尾元素（去除末尾元素）
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  *
  * @param <E> 成员类型
  */

@@ -18,7 +18,7 @@ import java.util.*;
 /**
  * 时间工具类
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
 public class DateUtil {
 
@@ -37,7 +37,7 @@ public class DateUtil {
 	 * 
 	 * @param date Long类型Date（Unix时间戳）
 	 * @return 时间对象
-	 * @since 3.0.7
+	 *
 	 */
 	public static DateTime date(Date date) {
 		if (date instanceof DateTime) {
@@ -51,7 +51,7 @@ public class DateUtil {
 	 * 
 	 * @param date Date对象
 	 * @return {@link DateTime}对象
-	 * @since 4.3.1
+	 *
 	 */
 	public static DateTime dateNew(Date date) {
 		return new DateTime(date);
@@ -119,7 +119,7 @@ public class DateUtil {
 	 * 当前时间的时间戳（秒）
 	 * 
 	 * @return 当前时间秒数
-	 * @since 4.0.0
+	 *
 	 */
 	public static long currentSeconds() {
 		return System.currentTimeMillis() / 1000;
@@ -159,7 +159,7 @@ public class DateUtil {
 	 * 
 	 * @param date 日期
 	 * @return 第几个季度
-	 * @since 4.1.0
+	 *
 	 */
 	public static int quarter(Date date) {
 		return DateTime.of(date).quarter();
@@ -170,7 +170,7 @@ public class DateUtil {
 	 * 
 	 * @param date 日期
 	 * @return 第几个季度枚举
-	 * @since 4.1.0
+	 *
 	 */
 	public static Quarter quarterEnum(Date date) {
 		return DateTime.of(date).quarterEnum();
@@ -303,7 +303,7 @@ public class DateUtil {
 	 * 
 	 * @param calendar {@link Calendar}
 	 * @return 是否为上午
-	 * @since 4.5.7
+	 *
 	 */
 	public static boolean isAM(Calendar calendar) {
 		return Calendar.AM == calendar.get(Calendar.AM_PM);
@@ -436,7 +436,7 @@ public class DateUtil {
 	 * @param startDate 起始日期（包含）
 	 * @param endDate 结束日期（包含）
 	 * @return 季度列表 ，元素类似于 20132
-	 * @since 4.1.15
+	 *
 	 */
 	public static LinkedHashSet<String> yearAndQuarter(long startDate, long endDate) {
 		LinkedHashSet<String> quarters = new LinkedHashSet<>();
@@ -529,7 +529,7 @@ public class DateUtil {
 	 * 
 	 * @param date 被格式化的日期
 	 * @return 格式化后的字符串
-	 * @since 3.0.1
+	 *
 	 */
 	public static String formatTime(Date date) {
 		if (null == date) {
@@ -558,7 +558,7 @@ public class DateUtil {
 	 * @param date 被格式化的日期
 	 * @param isUppercase 是否采用大写形式
 	 * @return 中文日期字符串
-	 * @since 4.1.19
+	 *
 	 */
 	public static String formatChineseDate(Date date, boolean isUppercase) {
 		if (null == date) {
@@ -625,7 +625,7 @@ public class DateUtil {
 	 * @param format 格式，例如yyyy-MM-dd
 	 * @param locale 区域信息
 	 * @return 日期对象
-	 * @since 4.5.18
+	 *
 	 */
 	public static DateTime parse(String dateStr, String format, Locale locale) {
 		return new DateTime(dateStr, new SimpleDateFormat(format, locale));
@@ -669,7 +669,7 @@ public class DateUtil {
 	 * 
 	 * @param timeString 标准形式的日期字符串
 	 * @return 日期对象
-	 * @since 3.1.1
+	 *
 	 */
 	public static DateTime parseTimeToday(String timeString) {
 		timeString = StrUtil.format("{} {}", today(), timeString);
@@ -687,7 +687,7 @@ public class DateUtil {
 	 * 
 	 * @param utcString UTC时间
 	 * @return 日期对象
-	 * @since 4.1.14
+	 *
 	 */
 	public static DateTime parseUTC(String utcString) {
 		return parse(utcString, DatePattern.UTC_FORMAT);
@@ -773,7 +773,7 @@ public class DateUtil {
 	 * @param date {@link Date}
 	 * @param dateField 时间字段
 	 * @return {@link DateTime}
-	 * @since 4.5.7
+	 *
 	 */
 	public static DateTime truncate(Date date, DateField dateField) {
 		return new DateTime(truncate(calendar(date), dateField));
@@ -785,7 +785,7 @@ public class DateUtil {
 	 * @param calendar {@link Calendar}
 	 * @param dateField 时间字段
 	 * @return 原{@link Calendar}
-	 * @since 4.5.7
+	 *
 	 */
 	public static Calendar truncate(Calendar calendar, DateField dateField) {
 		return DateModifier.modify(calendar, dateField.getValue(), ModifyType.TRUNCATE);
@@ -797,7 +797,7 @@ public class DateUtil {
 	 * @param date {@link Date}
 	 * @param dateField 时间字段
 	 * @return {@link DateTime}
-	 * @since 4.5.7
+	 *
 	 */
 	public static DateTime round(Date date, DateField dateField) {
 		return new DateTime(round(calendar(date), dateField));
@@ -809,7 +809,7 @@ public class DateUtil {
 	 * @param calendar {@link Calendar}
 	 * @param dateField 时间字段
 	 * @return 原{@link Calendar}
-	 * @since 4.5.7
+	 *
 	 */
 	public static Calendar round(Calendar calendar, DateField dateField) {
 		return DateModifier.modify(calendar, dateField.getValue(), ModifyType.ROUND);
@@ -821,7 +821,7 @@ public class DateUtil {
 	 * @param date {@link Date}
 	 * @param dateField 时间字段
 	 * @return {@link DateTime}
-	 * @since 4.5.7
+	 *
 	 */
 	public static DateTime ceiling(Date date, DateField dateField) {
 		return new DateTime(ceiling(calendar(date), dateField));
@@ -833,7 +833,7 @@ public class DateUtil {
 	 * @param calendar {@link Calendar}
 	 * @param dateField 时间字段
 	 * @return 原{@link Calendar}
-	 * @since 4.5.7
+	 *
 	 */
 	public static Calendar ceiling(Calendar calendar, DateField dateField) {
 		return DateModifier.modify(calendar, dateField.getValue(), ModifyType.CEILING);
@@ -915,7 +915,7 @@ public class DateUtil {
 	 * @param calendar 日期 {@link Calendar}
 	 * @param isMondayAsFirstDay 是否周一做为一周的第一天（false表示周日做为第一天）
 	 * @return {@link Calendar}
-	 * @since 3.1.2
+	 *
 	 */
 	public static Calendar beginOfWeek(Calendar calendar, boolean isMondayAsFirstDay) {
 		if (isMondayAsFirstDay) {
@@ -940,7 +940,7 @@ public class DateUtil {
 	 * @param calendar 日期 {@link Calendar}
 	 * @param isSundayAsLastDay 是否周日做为一周的最后一天（false表示周六做为最后一天）
 	 * @return {@link Calendar}
-	 * @since 3.1.2
+	 *
 	 */
 	public static Calendar endOfWeek(Calendar calendar, boolean isSundayAsLastDay) {
 		if (isSundayAsLastDay) {
@@ -1014,7 +1014,7 @@ public class DateUtil {
 	 * 
 	 * @param calendar 日期 {@link Calendar}
 	 * @return {@link Calendar}
-	 * @since 4.1.0
+	 *
 	 */
 	public static Calendar beginOfQuarter(Calendar calendar) {
 		calendar.set(Calendar.MONTH, calendar.get(DateField.MONTH.getValue()) / 3 * 3);
@@ -1027,7 +1027,7 @@ public class DateUtil {
 	 * 
 	 * @param calendar 日期 {@link Calendar}
 	 * @return {@link Calendar}
-	 * @since 4.1.0
+	 *
 	 */
 	public static Calendar endOfQuarter(Calendar calendar) {
 		calendar.set(Calendar.MONTH, calendar.get(DateField.MONTH.getValue()) / 3 * 3 + 2);
@@ -1089,7 +1089,7 @@ public class DateUtil {
 	 * 明天
 	 * 
 	 * @return 明天
-	 * @since 3.0.1
+	 *
 	 */
 	public static DateTime tomorrow() {
 		return offsetDay(new DateTime(), 1);
@@ -1108,7 +1108,7 @@ public class DateUtil {
 	 * 下周
 	 * 
 	 * @return 下周
-	 * @since 3.0.1
+	 *
 	 */
 	public static DateTime nextWeek() {
 		return offsetWeek(new DateTime(), 1);
@@ -1127,7 +1127,7 @@ public class DateUtil {
 	 * 下个月
 	 * 
 	 * @return 下个月
-	 * @since 3.0.1
+	 *
 	 */
 	public static DateTime nextMonth() {
 		return offsetMonth(new DateTime(), 1);
@@ -1260,7 +1260,7 @@ public class DateUtil {
 	 * @param unit 相差的单位：相差 天{@link DateUnit#DAY}、小时{@link DateUnit#HOUR} 等
 	 * @param isAbs 日期间隔是否只保留绝对值正数
 	 * @return 日期差
-	 * @since 3.3.1
+	 *
 	 */
 	public static long between(Date beginDate, Date endDate, DateUnit unit, boolean isAbs) {
 		return new DateBetween(beginDate, endDate, isAbs).between(unit);
@@ -1272,7 +1272,7 @@ public class DateUtil {
 	 * @param beginDate 起始日期
 	 * @param endDate 结束日期
 	 * @return 日期差
-	 * @since 3.0.1
+	 *
 	 */
 	public static long betweenMs(Date beginDate, Date endDate) {
 		return new DateBetween(beginDate, endDate).between(DateUnit.MS);
@@ -1292,7 +1292,7 @@ public class DateUtil {
 	 * @param endDate 结束日期
 	 * @param isReset 是否重置时间为起始时间
 	 * @return 日期差
-	 * @since 3.0.1
+	 *
 	 */
 	public static long betweenDay(Date beginDate, Date endDate, boolean isReset) {
 		if (isReset) {
@@ -1310,7 +1310,7 @@ public class DateUtil {
 	 * @param endDate 结束日期
 	 * @param isReset 是否重置时间为起始时间（重置天时分秒）
 	 * @return 相差月数
-	 * @since 3.0.8
+	 *
 	 */
 	public static long betweenMonth(Date beginDate, Date endDate, boolean isReset) {
 		return new DateBetween(beginDate, endDate).betweenMonth(isReset);
@@ -1324,7 +1324,7 @@ public class DateUtil {
 	 * @param endDate 结束日期
 	 * @param isReset 是否重置时间为起始时间（重置月天时分秒）
 	 * @return 相差年数
-	 * @since 3.0.8
+	 *
 	 */
 	public static long betweenYear(Date beginDate, Date endDate, boolean isReset) {
 		return new DateBetween(beginDate, endDate).betweenYear(isReset);
@@ -1348,7 +1348,7 @@ public class DateUtil {
 	 * @param beginDate 起始日期
 	 * @param endDate 结束日期
 	 * @return XX天XX小时XX分XX秒
-	 * @since 3.0.1
+	 *
 	 */
 	public static String formatBetween(Date beginDate, Date endDate) {
 		return formatBetween(between(beginDate, endDate, DateUnit.MS));
@@ -1370,7 +1370,7 @@ public class DateUtil {
 	 * 
 	 * @param betweenMs 日期间隔
 	 * @return XX天XX小时XX分XX秒XX毫秒
-	 * @since 3.0.1
+	 *
 	 */
 	public static String formatBetween(long betweenMs) {
 		return new BetweenFormater(betweenMs, BetweenFormater.Level.MILLSECOND).format();
@@ -1384,7 +1384,7 @@ public class DateUtil {
 	 * @param beginDate 起始日期
 	 * @param endDate 结束日期
 	 * @return 是否在范围内
-	 * @since 3.0.8
+	 *
 	 */
 	public static boolean isIn(Date date, Date beginDate, Date endDate) {
 		if (date instanceof DateTime) {
@@ -1400,7 +1400,7 @@ public class DateUtil {
 	 * @param date1 日期1
 	 * @param date2 日期2
 	 * @return 是否为相同时间
-	 * @since 4.1.13
+	 *
 	 */
 	public static boolean isSameTime(Date date1, Date date2) {
 		return date1.compareTo(date2) == 0;
@@ -1412,7 +1412,7 @@ public class DateUtil {
 	 * @param date1 日期1
 	 * @param date2 日期2
 	 * @return 是否为同一天
-	 * @since 4.1.13
+	 *
 	 */
 	public static boolean isSameDay(final Date date1, final Date date2) {
 		if (date1 == null || date2 == null) {
@@ -1427,7 +1427,7 @@ public class DateUtil {
 	 * @param cal1 日期1
 	 * @param cal2 日期2
 	 * @return 是否为同一天
-	 * @since 4.1.13
+	 *
 	 */
 	public static boolean isSameDay(Calendar cal1, Calendar cal2) {
 		if (cal1 == null || cal2 == null) {
@@ -1579,7 +1579,7 @@ public class DateUtil {
 	 * @param timeLength 时长
 	 * @param checkedDate 被比较的时间。如果经过时长后的时间晚于被检查的时间，就表示过期
 	 * @return 是否过期
-	 * @since 3.1.1
+	 *
 	 */
 	public static boolean isExpired(Date startDate, DateField dateField, int timeLength, Date checkedDate) {
 		final Date endDate = offset(startDate, dateField, timeLength);
@@ -1592,7 +1592,7 @@ public class DateUtil {
 	 * 
 	 * @param timeStr 字符串时分秒(HH:mm:ss)格式
 	 * @return 时分秒转换后的秒数
-	 * @since 3.1.2
+	 *
 	 */
 	public static int timeToSecond(String timeStr) {
 		if (StrUtil.isEmpty(timeStr)) {
@@ -1615,7 +1615,7 @@ public class DateUtil {
 	 * 
 	 * @param seconds 需要转换的秒数
 	 * @return 转换后的字符串
-	 * @since 3.1.2
+	 *
 	 */
 	public static String secondToTime(int seconds) {
 		if (seconds < 0) {
@@ -1674,7 +1674,7 @@ public class DateUtil {
 	 * @param month 月，从0开始计数
 	 * @param day 天
 	 * @return 星座名
-	 * @since 4.4.3
+	 *
 	 */
 	public static String getZodiac(int month, int day) {
 		return Zodiac.getZodiac(month, day);
@@ -1685,7 +1685,7 @@ public class DateUtil {
 	 * 
 	 * @param year 农历年
 	 * @return 生肖名
-	 * @since 4.4.3
+	 *
 	 */
 	public static String getChineseZodiac(int year) {
 		return Zodiac.getChineseZodiac(year);
@@ -1697,7 +1697,7 @@ public class DateUtil {
 	 * @param calendar {@link Calendar}
 	 * @param dateField {@link DateField}
 	 * @return 字段最小值
-	 * @since 4.5.7
+	 *
 	 * @see Calendar#getActualMinimum(int)
 	 */
 	public static int getBeginValue(Calendar calendar, int dateField) {
@@ -1713,7 +1713,7 @@ public class DateUtil {
 	 * @param calendar {@link Calendar}
 	 * @param dateField {@link DateField}
 	 * @return 字段最大值
-	 * @since 4.5.7
+	 *
 	 * @see Calendar#getActualMaximum(int)
 	 */
 	public static int getEndValue(Calendar calendar, int dateField) {

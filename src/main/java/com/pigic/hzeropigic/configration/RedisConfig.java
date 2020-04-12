@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author janti
+ * @author guchang.pan@hand-china.com
  * reids 相关bean的配置
  */
 @Configuration

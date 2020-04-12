@@ -22,8 +22,8 @@ import java.util.concurrent.ExecutorService;
  * </pre>
  * 
  * 
- * @author Looly
- * @since 4.1.15
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class SyncFinisher {
 
@@ -115,7 +115,7 @@ public class SyncFinisher {
 	 * 开始工作
 	 * 
 	 * @param sync 是否阻塞等待
-	 * @since 4.5.8
+	 *
 	 */
 	public void start(boolean sync) {
 		endLatch = new CountDownLatch(workers.size());
@@ -168,7 +168,7 @@ public class SyncFinisher {
 	/**
 	 * 工作者，为一个线程
 	 * 
-	 * @author xiaoleilu
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	public abstract class Worker implements Runnable {

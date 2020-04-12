@@ -9,8 +9,8 @@ import java.io.Serializable;
  * Base62编码解码实现，常用于短URL<br>
  * From https://github.com/seruco/base62
  *
- * @author Looly, Sebastian Ruhleder, sebastian@seruco.io
- * @since 4.5.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Base62Codec implements Serializable{
 	private static final long serialVersionUID = 1L;

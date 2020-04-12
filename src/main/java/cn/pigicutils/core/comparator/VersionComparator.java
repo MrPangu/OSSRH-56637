@@ -14,8 +14,8 @@ import java.util.List;
  * 支持如：1.3.20.8，6.82.20160101，8.5a/8.5c等版本形式<br>
  * 参考：https://www.cnblogs.com/shihaiming/p/6286575.html
  * 
- * @author Looly
- * @since 4.0.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class VersionComparator implements Comparator<String>, Serializable {
 	private static final long serialVersionUID = 8083701245147495562L;

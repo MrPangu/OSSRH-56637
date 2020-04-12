@@ -7,8 +7,8 @@ import java.util.Date;
 /**
  * 日期范围
  * 
- * @author looly
- * @since 4.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class DateRange extends Range<DateTime> {
 	private static final long serialVersionUID = 1L;

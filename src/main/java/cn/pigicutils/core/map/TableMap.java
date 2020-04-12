@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * 无重复键的Map
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K>
  * @param <V>

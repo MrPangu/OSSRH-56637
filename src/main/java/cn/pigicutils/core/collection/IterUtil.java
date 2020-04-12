@@ -11,8 +11,8 @@ import java.util.Map.Entry;
 /**
  * {@link Iterable} 和 {@link Iterator} 相关工具类
  * 
- * @author Looly
- * @since 3.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class IterUtil {
 
@@ -90,7 +90,7 @@ public class IterUtil {
 	 * 
 	 * @param iter iter 被检查的{@link Iterable}对象，如果为{@code null} 返回true
 	 * @return 是否全部元素为null
-	 * @since 3.3.0
+	 *
 	 */
 	public static boolean isAllNull(Iterable<?> iter) {
 		return isAllNull(null == iter ? null : iter.iterator());
@@ -101,7 +101,7 @@ public class IterUtil {
 	 * 
 	 * @param iter iter 被检查的{@link Iterator}对象，如果为{@code null} 返回true
 	 * @return 是否全部元素为null
-	 * @since 3.3.0
+	 *
 	 */
 	public static boolean isAllNull(Iterator<?> iter) {
 		if (null == iter) {
@@ -171,7 +171,7 @@ public class IterUtil {
 	 * @param iter 对象列表
 	 * @param fieldName 字段名（会通过反射获取其值）
 	 * @return 某个字段值与对象对应Map
-	 * @since 4.0.4
+	 *
 	 */
 	public static <K, V> Map<K, V> fieldValueMap(Iterable<V> iter, String fieldName) {
 		return fieldValueMap(null == iter ? null : iter.iterator(), fieldName);
@@ -186,7 +186,7 @@ public class IterUtil {
 	 * @param iter 对象列表
 	 * @param fieldName 字段名（会通过反射获取其值）
 	 * @return 某个字段值与对象对应Map
-	 * @since 4.0.4
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <K, V> Map<K, V> fieldValueMap(Iterator<V> iter, String fieldName) {
@@ -210,7 +210,7 @@ public class IterUtil {
 	 * @param fieldNameForKey 做为键的字段名（会通过反射获取其值）
 	 * @param fieldNameForValue 做为值的字段名（会通过反射获取其值）
 	 * @return 某个字段值与对象对应Map
-	 * @since 4.0.10
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <K, V> Map<K, V> fieldValueAsMap(Iterator<?> iter, String fieldNameForKey, String fieldNameForValue) {
@@ -232,7 +232,7 @@ public class IterUtil {
 	 * @param iter 对象列表
 	 * @param fieldName 字段名（会通过反射获取其值）
 	 * @return 某个字段值与对象对应Map
-	 * @since 4.0.10
+	 *
 	 */
 	public static <V> List<Object> fieldValueList(Iterator<V> iter, String fieldName) {
 		final List<Object> result = new ArrayList<>();
@@ -270,7 +270,7 @@ public class IterUtil {
 	 * @param prefix 每个元素添加的前缀，null表示不添加
 	 * @param suffix 每个元素添加的后缀，null表示不添加
 	 * @return 连接后的字符串
-	 * @since 4.0.10
+	 *
 	 */
 	public static <T> String join(Iterable<T> iterable, CharSequence conjunction, String prefix, String suffix) {
 		if (null == iterable) {
@@ -302,7 +302,7 @@ public class IterUtil {
 	 * @param prefix 每个元素添加的前缀，null表示不添加
 	 * @param suffix 每个元素添加的后缀，null表示不添加
 	 * @return 连接后的字符串
-	 * @since 4.0.10
+	 *
 	 */
 	public static <T> String join(Iterator<T> iterator, CharSequence conjunction, String prefix, String suffix) {
 		if (null == iterator) {
@@ -361,7 +361,7 @@ public class IterUtil {
 	 * @param keys 键列表
 	 * @param values 值列表
 	 * @return 标题内容Map
-	 * @since 3.1.0
+	 *
 	 */
 	public static <K, V> Map<K, V> toMap(Iterable<K> keys, Iterable<V> values) {
 		return toMap(keys, values, false);
@@ -378,7 +378,7 @@ public class IterUtil {
 	 * @param values 值列表
 	 * @param isOrder 是否有序
 	 * @return 标题内容Map
-	 * @since 4.1.12
+	 *
 	 */
 	public static <K, V> Map<K, V> toMap(Iterable<K> keys, Iterable<V> values, boolean isOrder) {
 		return toMap(null == keys ? null : keys.iterator(), null == values ? null : values.iterator(), isOrder);
@@ -394,7 +394,7 @@ public class IterUtil {
 	 * @param keys 键列表
 	 * @param values 值列表
 	 * @return 标题内容Map
-	 * @since 3.1.0
+	 *
 	 */
 	public static <K, V> Map<K, V> toMap(Iterator<K> keys, Iterator<V> values) {
 		return toMap(keys, values, false);
@@ -411,7 +411,7 @@ public class IterUtil {
 	 * @param values 值列表
 	 * @param isOrder 是否有序
 	 * @return 标题内容Map
-	 * @since 4.1.12
+	 *
 	 */
 	public static <K, V> Map<K, V> toMap(Iterator<K> keys, Iterator<V> values, boolean isOrder) {
 		final Map<K, V> resultMap = MapUtil.newHashMap(isOrder);
@@ -430,7 +430,7 @@ public class IterUtil {
 	 * @param <E> 元素类型
 	 * @param iter {@link Iterator}
 	 * @return List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <E> List<E> toList(Iterable<E> iter) {
 		return toList(iter.iterator());
@@ -443,7 +443,7 @@ public class IterUtil {
 	 * @param <E> 元素类型
 	 * @param iter {@link Iterator}
 	 * @return List
-	 * @since 4.0.6
+	 *
 	 */
 	public static <E> List<E> toList(Iterator<E> iter) {
 		final List<E> list = new ArrayList<>();

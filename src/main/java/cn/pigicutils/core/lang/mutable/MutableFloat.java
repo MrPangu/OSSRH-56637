@@ -6,7 +6,7 @@ import cn.pigicutils.core.util.NumberUtil;
  * 可变 <code>float</code> 类型
  * 
  * @see Float
- * @since 3.0.1
+ *
  */
 public class MutableFloat extends Number implements Comparable<MutableFloat>, Mutable<Number> {
 	private static final long serialVersionUID = 1L;

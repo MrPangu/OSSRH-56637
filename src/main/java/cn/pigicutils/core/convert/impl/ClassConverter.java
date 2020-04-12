@@ -6,7 +6,7 @@ import cn.pigicutils.core.util.ClassUtil;
 /**
  * 类转换器<br>
  * 将类名转换为类
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class ClassConverter extends AbstractConverter<Class<?>> {

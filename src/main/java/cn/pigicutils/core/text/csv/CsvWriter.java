@@ -16,8 +16,8 @@ import java.util.Collection;
 /**
  * CSV数据写出器
  *
- * @author Looly
- * @since 4.0.5
+ * @author guchang.pan@hand-china.com
+ *
  */
 public final class CsvWriter implements Closeable, Flushable, Serializable {
 	private static final long serialVersionUID = 1L;

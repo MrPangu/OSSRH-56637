@@ -7,11 +7,11 @@ import java.io.Serializable;
 /**
  * 键值对对象，只能在构造时传入键值
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K> 键类型
  * @param <V> 值类型
- * @since 4.1.5
+ *
  */
 public class Pair<K, V> extends CloneSupport<Pair<K, V>> implements Serializable{
 	private static final long serialVersionUID = 1L;

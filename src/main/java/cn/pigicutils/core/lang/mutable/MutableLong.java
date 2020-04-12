@@ -6,7 +6,7 @@ import cn.pigicutils.core.util.NumberUtil;
  * 可变 <code>long</code> 类型
  * 
  * @see Long
- * @since 3.0.1
+ *
  */
 public class MutableLong extends Number implements Comparable<MutableLong>, Mutable<Number> {
 	private static final long serialVersionUID = 1L;

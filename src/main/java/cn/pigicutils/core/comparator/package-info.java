@@ -1,7 +1,7 @@
 /**
  * 各种比较器（Comparator）实现和封装
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.comparator;

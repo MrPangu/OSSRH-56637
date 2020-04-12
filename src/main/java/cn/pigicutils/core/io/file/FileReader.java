@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * 文件读取器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class FileReader extends FileWrapper {
@@ -172,7 +172,7 @@ public class FileReader extends FileWrapper {
 	 * 
 	 * @param lineHandler 行处理器
 	 * @throws IORuntimeException IO异常
-	 * @since 3.0.9
+	 *
 	 */
 	public void readLines(LineHandler lineHandler) throws IORuntimeException{
 		BufferedReader reader = null;
@@ -264,7 +264,7 @@ public class FileReader extends FileWrapper {
 	/**
 	 * Reader处理接口
 	 * 
-	 * @author Luxiaolei
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <T> Reader处理返回结果类型
 	 */

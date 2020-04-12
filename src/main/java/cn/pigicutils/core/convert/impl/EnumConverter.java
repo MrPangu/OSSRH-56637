@@ -5,8 +5,8 @@ import cn.pigicutils.core.convert.AbstractConverter;
 /**
  * 无泛型检查的枚举转换器
  * 
- * @author Looly
- * @since 4.0.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class EnumConverter extends AbstractConverter<Object> {

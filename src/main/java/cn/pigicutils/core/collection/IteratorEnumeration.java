@@ -6,10 +6,10 @@ import java.util.Iterator;
 
 /**
  * {@link Iterator}对象转{@link Enumeration}
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <E> 元素类型
- * @since 3.0.8
+ *
  */
 public class IteratorEnumeration<E> implements Enumeration<E>, Serializable{
 	private static final long serialVersionUID = 1L;

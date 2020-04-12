@@ -19,8 +19,8 @@ import java.util.Map;
  * http://www.mca.gov.cn/article/sj/xzqh/2018/201804-12/20181011221630.html
  * </p>
  * 
- * @author Looly
- * @since 3.0.4
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class IdcardUtil {
 
@@ -519,7 +519,7 @@ public class IdcardUtil {
 	 * @param startInclude 开始位置（包含）
 	 * @param endExclude 结束位置（不包含）
 	 * @return 隐藏后的身份证号码
-	 * @since 3.2.2
+	 *
 	 * @see StrUtil#hide(CharSequence, int, int)
 	 */
 	public static String hide(String idCard, int startInclude, int endExclude) {

@@ -20,7 +20,7 @@ import java.util.TimeZone;
  * </p>
  * 
  * Thanks to Apache Commons Lang 3.5
- * @since 2.16.2
+ *
  */
 public class FastDateFormat extends Format implements DateParser, DatePrinter {
 	private static final long serialVersionUID = 8097890768636183236L;

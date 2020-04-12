@@ -16,8 +16,8 @@ import java.util.Map.Entry;
 /**
  * Map相关工具类
  * 
- * @author Looly
- * @since 3.1.1
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MapUtil {
 
@@ -66,7 +66,7 @@ public class MapUtil {
 	 * @param size 初始大小，由于默认负载因子0.75，传入的size会实际初始大小为size / 0.75 + 1
 	 * @param isOrder Map的Key是否有序，有序返回 {@link LinkedHashMap}，否则返回 {@link HashMap}
 	 * @return HashMap对象
-	 * @since 3.0.4
+	 *
 	 */
 	public static <K, V> HashMap<K, V> newHashMap(int size, boolean isOrder) {
 		int initialCapacity = (int) (size / DEFAULT_LOAD_FACTOR) + 1;
@@ -102,7 +102,7 @@ public class MapUtil {
 	 * 
 	 * @param comparator Key比较器
 	 * @return TreeMap
-	 * @since 3.2.3
+	 *
 	 */
 	public static <K, V> TreeMap<K, V> newTreeMap(Comparator<? super K> comparator) {
 		return new TreeMap<>(comparator);
@@ -114,7 +114,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param comparator Key比较器
 	 * @return TreeMap
-	 * @since 3.2.3
+	 *
 	 */
 	public static <K, V> TreeMap<K, V> newTreeMap(Map<K, V> map, Comparator<? super K> comparator) {
 		final TreeMap<K, V> treeMap = new TreeMap<>(comparator);
@@ -128,7 +128,7 @@ public class MapUtil {
 	 * 创建键不重复Map
 	 * 
 	 * @return {@link IdentityHashMap}
-	 * @since 4.5.7
+	 *
 	 */
 	public static <K, V> Map<K, V> newIdentityMap(int size){
 		return new IdentityHashMap<>(size);
@@ -204,7 +204,7 @@ public class MapUtil {
 	 * 
 	 * @param array 数组。元素类型为Map.Entry、数组、Iterable、Iterator
 	 * @return {@link HashMap}
-	 * @since 3.0.8
+	 *
 	 */
 	@SuppressWarnings("rawtypes")
 	public static HashMap<Object, Object> of(Object[] array) {
@@ -372,7 +372,7 @@ public class MapUtil {
 	 *
 	 * @param map 原Map
 	 * @return 驼峰风格Map
-	 * @since 3.3.1
+	 *
 	 */
 	public static <K, V> Map<K, V> toCamelCaseMap(Map<K, V> map) {
 		return (map instanceof LinkedHashMap) ? new CamelCaseLinkedMap<>(map) : new CamelCaseMap<>(map);
@@ -383,7 +383,7 @@ public class MapUtil {
 	 *
 	 * @param map Map<?, ?> map
 	 * @return 数组
-	 * @since 4.1.9
+	 *
 	 */
 	public static Object[][] toObjectArray(Map<?, ?> map) {
 		if(map == null) {
@@ -412,7 +412,7 @@ public class MapUtil {
 	 * @param separator entry之间的连接符
 	 * @param keyValueSeparator kv之间的连接符
 	 * @return 连接字符串
-	 * @since 3.1.1
+	 *
 	 */
 	public static <K, V> String join(Map<K, V> map, String separator, String keyValueSeparator) {
 		return join(map, separator, keyValueSeparator, false);
@@ -427,7 +427,7 @@ public class MapUtil {
 	 * @param separator entry之间的连接符
 	 * @param keyValueSeparator kv之间的连接符
 	 * @return 连接后的字符串
-	 * @since 3.1.1
+	 *
 	 */
 	public static <K, V> String joinIgnoreNull(Map<K, V> map, String separator, String keyValueSeparator) {
 		return join(map, separator, keyValueSeparator, true);
@@ -443,7 +443,7 @@ public class MapUtil {
 	 * @param keyValueSeparator kv之间的连接符
 	 * @param isIgnoreNull 是否忽略null的键和值
 	 * @return 连接后的字符串
-	 * @since 3.1.1
+	 *
 	 */
 	public static <K, V> String join(Map<K, V> map, String separator, String keyValueSeparator, boolean isIgnoreNull) {
 		final StringBuilder strBuilder = StrUtil.builder();
@@ -511,7 +511,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param filter 编辑器接口
 	 * @return 过滤后的Map
-	 * @since 3.1.0
+	 *
 	 */
 	public static <K, V> Map<K, V> filter(Map<K, V> map, Filter<Entry<K, V>> filter) {
 		if(null == map || null == filter) {
@@ -540,7 +540,7 @@ public class MapUtil {
 	 * @param map 原始Map
 	 * @param keys 键列表
 	 * @return Map 结果，结果的Map类型与原Map保持一致
-	 * @since 4.0.10
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <K, V> Map<K, V> filter(Map<K, V> map, K... keys) {
@@ -564,7 +564,7 @@ public class MapUtil {
 	 * @param <T> 键和值类型
 	 * @param map Map对象，键值类型必须一致
 	 * @return 互换后的Map
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T> Map<T, T> reverse(Map<T, T> map) {
 		return filter(map, new Editor<Entry<T, T>>() {
@@ -622,7 +622,7 @@ public class MapUtil {
 	 * 
 	 * @param map Map
 	 * @return TreeMap
-	 * @since 4.0.1
+	 *
 	 * @see #newTreeMap(Map, Comparator)
 	 */
 	public static <K, V> TreeMap<K, V> sort(Map<K, V> map) {
@@ -635,7 +635,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param comparator Key比较器
 	 * @return TreeMap
-	 * @since 4.0.1
+	 *
 	 * @see #newTreeMap(Map, Comparator)
 	 */
 	public static <K, V> TreeMap<K, V> sort(Map<K, V> map, Comparator<? super K> comparator) {
@@ -659,7 +659,7 @@ public class MapUtil {
 	 * 
 	 * @param map 被代理的Map
 	 * @return {@link MapProxy}
-	 * @since 3.2.0
+	 *
 	 */
 	public static MapProxy createProxy(Map<?, ?> map) {
 		return MapProxy.create(map);
@@ -671,7 +671,7 @@ public class MapUtil {
 	 * 
 	 * @param map 被代理的Map
 	 * @return {@link MapWrapper}
-	 * @since 4.5.4
+	 *
 	 */
 	public static <K, V> MapWrapper<K, V> wrap(Map<K, V> map) {
 		return new MapWrapper<K, V>(map);
@@ -722,7 +722,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param keys 键列表
 	 * @return 新Map，只包含指定的key
-	 * @since 4.0.6
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <K, V> Map<K, V> getAny(Map<K, V> map, final K... keys) {
@@ -741,7 +741,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static String getStr(Map<?, ?> map, Object key) {
 		return get(map, key, String.class);
@@ -753,7 +753,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Integer getInt(Map<?, ?> map, Object key) {
 		return get(map, key, Integer.class);
@@ -765,7 +765,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Double getDouble(Map<?, ?> map, Object key) {
 		return get(map, key, Double.class);
@@ -777,7 +777,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Float getFloat(Map<?, ?> map, Object key) {
 		return get(map, key, Float.class);
@@ -789,7 +789,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Short getShort(Map<?, ?> map, Object key) {
 		return get(map, key, Short.class);
@@ -801,7 +801,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Boolean getBool(Map<?, ?> map, Object key) {
 		return get(map, key, Boolean.class);
@@ -813,7 +813,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Character getChar(Map<?, ?> map, Object key) {
 		return get(map, key, Character.class);
@@ -825,7 +825,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static Long getLong(Map<?, ?> map, Object key) {
 		return get(map, key, Long.class);
@@ -837,7 +837,7 @@ public class MapUtil {
 	 * @param map Map
 	 * @param key 键
 	 * @return 值
-	 * @since 4.1.2
+	 *
 	 */
 	public static Date getDate(Map<?, ?> map, Object key) {
 		return get(map, key, Date.class);
@@ -851,7 +851,7 @@ public class MapUtil {
 	 * @param key 键
 	 * @param type 值类型
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	public static <T> T get(Map<?, ?> map, Object key, Class<T> type) {
 		return null == map ? null : Convert.convert(type, map.get(key));
@@ -865,7 +865,7 @@ public class MapUtil {
 	 * @param key 键
 	 * @param type 值类型
 	 * @return 值
-	 * @since 4.5.12
+	 *
 	 */
 	public static <T> T get(Map<?, ?> map, Object key, TypeReference<T> type) {
 		return null == map ? null : Convert.convert(type, map.get(key));
@@ -881,7 +881,7 @@ public class MapUtil {
 	 * @param newKey 新键
 	 * @return map
 	 * @throws IllegalArgumentException 新key存在抛出此异常
-	 * @since 4.5.16
+	 *
 	 */
 	public static <K, V> Map<K, V> renameKey(Map<K, V> map, K oldKey, K newKey) {
 		if(isNotEmpty(map) && map.containsKey(oldKey)) {

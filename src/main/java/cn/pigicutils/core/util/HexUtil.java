@@ -1,5 +1,7 @@
 package cn.pigicutils.core.util;
 
+import io.choerodon.core.exception.CommonException;
+
 import java.awt.*;
 import java.nio.charset.Charset;
 
@@ -10,7 +12,7 @@ import java.nio.charset.Charset;
  * 
  * 参考：https://my.oschina.net/xinxingegeya/blog/287476
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class HexUtil {
@@ -162,14 +164,14 @@ public class HexUtil {
 	 *
 	 * @param hexData 十六进制char[]
 	 * @return byte[]
-	 * @throws RuntimeException 如果源十六进制字符数组是一个奇怪的长度，将抛出运行时异常
+	 * @throws CommonException 如果源十六进制字符数组是一个奇怪的长度，将抛出运行时异常
 	 */
 	public static byte[] decodeHex(char[] hexData) {
 
 		int len = hexData.length;
 
 		if ((len & 0x01) != 0) {
-			throw new RuntimeException("Odd number of characters.");
+			throw new CommonException("Odd number of characters.");
 		}
 
 		byte[] out = new byte[len >> 1];
@@ -205,7 +207,7 @@ public class HexUtil {
 	 * 
 	 * @param color {@link Color}
 	 * @return Hex字符串
-	 * @since 3.0.8
+	 *
 	 */
 	public static String encodeColor(Color color) {
 		return encodeColor(color, "#");
@@ -217,7 +219,7 @@ public class HexUtil {
 	 * @param color {@link Color}
 	 * @param prefix 前缀字符串，可以是#、0x等
 	 * @return Hex字符串
-	 * @since 3.0.8
+	 *
 	 */
 	public static String encodeColor(Color color, String prefix) {
 		final StringBuffer builder = new StringBuffer(prefix);
@@ -245,7 +247,7 @@ public class HexUtil {
 	 * 
 	 * @param hexColor 16进制颜色值，可以以#开头，也可以用0x开头
 	 * @return {@link Color}
-	 * @since 3.0.8
+	 *
 	 */
 	public static Color decodeColor(String hexColor) {
 		return Color.decode(hexColor);
@@ -286,7 +288,7 @@ public class HexUtil {
 	 * 
 	 * @param ch char值
 	 * @return Unicode表现形式
-	 * @since 4.0.1
+	 *
 	 */
 	public static String toUnicodeHex(char ch) {
 		StringBuilder sb = new StringBuilder(6);
@@ -303,7 +305,7 @@ public class HexUtil {
 	 * 
 	 * @param value int值
 	 * @return 16进制字符串
-	 * @since 4.4.1
+	 *
 	 */
 	public static String toHex(int value) {
 		return Integer.toHexString(value);
@@ -314,7 +316,7 @@ public class HexUtil {
 	 * 
 	 * @param value int值
 	 * @return 16进制字符串
-	 * @since 4.4.1
+	 *
 	 */
 	public static String toHex(long value) {
 		return Long.toHexString(value);
@@ -325,7 +327,7 @@ public class HexUtil {
 	 * @param builder {@link StringBuilder}
 	 * @param b byte
 	 * @param toLowerCase 是否使用小写
-	 * @since 4.4.1
+	 *
 	 */
 	public static void appendHex(StringBuilder builder, byte b, boolean toLowerCase) {
 		final char[] toDigits = toLowerCase ? DIGITS_LOWER : DIGITS_UPPER;
@@ -372,12 +374,12 @@ public class HexUtil {
 	 * @param ch 十六进制char
 	 * @param index 十六进制字符在字符数组中的位置
 	 * @return 一个整数
-	 * @throws RuntimeException 当ch不是一个合法的十六进制字符时，抛出运行时异常
+	 * @throws CommonException 当ch不是一个合法的十六进制字符时，抛出运行时异常
 	 */
 	private static int toDigit(char ch, int index) {
 		int digit = Character.digit(ch, 16);
 		if (digit == -1) {
-			throw new RuntimeException("Illegal hexadecimal character " + ch + " at index " + index);
+			throw new CommonException("Illegal hexadecimal character " + ch + " at index " + index);
 		}
 		return digit;
 	}

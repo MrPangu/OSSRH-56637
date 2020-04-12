@@ -9,7 +9,7 @@ import org.apache.http.protocol.HttpContext;
 import java.io.IOException;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/6/29 13:50
  */
 @Slf4j

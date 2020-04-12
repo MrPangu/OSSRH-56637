@@ -8,7 +8,7 @@ import cn.pigicutils.core.text.escape.Html4Unescape;
  * escape采用ISO Latin字符集对指定的字符串进行编码。<br>
  * 所有的空格符、标点符号、特殊字符以及其他非ASCII字符都将被转化成%xx格式的字符编码(xx等于该字符在字符集表里面的编码的16进制数字)。
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
 public class EscapeUtil {
 
@@ -17,7 +17,7 @@ public class EscapeUtil {
 	 * 
 	 * @param html HTML文本
 	 * @return 转义后的文本
-	 * @since 4.1.5
+	 *
 	 */
 	public static String escapeHtml4(String html) {
 		Html4Escape escape = new Html4Escape();
@@ -29,7 +29,7 @@ public class EscapeUtil {
 	 * 
 	 * @param html HTML文本
 	 * @return 转义后的文本
-	 * @since 4.1.5
+	 *
 	 */
 	public static String unescapeHtml4(String html) {
 		Html4Unescape unescape = new Html4Unescape();

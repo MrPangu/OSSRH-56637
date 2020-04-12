@@ -8,8 +8,8 @@ import java.util.Locale;
 /**
  * 按照GBK拼音顺序对给定的汉字字符串排序
  * 
- * @author looly
- * @since 4.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class PinyinComparator implements Comparator<String>, Serializable {
 	private static final long serialVersionUID = 1L;

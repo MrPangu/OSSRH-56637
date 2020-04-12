@@ -2,7 +2,7 @@ package cn.pigicutils.core.lang;
 
 /**
  * 匹配接口
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 匹配的对象类型
  */

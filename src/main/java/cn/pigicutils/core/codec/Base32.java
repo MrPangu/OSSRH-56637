@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
  * base32就是用32（2的5次方）个特定ASCII码来表示256个ASCII码。<br>
  * 所以，5个ASCII字符经过base32编码后会变为8个字符（公约数为40），长度增加3/5.不足8n用“=”补足。
  * see http://blog.csdn.net/earbao/article/details/44453937
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Base32 {

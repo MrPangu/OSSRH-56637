@@ -6,8 +6,8 @@ import java.util.List;
  * 数学相关方法工具类<br>
  * 此工具类与{@link cn.pigicutils.core.util.NumberUtil}属于一类工具，NumberUtil偏向于简单数学计算的封装，MathUtil偏向复杂数学计算
  * 
- * @author looly
- * @since 4.0.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MathUtil {
 

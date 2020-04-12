@@ -2,12 +2,13 @@ package cn.pigicutils.core.comparator;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 比较异常
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class ComparatorException extends RuntimeException{
+public class ComparatorException extends CommonException {
 	private static final long serialVersionUID = 4475602435485521971L;
 
 	public ComparatorException(Throwable e) {

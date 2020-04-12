@@ -5,8 +5,8 @@ import java.awt.*;
 /**
  * 图片缩略算法类型
  * 
- * @author looly
- * @since 4.5.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public enum ScaleType {
 

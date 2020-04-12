@@ -27,8 +27,8 @@ import java.util.*;
  * 把一个拥有对属性进行set和get方法的类，我们就可以称之为JavaBean。
  * </p>
  * 
- * @author Looly
- * @since 3.1.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class BeanUtil {
 	
@@ -50,7 +50,7 @@ public class BeanUtil {
 	 * 
 	 * @param clazz 待测试类
 	 * @return 是否为Bean对象
-	 * @since 4.2.2
+	 *
 	 */
 	public static boolean hasSetter(Class<?> clazz) {
 		if (ClassUtil.isNormalClass(clazz)) {
@@ -71,7 +71,7 @@ public class BeanUtil {
 	 * 
 	 * @param clazz 待测试类
 	 * @return 是否为Bean对象
-	 * @since 4.2.2
+	 *
 	 */
 	public static boolean hasGetter(Class<?> clazz) {
 		if (ClassUtil.isNormalClass(clazz)) {
@@ -92,7 +92,7 @@ public class BeanUtil {
 	 * 
 	 * @param bean 普通Bean或Map
 	 * @return {@link DynaBean}
-	 * @since 3.0.7
+	 *
 	 */
 	public static DynaBean createDynaBean(Object bean) {
 		return new DynaBean(bean);
@@ -139,7 +139,7 @@ public class BeanUtil {
 	 * 
 	 * @param clazz Bean类
 	 * @return {@link BeanDesc}
-	 * @since 3.1.2
+	 *
 	 */
 	public static BeanDesc getBeanDesc(Class<?> clazz) {
 		BeanDesc beanDesc = BeanDescCache.INSTANCE.getBeanDesc(clazz);
@@ -289,7 +289,7 @@ public class BeanUtil {
 	 * @param expression 表达式，例如：person.friend[5].name
 	 * @return Bean属性值
 	 * @see BeanPath#get(Object)
-	 * @since 3.0.7
+	 *
 	 */
 	public static Object getProperty(Object bean, String expression) {
 		return BeanPath.create(expression).get(bean);
@@ -301,7 +301,7 @@ public class BeanUtil {
 	 * @param bean Bean对象，支持Map、List、Collection、Array
 	 * @param expression 表达式，例如：person.friend[5].name
 	 * @see BeanPath#get(Object)
-	 * @since 4.0.6
+	 *
 	 */
 	public static void setProperty(Object bean, String expression, Object value) {
 		BeanPath.create(expression).set(bean, value);
@@ -411,7 +411,7 @@ public class BeanUtil {
 	 * @param isToCamelCase 是否将Map中的下划线风格key转换为驼峰风格
 	 * @param copyOptions 属性复制选项 {@link CopyOptions}
 	 * @return Bean
-	 * @since 3.3.1
+	 *
 	 */
 	public static <T> T fillBeanWithMap(Map<?, ?> map, T bean, boolean isToCamelCase, CopyOptions copyOptions) {
 		if (MapUtil.isEmpty(map)) {
@@ -430,7 +430,7 @@ public class BeanUtil {
 	 * @param source Bean对象或Map
 	 * @param clazz 目标的Bean类型
 	 * @return Bean对象
-	 * @since 4.1.20
+	 *
 	 */
 	public static <T> T toBean(Object source, Class<T> clazz) {
 		final T target = ReflectUtil.newInstance(clazz);
@@ -499,7 +499,7 @@ public class BeanUtil {
 	 * @param isToUnderlineCase 是否转换为下划线模式
 	 * @param ignoreNullValue 是否忽略值为空的字段
 	 * @return Map
-	 * @since 3.2.3
+	 *
 	 */
 	public static Map<String, Object> beanToMap(Object bean, Map<String, Object> targetMap, final boolean isToUnderlineCase, boolean ignoreNullValue) {
 		if (bean == null) {
@@ -530,7 +530,7 @@ public class BeanUtil {
 	 * @param ignoreNullValue 是否忽略值为空的字段
 	 * @param keyEditor 属性字段（Map的key）编辑器，用于筛选、编辑key
 	 * @return Map
-	 * @since 4.0.5
+	 *
 	 */
 	public static Map<String, Object> beanToMap(Object bean, Map<String, Object> targetMap, boolean ignoreNullValue, Editor<String> keyEditor) {
 		if (bean == null) {
@@ -623,7 +623,7 @@ public class BeanUtil {
 	 * @param beanClassName Bean的类名
 	 * @param isSimple 是否只匹配类名而忽略包名，true表示忽略包名
 	 * @return 是否匹配
-	 * @since 4.0.6
+	 *
 	 */
 	public static boolean isMatchName(Object bean, String beanClassName, boolean isSimple) {
 		return ClassUtil.getClassName(bean, isSimple).equals(isSimple ? StrUtil.upperFirst(beanClassName) : beanClassName);
@@ -670,7 +670,7 @@ public class BeanUtil {
 	 *
 	 * @param bean Bean对象
 	 * @return 是否为空，<code>true</code> - 空 / <code>false</code> - 非空
-	 * @since 4.1.10
+	 *
 	 */
 	public static boolean isEmpty(Object bean) {
 		if (null != bean) {
@@ -689,7 +689,7 @@ public class BeanUtil {
 	 *
 	 * @param bean Bean对象
 	 * @return 是否包含值为<code>null</code>的属性，<code>true</code> - 包含 / <code>false</code> - 不包含
-	 * @since 4.1.10
+	 *
 	 */
 	public static boolean hasNullField(Object bean) {
 		if (null == bean) {

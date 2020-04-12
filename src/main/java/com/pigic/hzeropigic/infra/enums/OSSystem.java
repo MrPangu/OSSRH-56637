@@ -1,7 +1,7 @@
 package com.pigic.hzeropigic.infra.enums;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/8/12 9:12
  */
 public enum OSSystem {

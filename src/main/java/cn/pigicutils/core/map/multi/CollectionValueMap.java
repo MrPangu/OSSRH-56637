@@ -10,11 +10,11 @@ import java.util.Map;
 /**
  * 值作为集合的Map实现，通过调用putValue可以在相同key时加入多个值，多个值用集合表示
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K> 键类型
  * @param <V> 值类型
- * @since 4.3.3
+ *
  */
 public abstract class CollectionValueMap<K, V> extends MapWrapper<K, Collection<V>> {
 

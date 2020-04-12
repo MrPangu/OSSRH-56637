@@ -24,8 +24,8 @@ import java.io.Serializable;
  * <p>
  * 参考：http://www.cnblogs.com/relucent/p/4955340.html
  * 
- * @author Looly
- * @since 3.0.1
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Snowflake implements Serializable{
 	private static final long serialVersionUID = 1L;

@@ -11,7 +11,7 @@ import org.springframework.http.client.ClientHttpResponse;
 import java.io.IOException;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/6/29 14:34
  */
 public class RestTemplateIntercetor implements ClientHttpRequestInterceptor {

@@ -49,7 +49,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * A registry of objects used by reflection methods to detect cyclical object references and avoid infinite loops.
      * </p>
      *
-     * @since 3.0
+     *
      */
     private static final ThreadLocal<Set<Pair<IDKey, IDKey>>> REGISTRY = new ThreadLocal<Set<Pair<IDKey, IDKey>>>();
 
@@ -60,7 +60,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * </p>
      *
      * @return Set the registry of objects being traversed
-     * @since 3.0
+     *
      */
     static Set<Pair<IDKey, IDKey>> getRegistry() {
         return REGISTRY.get();
@@ -93,7 +93,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @param lhs <code>this</code> object to lookup in registry
      * @param rhs the other object to lookup on registry
      * @return boolean <code>true</code> if the registry contains the given object.
-     * @since 3.0
+     *
      */
     static boolean isRegistered(final Object lhs, final Object rhs) {
         final Set<Pair<IDKey, IDKey>> registry = getRegistry();
@@ -135,7 +135,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      *
      * @param lhs <code>this</code> object to unregister
      * @param rhs the other object to unregister
-     * @since 3.0
+     *
      */
     static void unregister(final Object lhs, final Object rhs) {
         Set<Pair<IDKey, IDKey>> registry = getRegistry();
@@ -248,7 +248,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      *  may be <code>null</code>
      * @param excludeFields  array of field names to exclude from testing
      * @return <code>true</code> if the two Objects have tested equals.
-     * @since 2.0
+     *
      */
     public static boolean reflectionEquals(final Object lhs, final Object rhs, final boolean testTransients, final Class<?> reflectUpToClass,
             final String... excludeFields) {
@@ -357,7 +357,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      *
      * @param superEquals  the result of calling <code>super.equals()</code>
      * @return EqualsBuilder - used to chain calls.
-     * @since 2.0
+     *
      */
     public EqualsBuilder appendSuper(final boolean superEquals) {
         if (isEquals == false) {
@@ -851,7 +851,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * @return <code>true</code> if all of the fields that have been checked
      *         are equal, <code>false</code> otherwise.
      *
-     * @since 3.0
+     *
      */
     @Override
     public Boolean build() {
@@ -862,7 +862,7 @@ public class EqualsBuilder implements Builder<Boolean> {
      * Sets the <code>isEquals</code> value.
      *
      * @param isEquals The value to set.
-     * @since 2.1
+     *
      */
     protected void setEquals(final boolean isEquals) {
         this.isEquals = isEquals;
@@ -870,7 +870,7 @@ public class EqualsBuilder implements Builder<Boolean> {
 
     /**
      * Reset the EqualsBuilder so you can use the same object again
-     * @since 2.5
+     *
      */
     public void reset() {
         this.isEquals = true;

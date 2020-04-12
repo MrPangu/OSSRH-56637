@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @ClassName HzeroPlatFormFeignClient
  * @Description TODO
- * @Author 38148
+ * @author guchang.pan@hand-china.com
  * @Date 2019/5/29 15:33
  * @Email dianzhang.zhou@hand-china.com
  **/
@@ -23,11 +23,21 @@ public interface PigicPlatFormFeignClient {
     /**
      * 查询配置维护信息
      * @param organizationId
-     * @param profileId
+     * @param profileName
+     * @param userId
+     * @param roleId
      * @return
      */
-    @GetMapping("/v1/{organizationId}/profiles/{profileId}")
-    Map selectProfile(@PathVariable("organizationId") Long organizationId, @PathVariable("profileId") Long profileId);
+    @GetMapping("/v1/{organizationId}/profile-value")
+    String selectProfile(@PathVariable("organizationId")
+                         Long organizationId,
+                         @RequestParam("profileName")
+                         String profileName,
+                         @RequestParam("userId")
+                         Long userId,
+                         @RequestParam("roleId")
+                         Long roleId
+    );
 
     /**
      * 获取值集编码
@@ -36,7 +46,7 @@ public interface PigicPlatFormFeignClient {
      * @return
      */
     @GetMapping("/v1/{organizationId}/lovs/value")
-    List<Map> queryLovValue(@ApiParam(value = "值集代码", required = true) @RequestParam("lovCode") String lovCode, @ApiParam("租户ID") @PathVariable("organizationId") Long tenantId);
+    List<Dict> queryLovValue(@ApiParam(value = "值集代码", required = true) @RequestParam("lovCode") String lovCode, @ApiParam("租户ID") @PathVariable("organizationId") Long tenantId);
 
 
     /**

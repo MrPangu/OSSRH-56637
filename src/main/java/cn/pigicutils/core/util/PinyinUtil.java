@@ -7,8 +7,8 @@ import cn.pigicutils.core.text.StrBuilder;
  * 拼音工具类<br>
  * 注意：部分拼音并不准确，例如：怡
  * 
- * @author looly
- * @since 4.0.7
+ * @author guchang.pan@hand-china.com
+ *
  * @deprecated 此工具不再建议使用，因为某些汉字拼音不准确且无法处理多音字，建议使用Jpinyin或Pinyin4j
  */
 @Deprecated
@@ -151,7 +151,7 @@ public class PinyinUtil {
 	 * 
 	 * @param chinese 汉字
 	 * @return 对应的拼音
-	 * @since 4.0.11
+	 *
 	 */
 	public static String getPinYin(String chinese) {
 		final StrBuilder result = StrUtil.strBuilder();

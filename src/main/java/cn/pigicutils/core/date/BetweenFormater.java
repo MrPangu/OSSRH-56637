@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * 时长格式化器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class BetweenFormater implements Serializable{
@@ -121,7 +121,7 @@ public class BetweenFormater implements Serializable{
 	/**
 	 * 格式化等级枚举
 	 * 
-	 * @author Looly
+	 * @author guchang.pan@hand-china.com
 	 */
 	public static enum Level {
 

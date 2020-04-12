@@ -13,8 +13,8 @@ import java.nio.charset.Charset;
 /**
  * Base62工具类，提供Base62的编码和解码方案<br>
  * 
- * @author Looly
- * @since 4.5.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Base62 {
 

@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 日期转换器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class CalendarConverter extends AbstractConverter<Calendar> {

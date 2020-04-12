@@ -14,7 +14,7 @@ import java.util.Calendar;
  * 3. 获取指定字段的结束时间
  * </pre>
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class DateModifier {
@@ -124,7 +124,7 @@ public class DateModifier {
 	/**
 	 * 修改类型
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	public static enum ModifyType {

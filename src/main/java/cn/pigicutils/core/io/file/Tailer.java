@@ -20,8 +20,8 @@ import java.util.concurrent.*;
 /**
  * 文件内容跟随器，实现类似Linux下"tail -f"命令功能
  * 
- * @author looly
- * @since 4.5.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Tailer implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -207,8 +207,8 @@ public class Tailer implements Serializable {
 	/**
 	 * 命令行打印的行处理器
 	 * 
-	 * @author looly
-	 * @since 4.5.2
+	 * @author guchang.pan@hand-china.com
+	 *
 	 */
 	public static class ConsoleLineHandler implements LineHandler {
 		@Override

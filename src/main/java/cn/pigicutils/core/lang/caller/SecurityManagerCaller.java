@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * {@link SecurityManager} 方式获取调用者
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public class SecurityManagerCaller extends SecurityManager implements Caller, Serializable {
 	private static final long serialVersionUID = 1L;

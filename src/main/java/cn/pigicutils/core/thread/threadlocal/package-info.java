@@ -1,7 +1,7 @@
 /**
  * 
  * ThreadLocal相关封装
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.thread.threadlocal;

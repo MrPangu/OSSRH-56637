@@ -13,7 +13,7 @@ import java.util.*;
 /**
  * 数组工具类
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class ArrayUtil {
@@ -244,7 +244,7 @@ public class ArrayUtil {
 	 * @param <T> 数组元素类型
 	 * @param array 被检查的数组
 	 * @return 是否包含{@code null}元素
-	 * @since 3.0.7
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> boolean hasNull(T... array) {
@@ -264,7 +264,7 @@ public class ArrayUtil {
 	 * @param <T> 数组元素类型
 	 * @param array 数组
 	 * @return 非空元素，如果不存在非空元素或数组为空，返回{@code null}
-	 * @since 3.0.7
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T firstNonNull(T... array) {
@@ -296,7 +296,7 @@ public class ArrayUtil {
 	 * 
 	 * @param newSize 大小
 	 * @return 空数组
-	 * @since 3.3.0
+	 *
 	 */
 	public static Object[] newArray(int newSize) {
 		return new Object[newSize];
@@ -307,7 +307,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组对象
 	 * @return 元素类型
-	 * @since 3.2.2
+	 *
 	 */
 	public static Class<?> getComponentType(Object array) {
 		return null == array ? null : array.getClass().getComponentType();
@@ -318,7 +318,7 @@ public class ArrayUtil {
 	 * 
 	 * @param arrayClass 数组类
 	 * @return 元素类型
-	 * @since 3.2.2
+	 *
 	 */
 	public static Class<?> getComponentType(Class<?> arrayClass) {
 		return null == arrayClass ? null : arrayClass.getComponentType();
@@ -330,7 +330,7 @@ public class ArrayUtil {
 	 * 
 	 * @param componentType 数组元素类型
 	 * @return 数组类型
-	 * @since 3.2.2
+	 *
 	 */
 	public static Class<?> getArrayType(Class<?> componentType) {
 		return Array.newInstance(componentType, 0).getClass();
@@ -346,7 +346,7 @@ public class ArrayUtil {
 	 * @return 转换后的数组类型
 	 * @throws NullPointerException 提供参数为空
 	 * @throws IllegalArgumentException 参数arrayObj不是数组
-	 * @since 3.0.6
+	 *
 	 */
 	public static Object[] cast(Class<?> type, Object arrayObj) throws NullPointerException, IllegalArgumentException {
 		if (null == arrayObj) {
@@ -408,7 +408,7 @@ public class ArrayUtil {
 	 * @param index 位置，大于长度追加，否则替换
 	 * @param value 新值
 	 * @return 新数组或原有数组
-	 * @since 4.1.2
+	 *
 	 */
 	public static <T> T[] setOrAppend(T[] buffer, int index, T value) {
 		if(index < buffer.length) {
@@ -426,7 +426,7 @@ public class ArrayUtil {
 	 * @param index 位置，大于长度追加，否则替换
 	 * @param value 新值
 	 * @return 新数组或原有数组
-	 * @since 4.1.2
+	 *
 	 */
 	public static Object setOrAppend(Object array, int index, Object value) {
 		if(index < length(array)) {
@@ -447,7 +447,7 @@ public class ArrayUtil {
 	 * @param index 插入位置，此位置为对应此位置元素之前的空档
 	 * @param newElements 新元素
 	 * @return 新数组
-	 * @since 4.0.8
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T[] insert(T[] buffer, int index, T... newElements) {
@@ -464,7 +464,7 @@ public class ArrayUtil {
 	 * @param index 插入位置，此位置为对应此位置元素之前的空档
 	 * @param newElements 新元素
 	 * @return 新数组
-	 * @since 4.0.8
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> Object insert(Object array, int index, T... newElements) {
@@ -564,7 +564,7 @@ public class ArrayUtil {
 	 * @param destPos 目标数组开始位置
 	 * @param length 拷贝数组长度
 	 * @return 目标数组
-	 * @since 3.0.6
+	 *
 	 */
 	public static Object copy(Object src, int srcPos, Object dest, int destPos, int length) {
 		System.arraycopy(src, srcPos, dest, destPos, length);
@@ -579,7 +579,7 @@ public class ArrayUtil {
 	 * @param dest 目标数组
 	 * @param length 拷贝数组长度
 	 * @return 目标数组
-	 * @since 3.0.6
+	 *
 	 */
 	public static Object copy(Object src, Object dest, int length) {
 		System.arraycopy(src, 0, dest, 0, length);
@@ -750,7 +750,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param filter 过滤器接口，用于定义过滤规则，null表示不过滤，返回原数组
 	 * @return 过滤后的数组
-	 * @since 3.2.1
+	 *
 	 */
 	public static <T> T[] filter(T[] array, Filter<T> filter) {
 		if(null == filter) {
@@ -772,7 +772,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组
 	 * @return 处理后的数组
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T> T[] removeNull(T[] array) {
 		return filter(array, new Editor<T>() {
@@ -789,7 +789,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组
 	 * @return 处理后的数组
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T extends CharSequence> T[] removeEmpty(T[] array) {
 		return filter(array, new Filter<T>() {
@@ -805,7 +805,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组
 	 * @return 处理后的数组
-	 * @since 3.2.2
+	 *
 	 */
 	public static <T extends CharSequence> T[] removeBlank(T[] array) {
 		return filter(array, new Filter<T>() {
@@ -821,7 +821,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组
 	 * @return 新数组
-	 * @since 3.2.1
+	 *
 	 */
 	public static String[] nullToEmpty(String[] array) {
 		return filter(array, new Editor<String>() {
@@ -846,7 +846,7 @@ public class ArrayUtil {
 	 * @param values 值列表
 	 * @param isOrder 是否有序
 	 * @return Map
-	 * @since 3.0.4
+	 *
 	 */
 	public static <K, V> Map<K, V> zip(K[] keys, V[] values, boolean isOrder) {
 		if (isEmpty(keys) || isEmpty(values)) {
@@ -888,7 +888,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static <T> int indexOf(T[] array, Object value) {
 		if (null != array) {
@@ -907,7 +907,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.1.2
+	 *
 	 */
 	public static int indexOfIgnoreCase(CharSequence[] array, CharSequence value) {
 		if (null != array) {
@@ -927,7 +927,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static <T> int lastIndexOf(T[] array, Object value) {
 		if (null != array) {
@@ -961,7 +961,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param values 被检查的多个元素
 	 * @return 是否包含指定元素中的任意一个
-	 * @since 4.1.20
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> boolean containsAny(T[] array, T... values) {
@@ -979,7 +979,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.1.2
+	 *
 	 */
 	public static boolean containsIgnoreCase(CharSequence[] array, CharSequence value) {
 		return indexOfIgnoreCase(array, value) > INDEX_NOT_FOUND;
@@ -991,7 +991,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(long[] array, long value) {
 		if (null != array) {
@@ -1010,7 +1010,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(long[] array, long value) {
 		if (null != array) {
@@ -1029,7 +1029,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(long[] array, long value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1041,7 +1041,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(int[] array, int value) {
 		if (null != array) {
@@ -1060,7 +1060,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(int[] array, int value) {
 		if (null != array) {
@@ -1079,7 +1079,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(int[] array, int value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1091,7 +1091,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(short[] array, short value) {
 		if (null != array) {
@@ -1110,7 +1110,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(short[] array, short value) {
 		if (null != array) {
@@ -1129,7 +1129,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(short[] array, short value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1141,7 +1141,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(char[] array, char value) {
 		if (null != array) {
@@ -1160,7 +1160,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(char[] array, char value) {
 		if (null != array) {
@@ -1179,7 +1179,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(char[] array, char value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1191,7 +1191,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(byte[] array, byte value) {
 		if (null != array) {
@@ -1210,7 +1210,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(byte[] array, byte value) {
 		if (null != array) {
@@ -1229,7 +1229,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(byte[] array, byte value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1241,7 +1241,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(double[] array, double value) {
 		if (null != array) {
@@ -1260,7 +1260,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(double[] array, double value) {
 		if (null != array) {
@@ -1279,7 +1279,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(double[] array, double value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1291,7 +1291,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(float[] array, float value) {
 		if (null != array) {
@@ -1310,7 +1310,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(float[] array, float value) {
 		if (null != array) {
@@ -1329,7 +1329,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(float[] array, float value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1341,7 +1341,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int indexOf(boolean[] array, boolean value) {
 		if (null != array) {
@@ -1360,7 +1360,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 数组中指定元素所在位置，未找到返回{@link #INDEX_NOT_FOUND}
-	 * @since 3.0.7
+	 *
 	 */
 	public static int lastIndexOf(boolean[] array, boolean value) {
 		if (null != array) {
@@ -1379,7 +1379,7 @@ public class ArrayUtil {
 	 * @param array 数组
 	 * @param value 被检查的元素
 	 * @return 是否包含
-	 * @since 3.0.7
+	 *
 	 */
 	public static boolean contains(boolean[] array, boolean value) {
 		return indexOf(array, value) > INDEX_NOT_FOUND;
@@ -1801,7 +1801,7 @@ public class ArrayUtil {
 	 * @param array 数组对象
 	 * @param index 下标，支持负数
 	 * @return 值
-	 * @since 4.0.6
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T get(Object array, int index) {
@@ -1846,7 +1846,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.2.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static <T> T[] sub(T[] array, int start, int end) {
@@ -1881,7 +1881,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static byte[] sub(byte[] array, int start, int end) {
@@ -1916,7 +1916,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static int[] sub(int[] array, int start, int end) {
@@ -1951,7 +1951,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static long[] sub(long[] array, int start, int end) {
@@ -1986,7 +1986,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static short[] sub(short[] array, int start, int end) {
@@ -2021,7 +2021,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static char[] sub(char[] array, int start, int end) {
@@ -2056,7 +2056,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static double[] sub(double[] array, int start, int end) {
@@ -2091,7 +2091,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static float[] sub(float[] array, int start, int end) {
@@ -2126,7 +2126,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.5.2
+	 *
 	 * @see Arrays#copyOfRange(Object[], int, int)
 	 */
 	public static boolean[] sub(boolean[] array, int start, int end) {
@@ -2161,7 +2161,7 @@ public class ArrayUtil {
 	 * @param start 开始位置（包括）
 	 * @param end 结束位置（不包括）
 	 * @return 新的数组
-	 * @since 4.0.6
+	 *
 	 */
 	public static Object[] sub(Object array, int start, int end) {
 		return sub(array, start, end, 1);
@@ -2175,7 +2175,7 @@ public class ArrayUtil {
 	 * @param end 结束位置（不包括）
 	 * @param step 步进
 	 * @return 新的数组
-	 * @since 4.0.6
+	 *
 	 */
 	public static Object[] sub(Object array, int start, int end, int step) {
 		int length = length(array);
@@ -2268,7 +2268,7 @@ public class ArrayUtil {
 	 * @param array 数组对象
 	 * @return 数组长度
 	 * @throws IllegalArgumentException 如果参数不为数组，抛出此异常
-	 * @since 3.0.8
+	 *
 	 * @see Array#getLength(Object)
 	 */
 	public static int length(Object array) throws IllegalArgumentException {
@@ -2299,7 +2299,7 @@ public class ArrayUtil {
 	 * @param prefix 每个元素添加的前缀，null表示不添加
 	 * @param suffix 每个元素添加的后缀，null表示不添加
 	 * @return 连接后的字符串
-	 * @since 4.0.10
+	 *
 	 */
 	public static <T> String join(T[] array, CharSequence conjunction, String prefix, String suffix) {
 		if (null == array) {
@@ -2571,7 +2571,7 @@ public class ArrayUtil {
 	 * 
 	 * @param bytebuffer {@link ByteBuffer}
 	 * @return byte数组
-	 * @since 3.0.1
+	 *
 	 */
 	public static byte[] toArray(ByteBuffer bytebuffer) {
 		if (false == bytebuffer.hasArray()) {
@@ -2594,7 +2594,7 @@ public class ArrayUtil {
 	 * @param iterator {@link Iterator}
 	 * @param componentType 集合元素类型
 	 * @return 数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T> T[] toArray(Iterator<T> iterator, Class<T> componentType) {
 		return toArray(CollectionUtil.newArrayList(iterator), componentType);
@@ -2607,7 +2607,7 @@ public class ArrayUtil {
 	 * @param iterable {@link Iterable}
 	 * @param componentType 集合元素类型
 	 * @return 数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T> T[] toArray(Iterable<T> iterable, Class<T> componentType) {
 		return toArray(CollectionUtil.toCollection(iterable), componentType);
@@ -2620,7 +2620,7 @@ public class ArrayUtil {
 	 * @param collection 集合
 	 * @param componentType 集合元素类型
 	 * @return 数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T> T[] toArray(Collection<T> collection, Class<T> componentType) {
 		final T[] array = newArray(componentType, collection.size());
@@ -2638,7 +2638,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T[] remove(T[] array, int index) throws IllegalArgumentException {
@@ -2653,7 +2653,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static long[] remove(long[] array, int index) throws IllegalArgumentException {
 		return (long[]) remove((Object) array, index);
@@ -2667,7 +2667,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static int[] remove(int[] array, int index) throws IllegalArgumentException {
 		return (int[]) remove((Object) array, index);
@@ -2681,7 +2681,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static short[] remove(short[] array, int index) throws IllegalArgumentException {
 		return (short[]) remove((Object) array, index);
@@ -2695,7 +2695,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static char[] remove(char[] array, int index) throws IllegalArgumentException {
 		return (char[]) remove((Object) array, index);
@@ -2709,7 +2709,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static byte[] remove(byte[] array, int index) throws IllegalArgumentException {
 		return (byte[]) remove((Object) array, index);
@@ -2723,7 +2723,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static double[] remove(double[] array, int index) throws IllegalArgumentException {
 		return (double[]) remove((Object) array, index);
@@ -2737,7 +2737,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static float[] remove(float[] array, int index) throws IllegalArgumentException {
 		return (float[]) remove((Object) array, index);
@@ -2751,7 +2751,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static boolean[] remove(boolean[] array, int index) throws IllegalArgumentException {
 		return (boolean[]) remove((Object) array, index);
@@ -2765,7 +2765,7 @@ public class ArrayUtil {
 	 * @param index 位置，如果位置小于0或者大于长度，返回原数组
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static Object remove(Object array, int index) throws IllegalArgumentException {
 		if (null == array) {
@@ -2796,7 +2796,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static <T> T[] removeEle(T[] array, T element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2810,7 +2810,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static long[] removeEle(long[] array, long element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2824,7 +2824,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static int[] removeEle(int[] array, int element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2838,7 +2838,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static short[] removeEle(short[] array, short element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2852,7 +2852,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static char[] removeEle(char[] array, char element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2866,7 +2866,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static byte[] removeEle(byte[] array, byte element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2880,7 +2880,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static double[] removeEle(double[] array, double element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2894,7 +2894,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static float[] removeEle(float[] array, float element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2908,7 +2908,7 @@ public class ArrayUtil {
 	 * @param element 要移除的元素
 	 * @return 去掉指定元素后的新数组或原数组
 	 * @throws IllegalArgumentException 参数对象不为数组对象
-	 * @since 3.0.8
+	 *
 	 */
 	public static boolean[] removeEle(boolean[] array, boolean element) throws IllegalArgumentException {
 		return remove(array, indexOf(array, element));
@@ -2924,7 +2924,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T> T[] reverse(final T[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -2949,7 +2949,7 @@ public class ArrayUtil {
 	 * @param <T> 数组元素类型
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T> T[] reverse(final T[] array) {
 		return reverse(array, 0, array.length);
@@ -2962,7 +2962,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static long[] reverse(final long[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -2986,7 +2986,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static long[] reverse(final long[] array) {
 		return reverse(array, 0, array.length);
@@ -2999,7 +2999,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static int[] reverse(final int[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3023,7 +3023,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static int[] reverse(final int[] array) {
 		return reverse(array, 0, array.length);
@@ -3036,7 +3036,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static short[] reverse(final short[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3060,7 +3060,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static short[] reverse(final short[] array) {
 		return reverse(array, 0, array.length);
@@ -3073,7 +3073,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static char[] reverse(final char[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3097,7 +3097,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static char[] reverse(final char[] array) {
 		return reverse(array, 0, array.length);
@@ -3110,7 +3110,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static byte[] reverse(final byte[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3134,7 +3134,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static byte[] reverse(final byte[] array) {
 		return reverse(array, 0, array.length);
@@ -3147,7 +3147,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static double[] reverse(final double[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3171,7 +3171,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static double[] reverse(final double[] array) {
 		return reverse(array, 0, array.length);
@@ -3184,7 +3184,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static float[] reverse(final float[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3208,7 +3208,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static float[] reverse(final float[] array) {
 		return reverse(array, 0, array.length);
@@ -3221,7 +3221,7 @@ public class ArrayUtil {
 	 * @param startIndexInclusive 其实位置（包含）
 	 * @param endIndexExclusive 结束位置（不包含）
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static boolean[] reverse(final boolean[] array, final int startIndexInclusive, final int endIndexExclusive) {
 		if (isEmpty(array)) {
@@ -3245,7 +3245,7 @@ public class ArrayUtil {
 	 * 
 	 * @param array 数组，会变更
 	 * @return 变更后的原数组
-	 * @since 3.0.9
+	 *
 	 */
 	public static boolean[] reverse(final boolean[] array) {
 		return reverse(array, 0, array.length);
@@ -3258,7 +3258,7 @@ public class ArrayUtil {
 	 * @param <T> 元素类型
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T extends Comparable<? super T>> T min(T[] numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3278,7 +3278,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static long min(long... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3298,7 +3298,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static int min(int... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3318,7 +3318,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static short min(short... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3338,7 +3338,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static char min(char... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3358,7 +3358,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static byte min(byte... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3378,7 +3378,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static double min(double... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3398,7 +3398,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最小值
-	 * @since 3.0.9
+	 *
 	 */
 	public static float min(float... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3419,7 +3419,7 @@ public class ArrayUtil {
 	 * @param <T> 元素类型
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static <T extends Comparable<? super T>> T max(T[] numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3439,7 +3439,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static long max(long... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3459,7 +3459,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static int max(int... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3479,7 +3479,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static short max(short... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3499,7 +3499,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static char max(char... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3519,7 +3519,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static byte max(byte... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3539,7 +3539,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static double max(double... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3559,7 +3559,7 @@ public class ArrayUtil {
 	 * 
 	 * @param numberArray 数字数组
 	 * @return 最大值
-	 * @since 3.0.9
+	 *
 	 */
 	public static float max(float... numberArray) {
 		if (isEmpty(numberArray)) {
@@ -3581,7 +3581,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static int[] swap(int[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3600,7 +3600,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static long[] swap(long[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3619,7 +3619,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static double[] swap(double[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3638,7 +3638,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static float[] swap(float[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3657,7 +3657,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static boolean[] swap(boolean[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3676,7 +3676,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static byte[] swap(byte[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3695,7 +3695,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static char[] swap(char[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3714,7 +3714,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static short[] swap(short[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3734,7 +3734,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static <T> T[] swap(T[] array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3753,7 +3753,7 @@ public class ArrayUtil {
 	 * @param index1 位置1
 	 * @param index2 位置2
 	 * @return 交换后的数组，与传入数组为同一对象
-	 * @since 4.0.7
+	 *
 	 */
 	public static Object swap(Object array, int index1, int index2) {
 		if (isEmpty(array)) {
@@ -3770,7 +3770,7 @@ public class ArrayUtil {
 	 *
 	 * @param args 被检查的对象,一个或者多个
 	 * @return 存在{@code null}的数量
-	 * @since 4.5.18
+	 *
 	 */
 	public static int emptyCount(Object... args) {
 		int count = 0;
@@ -3789,7 +3789,7 @@ public class ArrayUtil {
 	 *
 	 * @param args 被检查对象
 	 * @return 是否存在
-	 * @since 4.5.18
+	 *
 	 */
 	public static boolean hasEmpty(Object... args) {
 		if (isNotEmpty(args)) {
@@ -3807,7 +3807,7 @@ public class ArrayUtil {
 	 *
 	 * @param args 被检查的对象,一个或者多个
 	 * @return 是否都为空
-	 * @since 4.5.18
+	 *
 	 */
 	public static boolean isAllEmpty(Object... args) {
 		return emptyCount(args) == args.length;
@@ -3818,7 +3818,7 @@ public class ArrayUtil {
 	 *
 	 * @param args 被检查的对象,一个或者多个
 	 * @return 是否都不为空
-	 * @since 4.5.18
+	 *
 	 */
 	public static boolean isAllNotEmpty(Object... args) {
 		return false == hasEmpty(args);

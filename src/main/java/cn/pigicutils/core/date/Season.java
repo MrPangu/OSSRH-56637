@@ -8,7 +8,7 @@ package cn.pigicutils.core.date;
  * @see #AUTUMN
  * @see #WINTER
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *@deprecated 请使用{@link Quarter}代替
  */
 @Deprecated

@@ -1,5 +1,6 @@
 package com.pigic.hzeropigic.utils;
 
+import io.choerodon.core.exception.CommonException;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
@@ -49,7 +50,7 @@ import java.util.Map;
 /*
  * HTTP连接
  * @date: 2019/3/16
- * @author: 潘顾昌 <guchang.pan@hand-china.com>
+ * @author guchang.pan@hand-china.com
  * @version: 0.0.1
  * @copyright Copyright (c) 2019, Hand
  */
@@ -187,9 +188,9 @@ public class HttpClientUtils {
 		try {
 			responseByte = httpclient.execute(hg, responseHandler);
 		} catch (ClientProtocolException e) {
-			throw new RuntimeException("客户端连接协议错误", e);
+			throw new CommonException("客户端连接协议错误", e);
 		} catch (IOException e) {
-			throw new RuntimeException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
+			throw new CommonException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
 		} finally {
 			abortConnection(hg, httpclient);
 		}
@@ -225,7 +226,7 @@ public class HttpClientUtils {
 			responseStr = new String(responseByte, StringUtils.isBlank(responseCharset) ? responseCharsetThreadLocal.get()
 					: responseCharset);
 		} catch (IOException e) {
-			throw new RuntimeException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
+			throw new CommonException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
 		}
 
 		return responseStr;
@@ -268,7 +269,7 @@ public class HttpClientUtils {
 				formEntity = new UrlEncodedFormEntity(getParamsList(params), requestCharset);
 			}
 		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException("不支持的编码集", e);
+			throw new CommonException("不支持的编码集", e);
 		}
 		HttpPost hp = new HttpPost(url);
         TempUtils.getContainer().put("postBody",params);
@@ -293,9 +294,9 @@ public class HttpClientUtils {
 					: responseCharset);
 		} catch (ClientProtocolException e) {
 			logger.error(e.getMessage(), e);
-			throw new RuntimeException("客户端连接协议错误", e);
+			throw new CommonException("客户端连接协议错误", e);
 		} catch (IOException e) {
-			throw new RuntimeException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
+			throw new CommonException("IO操作异常,查看是否超过请求设定时间:" + TIMEOUT + "毫秒!", e);
 		} finally {
 			abortConnection(hp, httpclient);
 		}
@@ -359,9 +360,9 @@ public class HttpClientUtils {
 			responseStr = new String(responseByte, StringUtils.isBlank(responseCharset) ? responseCharsetThreadLocal.get()
 					: responseCharset);
 		} catch (ClientProtocolException e) {
-			throw new RuntimeException("客户端连接协议错误", e);
+			throw new CommonException("客户端连接协议错误", e);
 		} catch (IOException e) {
-			throw new RuntimeException("IO操作异常", e);
+			throw new CommonException("IO操作异常", e);
 		} finally {
 			abortConnection(hp, httpclient);
 		}
@@ -403,7 +404,7 @@ public class HttpClientUtils {
 				formEntity = new UrlEncodedFormEntity(getParamsList(params), charset);
 			}
 		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException("不支持的编码集", e);
+			throw new CommonException("不支持的编码集", e);
 		}
 		HttpPost hp = null;
 		String responseStr = null;
@@ -415,9 +416,9 @@ public class HttpClientUtils {
 			responseStr = new String(responseByte, StringUtils.isBlank(responseCharset) ? responseCharsetThreadLocal.get()
 					: responseCharset);
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("keystore文件不存在", e);
+			throw new CommonException("keystore文件不存在", e);
 		} catch (IOException e) {
-			throw new RuntimeException("I/O操作失败或中断 ", e);
+			throw new CommonException("I/O操作失败或中断 ", e);
 		} finally {
 			abortConnection(hp, httpclient);
 		}
@@ -483,17 +484,17 @@ public class HttpClientUtils {
 						Scheme scheme = new Scheme(SSL_DEFAULT_SCHEME, socketFactory, SSL_DEFAULT_PORT);
 						httpclient.getConnectionManager().getSchemeRegistry().register(scheme);
 					} catch (KeyStoreException e) {
-						throw new RuntimeException("keytore解析异常", e);
+						throw new CommonException("keytore解析异常", e);
 					} catch (NoSuchAlgorithmException e) {
-						throw new RuntimeException("指定的加密算法不可用", e);
+						throw new CommonException("指定的加密算法不可用", e);
 					} catch (CertificateException e) {
-						throw new RuntimeException("信任证书过期或解析异常", e);
+						throw new CommonException("信任证书过期或解析异常", e);
 					} catch (IOException e) {
-						throw new RuntimeException("I/O操作失败或中断 ", e);
+						throw new CommonException("I/O操作失败或中断 ", e);
 					} catch (KeyManagementException e) {
-						throw new RuntimeException("处理密钥管理的操作异常", e);
+						throw new CommonException("处理密钥管理的操作异常", e);
 					} catch (UnrecoverableKeyException e) {
-						throw new RuntimeException("keystore中的密钥无法恢复异常", e);
+						throw new CommonException("keystore中的密钥无法恢复异常", e);
 					}
 				} else if (isHttps) {
 
@@ -523,7 +524,7 @@ public class HttpClientUtils {
 							}
 						} }, null);
 					} catch (Exception e) {
-						throw new RuntimeException(e.getMessage(), e);
+						throw new CommonException(e.getMessage(), e);
 					}
 
 					SSLSocketFactory socketFactory = new SSLSocketFactory(ctx, SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);

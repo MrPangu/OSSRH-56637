@@ -1,7 +1,7 @@
 /**
  * 锁的实现
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.thread.lock;

@@ -4,8 +4,8 @@ package cn.pigicutils.core.io;
  * 代码移植自<a href="https://github.com/biezhi/blade">blade</a><br>
  * 快速缓冲，将数据存放在缓冲集中，取代以往的单一数组
  *
- * @author biezhi, looly
- * @since 1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class FastByteBuffer {
 

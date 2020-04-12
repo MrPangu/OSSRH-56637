@@ -21,8 +21,8 @@ import java.util.Map;
  * </pre>
  * 
  * @param <T> Bean类型
- * @author Looly
- * @since 4.0.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class BeanConverter<T> extends AbstractConverter<T> {
 	private static final long serialVersionUID = 1L;

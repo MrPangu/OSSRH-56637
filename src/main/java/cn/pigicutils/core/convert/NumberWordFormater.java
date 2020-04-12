@@ -6,8 +6,8 @@ import cn.pigicutils.core.util.StrUtil;
  * 将浮点数类型的number转换成英语的表达方式 <br>
  * 参考博客：http://blog.csdn.net/eric_sunah/article/details/8713226
  * 
- * @author Looly
- * @since 3.0.9
+ * @author guchang.pan@hand-china.com
+ *
  * @see <a href=
  *      "http://blog.csdn.net/eric_sunah/article/details/8713226">http://blog.csdn.net/eric_sunah/article/details/8713226</a>
  */

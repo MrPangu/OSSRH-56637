@@ -11,8 +11,8 @@ import java.lang.ref.*;
  * 3. {@link PhantomReference} 虚引用，在GC时发现虚引用对象，会将{@link PhantomReference}插入{@link ReferenceQueue}。 此时对象未被真正回收，要等到{@link ReferenceQueue}被真正处理后才会被回收。
  * </pre>
  * 
- * @author looly
- * @since 3.1.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ReferenceUtil {
 	
@@ -53,7 +53,7 @@ public class ReferenceUtil {
 	/**
 	 * 引用类型
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	public static enum ReferenceType {

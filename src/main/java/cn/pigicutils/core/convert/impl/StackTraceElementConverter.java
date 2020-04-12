@@ -10,8 +10,8 @@ import java.util.Map;
  * {@link StackTraceElement} 转换器<br>
  * 只支持Map方式转换
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class StackTraceElementConverter extends AbstractConverter<StackTraceElement> {
 	private static final long serialVersionUID = 1L;

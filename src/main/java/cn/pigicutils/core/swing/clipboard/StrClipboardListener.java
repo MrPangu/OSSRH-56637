@@ -8,8 +8,8 @@ import java.io.Serializable;
 /**
  * 剪贴板字符串内容监听
  * 
- * @author looly
- * @since 4.5.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public abstract class StrClipboardListener implements ClipboardListener, Serializable {
 	private static final long serialVersionUID = 1L;

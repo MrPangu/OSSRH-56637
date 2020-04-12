@@ -17,8 +17,8 @@ import java.util.List;
  * 多资源组合资源<br>
  * 此资源为一个利用游标自循环资源，只有调用{@link #next()} 方法才会获取下一个资源，使用完毕后调用{@link #reset()}方法重置游标
  * 
- * @author looly
- * @since 4.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MultiResource implements Resource, Iterable<Resource>, Iterator<Resource>, Serializable {
 	private static final long serialVersionUID = 1L;

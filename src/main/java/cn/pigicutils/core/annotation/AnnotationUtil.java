@@ -1,14 +1,15 @@
 package cn.pigicutils.core.annotation;
 
 import cn.pigicutils.core.exceptions.UtilException;
+import cn.pigicutils.core.lang.Console;
 import cn.pigicutils.core.lang.Filter;
 import cn.pigicutils.core.util.ArrayUtil;
 import cn.pigicutils.core.util.ReflectUtil;
+import com.pigic.hzeropigic.domain.dto.PIGIC;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.lang.annotation.*;
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.AnnotatedElement;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,11 +17,11 @@ import java.util.Map;
  * 注解工具类<br>
  * 快速获取注解对象、注解值等工具封装
  * 
- * @author looly
- * @since 4.0.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class AnnotationUtil {
-	
+
 	/**
 	 * 将指定的被注解的元素转换为组合注解元素
 	 * 
@@ -34,11 +35,14 @@ public class AnnotationUtil {
 		return new CombinationAnnotationElement(annotationEle);
 	}
 
+	public static void main(String[] args) {
+		Console.log(PIGIC.PIGIC);
+	}
 	/**
-	 * 获取指定注解
-	 * 
-	 * @param annotationEle {@link AnnotatedElement}，可以是Class、Method、Field、Constructor、ReflectPermission
-	 * @return 注解对象
+	 * 查询所有注解
+	 * @param annotationEle 可以是Class、Method、Field、Constructor、ReflectPermission
+	 * @param isCombination 是否递归查询
+	 * @return
 	 */
 	public static Annotation[] getAnnotations(AnnotatedElement annotationEle, boolean isCombination) {
 		return (null == annotationEle) ? null : (isCombination ? toCombination(annotationEle) : annotationEle).getAnnotations();

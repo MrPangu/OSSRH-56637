@@ -2,12 +2,13 @@ package cn.pigicutils.core.convert;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 转换异常
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class ConvertException extends RuntimeException{
+public class ConvertException extends CommonException {
 	private static final long serialVersionUID = 4730597402855274362L;
 
 	public ConvertException(Throwable e) {

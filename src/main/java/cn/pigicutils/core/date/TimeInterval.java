@@ -6,7 +6,7 @@ import java.io.Serializable;
  * 计时器<br>
  * 计算某个过程花费的时间，精确到毫秒
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class TimeInterval implements Serializable{
@@ -45,7 +45,7 @@ public class TimeInterval implements Serializable{
 	/**
 	 * 重新开始计算时间（重置开始时间）
 	 * @return this
-	 * @since 3.0.1
+	 *
 	 */
 	public TimeInterval restart(){
 		time = DateUtil.current(isNano);

@@ -2,12 +2,13 @@ package cn.pigicutils.core.clone;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 克隆异常
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class CloneRuntimeException extends RuntimeException{
+public class CloneRuntimeException extends CommonException {
 	private static final long serialVersionUID = 6774837422188798989L;
 
 	public CloneRuntimeException(Throwable e) {

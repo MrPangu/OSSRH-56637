@@ -12,7 +12,7 @@ import java.util.Map;
  * 抽象转换器，提供通用的转换逻辑，同时通过convertInternal实现对应类型的专属逻辑<br>
  * 转换器不会抛出转换异常，转换失败时会返回{@code null}
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public abstract class AbstractConverter<T> implements Converter<T>, Serializable {
@@ -25,7 +25,7 @@ public abstract class AbstractConverter<T> implements Converter<T>, Serializable
 	 * @param value 被转换的值
 	 * @param defaultValue 默认值
 	 * @return 转换后的值
-	 * @since 4.5.7
+	 *
 	 */
 	public T convertQuietly(Object value, T defaultValue) {
 		try {
@@ -68,7 +68,7 @@ public abstract class AbstractConverter<T> implements Converter<T>, Serializable
 	 * 
 	 * <pre>
 	 * 1、返回{@code null} 
-	 * 2、抛出一个{@link RuntimeException}异常
+	 * 2、抛出一个{@link CommonException}异常
 	 * </pre>
 	 * 
 	 * @param value 值

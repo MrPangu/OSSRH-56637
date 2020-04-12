@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * <li><code>java.math.BigInteger</code></li>
  * </ul>
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class NumberConverter extends AbstractConverter<Number> {

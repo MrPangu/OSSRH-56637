@@ -17,7 +17,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * 此类使用{@link ReentrantReadWriteLock}保证线程安全
  * </p>
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 生成范围对象的类型
  */
@@ -87,7 +87,7 @@ public class Range<T> implements Iterable<T>, Iterator<T>, Serializable {
 	 * 禁用锁，调用此方法后不在 使用锁保护
 	 * 
 	 * @return this
-	 * @since 4.3.1
+	 *
 	 */
 	public Range<T> disableLock() {
 		this.lock = new NoLock();
@@ -192,7 +192,7 @@ public class Range<T> implements Iterable<T>, Iterator<T>, Serializable {
 	 * 3、限制range个数，通过实现此接口，在实现类中定义一个对象属性，可灵活定义limit，限制range个数
 	 * </pre>
 	 * 
-	 * @author Looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <T> 需要增加步进的对象
 	 */

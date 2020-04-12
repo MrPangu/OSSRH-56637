@@ -14,7 +14,7 @@ import cn.pigicutils.core.date.TimeInterval;
  * });
  * </pre>
  *
- * @author kwer
+ * @author guchang.pan@hand-china.com
  */
 public class ConcurrencyTester {
 	private SyncFinisher sf;

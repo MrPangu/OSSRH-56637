@@ -2,7 +2,7 @@ package cn.pigicutils.core.clone;
 
 /**
  * 克隆支持接口
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 实现克隆接口的类型
  */

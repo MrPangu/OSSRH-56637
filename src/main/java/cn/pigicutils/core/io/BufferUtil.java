@@ -11,8 +11,8 @@ import java.nio.charset.Charset;
  * 此工具来自于 t-io 项目以及其它项目的相关部分收集<br>
  * ByteBuffer的相关介绍见：https://www.cnblogs.com/ruber/p/6857159.html
  * 
- * @author tanyaowu, looly
- * @since 4.0.0
+ * @author guchang.pan@hand-china.com
+ *
  *
  */
 public class BufferUtil {
@@ -72,7 +72,7 @@ public class BufferUtil {
 	 * 
 	 * @param buffer ByteBuffer
 	 * @return 字符串
-	 * @since 4.5.0
+	 *
 	 */
 	public static String readUtf8Str(ByteBuffer buffer) {
 		return readStr(buffer, CharsetUtil.CHARSET_UTF_8);
@@ -84,7 +84,7 @@ public class BufferUtil {
 	 * @param buffer ByteBuffer
 	 * @param charset 编码
 	 * @return 字符串
-	 * @since 4.5.0
+	 *
 	 */
 	public static String readStr(ByteBuffer buffer, Charset charset) {
 		return StrUtil.str(readBytes(buffer), charset);
@@ -220,7 +220,7 @@ public class BufferUtil {
 	 * 
 	 * @param data 数据
 	 * @return {@link ByteBuffer}
-	 * @since 4.5.0
+	 *
 	 */
 	public static ByteBuffer create(byte[] data) {
 		return ByteBuffer.wrap(data);
@@ -232,7 +232,7 @@ public class BufferUtil {
 	 * @param data 数据
 	 * @param charset 编码
 	 * @return {@link ByteBuffer}
-	 * @since 4.5.0
+	 *
 	 */
 	public static ByteBuffer create(CharSequence data, Charset charset) {
 		return create(StrUtil.bytes(data, charset));
@@ -243,7 +243,7 @@ public class BufferUtil {
 	 * 
 	 * @param data 数据
 	 * @return {@link ByteBuffer}
-	 * @since 4.5.0
+	 *
 	 */
 	public static ByteBuffer createUtf8(CharSequence data) {
 		return create(StrUtil.utf8Bytes(data));

@@ -8,7 +8,7 @@ import java.net.URL;
 
 /**
  * URL对象转换器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class URLConverter extends AbstractConverter<URL>{

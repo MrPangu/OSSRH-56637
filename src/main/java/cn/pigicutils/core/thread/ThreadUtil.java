@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 /**
  * 线程池工具
  * 
- * @author luxiaolei
+ * @author guchang.pan@hand-china.com
  */
 public class ThreadUtil {
 
@@ -64,7 +64,7 @@ public class ThreadUtil {
 	 * 
 	 * @param blockingCoefficient 阻塞系数，阻塞因子介于0~1之间的数，阻塞因子越大，线程池中的线程数越多。
 	 * @return {@link ThreadPoolExecutor}
-	 * @since 3.0.6
+	 *
 	 */
 	public static ThreadPoolExecutor newExecutorByBlockingCoefficient(float blockingCoefficient) {
 		if (blockingCoefficient >= 1 || blockingCoefficient < 0) {
@@ -123,7 +123,7 @@ public class ThreadUtil {
 	 * 
 	 * @param runnable 可运行对象
 	 * @return {@link Future}
-	 * @since 3.0.5
+	 *
 	 */
 	public static Future<?> execAsync(Runnable runnable) {
 		return GlobalThreadPool.submit(runnable);
@@ -168,7 +168,7 @@ public class ThreadUtil {
 	 * @param runnable {@link Runnable}
 	 * @param name 线程名
 	 * @return {@link Thread}
-	 * @since 3.1.2
+	 *
 	 */
 	public static Thread newThread(Runnable runnable, String name) {
 		final Thread t = newThread(runnable, name, false);
@@ -185,7 +185,7 @@ public class ThreadUtil {
 	 * @param name 线程名
 	 * @param isDeamon 是否守护线程
 	 * @return {@link Thread}
-	 * @since 4.1.2
+	 *
 	 */
 	public static Thread newThread(Runnable runnable, String name, boolean isDeamon) {
 		final Thread t = new Thread(null, runnable, name);
@@ -290,7 +290,7 @@ public class ThreadUtil {
 	 * 
 	 * @return ThreadFactoryBuilder
 	 * @see ThreadFactoryBuilder#build()
-	 * @since 4.1.13
+	 *
 	 */
 	public static ThreadFactoryBuilder createThreadFactoryBuilder() {
 		return ThreadFactoryBuilder.create();
@@ -372,7 +372,7 @@ public class ThreadUtil {
 	 * 获取当前线程的线程组
 	 * 
 	 * @return 线程组
-	 * @since 3.1.2
+	 *
 	 */
 	public static ThreadGroup currentThreadGroup() {
 		final SecurityManager s = System.getSecurityManager();
@@ -384,7 +384,7 @@ public class ThreadUtil {
 	 * 
 	 * @param prefix 线程名前缀
 	 * @param isDeamon 是否守护线程
-	 * @since 4.0.0
+	 *
 	 */
 	public static ThreadFactory newNamedThreadFactory(String prefix, boolean isDeamon) {
 		return new NamedThreadFactory(prefix, isDeamon);
@@ -396,7 +396,7 @@ public class ThreadUtil {
 	 * @param prefix 线程名前缀
 	 * @param threadGroup 线程组，可以为null
 	 * @param isDeamon 是否守护线程
-	 * @since 4.0.0
+	 *
 	 */
 	public static ThreadFactory newNamedThreadFactory(String prefix, ThreadGroup threadGroup, boolean isDeamon) {
 		return new NamedThreadFactory(prefix, threadGroup, isDeamon);
@@ -409,7 +409,7 @@ public class ThreadUtil {
 	 * @param threadGroup 线程组，可以为null
 	 * @param isDeamon 是否守护线程
 	 * @param handler 未捕获异常处理
-	 * @since 4.0.0
+	 *
 	 */
 	public static ThreadFactory newNamedThreadFactory(String prefix, ThreadGroup threadGroup, boolean isDeamon, UncaughtExceptionHandler handler) {
 		return new NamedThreadFactory(prefix, threadGroup, isDeamon, handler);
@@ -419,7 +419,7 @@ public class ThreadUtil {
 	 * 阻塞当前线程，保证在main方法中执行不被退出
 	 * 
 	 * @param obj 对象所在线程
-	 * @since 4.5.6
+	 *
 	 */
 	public static void sync(Object obj) {
 		synchronized (obj) {
@@ -440,7 +440,7 @@ public class ThreadUtil {
 	 * @param threadSize 并发线程数
 	 * @param runnable 执行的逻辑实现
 	 * @return {@link ConcurrencyTester}
-	 * @since 4.5.8
+	 *
 	 */
 	public static ConcurrencyTester concurrencyTest(int threadSize, Runnable runnable) {
 		return (new ConcurrencyTester(threadSize)).test(runnable);

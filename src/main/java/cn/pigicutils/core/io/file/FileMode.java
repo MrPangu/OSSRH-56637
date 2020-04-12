@@ -3,8 +3,8 @@ package cn.pigicutils.core.io.file;
 /**
  * 文件读写模式，常用于RandomAccessFile
  * 
- * @author looly
- * @since 4.5.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public enum FileMode {
 	/** 以只读方式打开。调用结果对象的任何 write 方法都将导致抛出 IOException。 */

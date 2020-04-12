@@ -1,7 +1,7 @@
 package com.pigic.hzeropigic.utils;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/2/3 16:07
  */
 import java.io.File;

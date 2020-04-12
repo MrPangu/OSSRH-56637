@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 通过StackTrace方式获取调用者。此方式效率最低，不推荐使用
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public class StackTraceCaller implements Caller, Serializable {
 	private static final long serialVersionUID = 1L;

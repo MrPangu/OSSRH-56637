@@ -2,7 +2,7 @@ package cn.pigicutils.core.lang.copier;
 
 /**
  * 拷贝接口
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 拷贝目标类型
  */

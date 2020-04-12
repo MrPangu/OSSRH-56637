@@ -7,7 +7,7 @@ import cn.pigicutils.core.util.CharUtil;
 /**
  * 形如&#39;的反转义器
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class NumericEntityUnescaper extends StrReplacer {

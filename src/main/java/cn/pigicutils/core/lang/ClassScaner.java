@@ -6,6 +6,7 @@ import cn.pigicutils.core.io.FileUtil;
 import cn.pigicutils.core.io.IORuntimeException;
 import cn.pigicutils.core.io.resource.ResourceUtil;
 import cn.pigicutils.core.util.*;
+import io.choerodon.core.exception.CommonException;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +23,8 @@ import java.util.jar.JarFile;
 /**
  * 类扫描器
  * 
- * @author looly
- * @since 4.1.5
+ * @author guchang.pan@hand-china.com
+ *
  *
  */
 public class ClassScaner implements Serializable{
@@ -267,7 +268,7 @@ public class ClassScaner implements Serializable{
 		} catch (UnsupportedClassVersionError e) {
 			// 版本导致的不兼容的类，跳过
 		} catch (Exception e) {
-			throw new RuntimeException(e);
+			throw new CommonException(e);
 			// Console.error(e);
 		}
 		return clazz;

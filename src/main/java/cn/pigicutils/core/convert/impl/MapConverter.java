@@ -14,8 +14,8 @@ import java.util.Map.Entry;
 /**
  * {@link Map} 转换器
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MapConverter extends AbstractConverter<Map<?, ?>> {
 	private static final long serialVersionUID = 1L;

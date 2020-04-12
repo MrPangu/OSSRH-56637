@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 类型转换器
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  * 
  */
 public class Convert {
@@ -55,7 +55,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return String数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static String[] toStrArray(Object value) {
 		return convert(String[].class, value);
@@ -91,7 +91,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return Character数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static Character[] toCharArray(Object value) {
 		return convert(Character[].class, value);
@@ -127,7 +127,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return Byte数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static Byte[] toByteArray(Object value) {
 		return convert(Byte[].class, value);
@@ -163,7 +163,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return Short数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static Short[] toShortArray(Object value) {
 		return convert(Short[].class, value);
@@ -199,7 +199,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return Number数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static Number[] toNumberArray(Object value) {
 		return convert(Number[].class, value);
@@ -438,7 +438,7 @@ public class Convert {
 	 * @param value 被转换的值
 	 * @param defaultValue 转换错误时的默认值
 	 * @return 结果
-	 * @since 4.1.6
+	 *
 	 */
 	public static Date toDate(Object value, Date defaultValue) {
 		return convertQuietly(Date.class, value, defaultValue);
@@ -451,7 +451,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return 结果
-	 * @since 4.1.6
+	 *
 	 */
 	public static Date toDate(Object value) {
 		return toDate(value, null);
@@ -491,7 +491,7 @@ public class Convert {
 	 * @param elementType 集合中元素类型
 	 * @param value 被转换的值
 	 * @return {@link Collection}
-	 * @since 3.0.8
+	 *
 	 */
 	public static Collection<?> toCollection(Class<?> collectionType, Class<?> elementType, Object value) {
 		return new CollectionConverter(collectionType, elementType).convert(value, null);
@@ -502,7 +502,7 @@ public class Convert {
 	 * 
 	 * @param value 被转换的值
 	 * @return {@link List}
-	 * @since 4.1.11
+	 *
 	 */
 	public static List<?> toList(Object value) {
 		return convert(List.class, value);
@@ -515,7 +515,7 @@ public class Convert {
 	 * @param elementType 集合中元素类型
 	 * @param value 被转换的值
 	 * @return {@link List}
-	 * @since 4.1.20
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> List<T> toList(Class<T> elementType, Object value) {
@@ -529,7 +529,7 @@ public class Convert {
 	 * @param className 类的字符串表示
 	 * @param value 值
 	 * @return 转换后的值
-	 * @since 4.0.7
+	 *
 	 * @throws ConvertException 转换器不存在
 	 */
 	@SuppressWarnings("unchecked")
@@ -544,7 +544,7 @@ public class Convert {
 	 * @param type 类型
 	 * @param value 值
 	 * @return 转换后的值
-	 * @since 4.0.0
+	 *
 	 * @throws ConvertException 转换器不存在
 	 */
 	public static <T> T convert(Class<T> type, Object value) throws ConvertException{
@@ -586,7 +586,7 @@ public class Convert {
 	 * @param defaultValue 默认值
 	 * @return 转换后的值
 	 * @throws ConvertException 转换器不存在
-	 * @since 4.0.0
+	 *
 	 */
 	public static <T> T convert(Class<T> type, Object value, T defaultValue) throws ConvertException {
 		return convert((Type)type, value, defaultValue);
@@ -614,7 +614,7 @@ public class Convert {
 	 * @param type 目标类型
 	 * @param value 值
 	 * @return 转换后的值，转换失败返回null
-	 * @since 4.5.10
+	 *
 	 */
 	public static <T> T convertQuietly(Type type, Object value) {
 		return convertQuietly(type, value, null);
@@ -629,7 +629,7 @@ public class Convert {
 	 * @param value 值
 	 * @param defaultValue 默认值
 	 * @return 转换后的值
-	 * @since 4.5.10
+	 *
 	 */
 	public static <T> T convertQuietly(Type type, Object value, T defaultValue) {
 		try {
@@ -771,7 +771,7 @@ public class Convert {
 	 * @param charset 编码 {@link Charset}
 	 * @return 对应的字符串
 	 * @see HexUtil#decodeHexStr(String, Charset)
-	 * @since 4.1.11
+	 *
 	 */
 	public static String hexToStr(String hexStr, Charset charset) {
 		return HexUtil.decodeHexStr(hexStr, charset);
@@ -862,7 +862,7 @@ public class Convert {
 	 * 
 	 * @param number {@link Number}对象
 	 * @return 英文表达式
-	 * @since 3.0.9
+	 *
 	 */
 	public static String numberToWord(Number number) {
 		return NumberWordFormater.format(number);
@@ -874,7 +874,7 @@ public class Convert {
 	 * @param number 数字
 	 * @param isUseTraditonal 是否使用繁体字（金额形式）
 	 * @return 中文
-	 * @since 3.2.3
+	 *
 	 */
 	public static String numberToChinese(double number, boolean isUseTraditonal) {
 		return NumberChineseFormater.format(number, isUseTraditonal);
@@ -885,7 +885,7 @@ public class Convert {
 	 * 
 	 * @param n 数字
 	 * @return 中文大写数字
-	 * @since 3.2.3
+	 *
 	 */
 	public static String digitToChinese(Number n) {
 		if(null == n) {
@@ -900,7 +900,7 @@ public class Convert {
 	 * 
 	 * @param intValue int值
 	 * @return byte值
-	 * @since 3.2.0
+	 *
 	 */
 	public static byte intToByte(int intValue) {
 		return (byte) intValue;
@@ -911,7 +911,7 @@ public class Convert {
 	 * 
 	 * @param byteValue byte值
 	 * @return 无符号int值
-	 * @since 3.2.0
+	 *
 	 */
 	public static int byteToUnsignedInt(byte byteValue) {
 		// Java 总是把 byte 当做有符处理；我们可以通过将其和 0xFF 进行二进制与得到它的无符值
@@ -923,7 +923,7 @@ public class Convert {
 	 * 
 	 * @param bytes byte数组
 	 * @return short值
-	 * @since 3.2.0
+	 *
 	 */
 	public static short bytesToShort(byte[] bytes) {
 		return (short) (bytes[1] & 0xff | (bytes[0] & 0xff) << 8);
@@ -933,7 +933,7 @@ public class Convert {
 	 * short转byte数组
 	 * @param shortValue short值
 	 * @return byte数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static byte[] shortToBytes(short shortValue) {
 		byte[] b = new byte[2];
@@ -947,7 +947,7 @@ public class Convert {
 	 * 
 	 * @param bytes byte数组
 	 * @return int值
-	 * @since 3.2.0
+	 *
 	 */
 	public static int bytesToInt(byte[] bytes) {
 		return bytes[3] & 0xFF | //
@@ -961,7 +961,7 @@ public class Convert {
 	 * 
 	 * @param intValue int值
 	 * @return byte数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static byte[] intToBytes(int intValue) {
 		return new byte[] { //
@@ -978,7 +978,7 @@ public class Convert {
 	 * 
 	 * @param longValue long值
 	 * @return byte数组
-	 * @since 3.2.0
+	 *
 	 */
 	public static byte[] longToBytes(long longValue) {
 		// Magic number 8 should be defined as Long.SIZE / Byte.SIZE
@@ -996,7 +996,7 @@ public class Convert {
 	 * 
 	 * @param bytes byte数组
 	 * @return long值
-	 * @since 3.2.0
+	 *
 	 */
 	public static long bytesToLong(byte[] bytes) {
 		// Magic number 8 should be defined as Long.SIZE / Byte.SIZE

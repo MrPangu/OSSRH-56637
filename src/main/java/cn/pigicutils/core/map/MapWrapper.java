@@ -9,12 +9,12 @@ import java.util.Set;
 /**
  * Map包装类，通过包装一个已有Map实现特定功能。例如自定义Key的规则或Value规则
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <K> 键类型
  * @param <V> 值类型
- * @author looly
- * @since 4.3.3
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class MapWrapper<K, V> implements Map<K, V>, Iterable<Map.Entry<K, V>>, Serializable, Cloneable {
 	private static final long serialVersionUID = -7524578042008586382L;

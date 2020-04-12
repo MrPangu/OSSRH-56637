@@ -14,8 +14,8 @@ import java.nio.charset.Charset;
  * 基于{@link InputStream}的资源获取器<br>
  * 注意：此对象中getUrl方法始终返回null
  * 
- * @author looly
- * @since 4.0.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class InputStreamResource implements Resource, Serializable {
 	private static final long serialVersionUID = 1L;

@@ -7,7 +7,7 @@ import java.nio.charset.Charset;
 
 /**
  * 编码对象转换器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class CharsetConverter extends AbstractConverter<Charset>{

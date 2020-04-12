@@ -8,7 +8,7 @@ import java.util.Date;
  * 可选默认值的基本类型的getter接口<br>
  * 提供一个统一的接口定义返回不同类型的值（基本类型）<br>
  * 如果值不存在或获取错误，返回默认值
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public interface OptBasicTypeGetter<K> {
 	/*-------------------------- 基本类型 start -------------------------------*/

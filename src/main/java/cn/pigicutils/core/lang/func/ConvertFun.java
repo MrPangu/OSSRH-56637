@@ -5,7 +5,7 @@ import cn.pigicutils.core.lang.Dict;
 import java.util.Map;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/9/2 22:43
  */
 @FunctionalInterface

@@ -11,8 +11,8 @@ import java.io.IOException;
  * 桌面相关工具（平台相关）<br>
  * Desktop 类允许 Java 应用程序启动已在本机桌面上注册的关联应用程序，以处理 URI 或文件。
  * 
- * @author looly
- * @since 4.5.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class DesktopUtil {
 

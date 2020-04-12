@@ -2,13 +2,14 @@ package cn.pigicutils.core.io;
 
 import cn.pigicutils.core.exceptions.ExceptionUtil;
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * IO运行时异常，常用于对IOException的包装
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class IORuntimeException extends RuntimeException {
+public class IORuntimeException extends CommonException {
 	private static final long serialVersionUID = 8247610319171014183L;
 
 	public IORuntimeException(Throwable e) {

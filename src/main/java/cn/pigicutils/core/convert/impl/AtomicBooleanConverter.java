@@ -8,8 +8,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * {@link AtomicBoolean}转换器
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class AtomicBooleanConverter extends AbstractConverter<AtomicBoolean> {
 	private static final long serialVersionUID = 1L;

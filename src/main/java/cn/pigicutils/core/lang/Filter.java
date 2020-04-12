@@ -2,7 +2,7 @@ package cn.pigicutils.core.lang;
 
 /**
  * 过滤器接口
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public interface Filter<T> {

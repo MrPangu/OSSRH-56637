@@ -18,8 +18,8 @@ import java.util.Set;
 /**
  * 反射工具类
  * 
- * @author Looly
- * @since 3.0.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ReflectUtil {
 
@@ -98,7 +98,7 @@ public class ReflectUtil {
 	 * @param name 字段名
 	 * @return 是否包含字段
 	 * @throws SecurityException 安全异常
-	 * @since 4.1.21
+	 *
 	 */
 	public static boolean hasField(Class<?> beanClass, String name) throws SecurityException {
 		return null != getField(beanClass, name);
@@ -209,7 +209,7 @@ public class ReflectUtil {
 	 * 获取所有字段的值
 	 * @param obj bean对象
 	 * @return 字段值数组
-	 * @since 4.1.17
+	 *
 	 */
 	public static Object[] getFieldsValue(Object obj) {
 		if (null != obj) {
@@ -409,7 +409,7 @@ public class ReflectUtil {
 	 * @param paramTypes 参数类型，指定参数类型如果是方法的子类也算
 	 * @return 方法
 	 * @throws SecurityException 无权访问抛出异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static Method getMethodIgnoreCase(Class<?> clazz, String methodName, Class<?>... paramTypes) throws SecurityException {
 		return getMethod(clazz, true, methodName, paramTypes);
@@ -445,7 +445,7 @@ public class ReflectUtil {
 	 * @param paramTypes 参数类型，指定参数类型如果是方法的子类也算
 	 * @return 方法
 	 * @throws SecurityException 无权访问抛出异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static Method getMethod(Class<?> clazz, boolean ignoreCase, String methodName, Class<?>... paramTypes) throws SecurityException {
 		if (null == clazz || StrUtil.isBlank(methodName)) {
@@ -476,7 +476,7 @@ public class ReflectUtil {
 	 * @param methodName 方法名，如果为空字符串返回{@code null}
 	 * @return 方法
 	 * @throws SecurityException 无权访问抛出异常
-	 * @since 4.3.2
+	 *
 	 */
 	public static Method getMethodByName(Class<?> clazz, String methodName) throws SecurityException {
 		return getMethodByName(clazz, false, methodName);
@@ -493,7 +493,7 @@ public class ReflectUtil {
 	 * @param methodName 方法名，如果为空字符串返回{@code null}
 	 * @return 方法
 	 * @throws SecurityException 无权访问抛出异常
-	 * @since 4.3.2
+	 *
 	 */
 	public static Method getMethodByNameIgnoreCase(Class<?> clazz, String methodName) throws SecurityException {
 		return getMethodByName(clazz, true, methodName);
@@ -511,7 +511,7 @@ public class ReflectUtil {
 	 * @param methodName 方法名，如果为空字符串返回{@code null}
 	 * @return 方法
 	 * @throws SecurityException 无权访问抛出异常
-	 * @since 4.3.2
+	 *
 	 */
 	public static Method getMethodByName(Class<?> clazz, boolean ignoreCase, String methodName) throws SecurityException {
 		if (null == clazz || StrUtil.isBlank(methodName)) {
@@ -801,7 +801,7 @@ public class ReflectUtil {
 	 * @param args 参数列表
 	 * @return 执行结果
 	 * @throws UtilException IllegalAccessException包装
-	 * @since 3.1.2
+	 *
 	 */
 	public static <T> T invoke(Object obj, String methodName, Object... args) throws UtilException {
 		final Method method = getMethodOfObj(obj, methodName, args);

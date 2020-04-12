@@ -8,8 +8,8 @@ import java.nio.charset.Charset;
 /**
  * Base64编码
  * 
- * @author looly
- * @since 3.2.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Base64Encoder {
 
@@ -55,7 +55,7 @@ public class Base64Encoder {
 	 * @param arr 被编码的数组
 	 * @param lineSep 在76个char之后是CRLF还是EOF
 	 * @return 编码后的bytes
-	 * @since 3.0.6
+	 *
 	 */
 	public static byte[] encodeUrlSafe(byte[] arr, boolean lineSep) {
 		return encode(arr, lineSep, true);
@@ -76,7 +76,7 @@ public class Base64Encoder {
 	 * 
 	 * @param source 被编码的base64字符串
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(CharSequence source) {
 		return encodeUrlSafe(source, DEFAULT_CHARSET);
@@ -99,7 +99,7 @@ public class Base64Encoder {
 	 * @param source 被编码的base64字符串
 	 * @param charset 字符集
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(CharSequence source, Charset charset) {
 		return encodeUrlSafe(StrUtil.bytes(source, charset));
@@ -120,7 +120,7 @@ public class Base64Encoder {
 	 * 
 	 * @param source 被编码的base64字符串
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(byte[] source) {
 		return StrUtil.str(encodeUrlSafe(source, false), DEFAULT_CHARSET);

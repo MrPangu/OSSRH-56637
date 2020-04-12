@@ -1,5 +1,6 @@
 package com.pigic.hzeropigic.utils;
 
+import cn.pigicutils.core.util.StrUtil;
 import com.github.pagehelper.PageInfo;
 import io.choerodon.mybatis.pagehelper.domain.Sort;
 
@@ -10,7 +11,7 @@ import java.util.List;
 /*
  * 分页插件中间件
  * @date: 2019/6/22
- * @author: 潘顾昌 <guchang.pan@hand-china.com>
+ * @author guchang.pan@hand-china.com
  * @version: 0.0.1
  * @copyright Copyright (c) 2019, Hand
  */
@@ -30,7 +31,7 @@ public class PageHelperUtil {
         String[] split = result.split(",");
         Arrays.stream(split).forEach(obj->{
             String[] split1 = obj.split(" ");
-            String underline = StringUtil.camelhumpToUnderline(split1[0]);
+            String underline = StrUtil.toUnderlineCase(split1[0]);
             stringBuilder.append(",");
             stringBuilder.append(underline);
             stringBuilder.append(" ");
@@ -40,7 +41,7 @@ public class PageHelperUtil {
         return finalResult;
     }
     /**
-     * 将猪齿鱼的PageInfo转换成gitlab的PageInfo。
+     * 将猪齿鱼的PageInfo转换成github的PageInfo。
      * @param pageInfo
      * @param objectList
      * @return

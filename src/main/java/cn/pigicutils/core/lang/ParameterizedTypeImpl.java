@@ -10,8 +10,8 @@ import java.lang.reflect.Type;
 /**
  * {@link ParameterizedType} 接口实现，用于重新定义泛型类型
  * 
- * @author looly
- * @since 4.5.7
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ParameterizedTypeImpl implements ParameterizedType, Serializable {
 	private static final long serialVersionUID = 1L;

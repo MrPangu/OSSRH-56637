@@ -10,7 +10,7 @@ package cn.pigicutils.core.lang;
  * </pre>
  * 
  * @param <T> 被编辑对象类型
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 @FunctionalInterface
 public interface Editor<T> {

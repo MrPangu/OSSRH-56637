@@ -9,8 +9,8 @@ import java.nio.file.WatchEvent;
  * 跳过所有事件处理Watcher<br>
  * 用户继承此类后实现需要监听的方法
  * 
- * @author Looly
- * @since 3.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class IgnoreWatcher implements Watcher {
 

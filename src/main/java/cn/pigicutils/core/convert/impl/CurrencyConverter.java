@@ -7,8 +7,8 @@ import java.util.Currency;
 /**
  * 货币{@link Currency} 转换器
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class CurrencyConverter extends AbstractConverter<Currency> {
 	private static final long serialVersionUID = 1L;

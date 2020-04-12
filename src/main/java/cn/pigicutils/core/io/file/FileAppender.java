@@ -15,8 +15,8 @@ import java.util.List;
  * 此类只有在写入文件时打开文件，并在写入结束后关闭之。因此此类不需要关闭<br>
  * 在调用append方法后会缓存于内存，只有超过容量后才会一次性写入文件，因此内存中随时有剩余未写入文件的内容，在最后必须调用flush方法将剩余内容刷入文件
  * 
- * @author looly
- * @since 3.1.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class FileAppender implements Serializable{
 	private static final long serialVersionUID = 1L;

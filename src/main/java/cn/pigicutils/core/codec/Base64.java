@@ -14,7 +14,7 @@ import java.nio.charset.Charset;
  * base64编码是用64（2的6次方）个ASCII字符来表示256（2的8次方）个ASCII字符，<br>
  * 也就是三位二进制数组经过编码后变为四位的ASCII字符显示，长度比原来增加1/3。
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Base64 {
@@ -37,7 +37,7 @@ public class Base64 {
 	 * @param arr 被编码的数组
 	 * @param lineSep 在76个char之后是CRLF还是EOF
 	 * @return 编码后的bytes
-	 * @since 3.0.6
+	 *
 	 */
 	public static byte[] encodeUrlSafe(byte[] arr, boolean lineSep) {
 		return Base64Encoder.encodeUrlSafe(arr, lineSep);
@@ -58,7 +58,7 @@ public class Base64 {
 	 * 
 	 * @param source 被编码的base64字符串
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(CharSequence source) {
 		return Base64Encoder.encodeUrlSafe(source);
@@ -81,7 +81,7 @@ public class Base64 {
 	 * @param source 被编码的base64字符串
 	 * @param charset 字符集
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(CharSequence source, String charset) {
 		return Base64Encoder.encodeUrlSafe(source, CharsetUtil.charset(charset));
@@ -104,7 +104,7 @@ public class Base64 {
 	 * @param source 被编码的base64字符串
 	 * @param charset 字符集
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(CharSequence source, Charset charset) {
 		return Base64Encoder.encodeUrlSafe(source, charset);
@@ -125,7 +125,7 @@ public class Base64 {
 	 * 
 	 * @param source 被编码的base64字符串
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 */
 	public static String encodeUrlSafe(byte[] source) {
 		return Base64Encoder.encodeUrlSafe(source);
@@ -136,7 +136,7 @@ public class Base64 {
 	 * 
 	 * @param in 被编码base64的流（一般为图片流或者文件流）
 	 * @return 被加密后的字符串
-	 * @since 4.0.9
+	 *
 	 */
 	public static String encode(InputStream in) {
 		return Base64Encoder.encode(IoUtil.readBytes(in));
@@ -147,7 +147,7 @@ public class Base64 {
 	 * 
 	 * @param in 被编码base64的流（一般为图片流或者文件流）
 	 * @return 被加密后的字符串
-	 * @since 4.0.9
+	 *
 	 */
 	public static String encodeUrlSafe(InputStream in) {
 		return Base64Encoder.encodeUrlSafe(IoUtil.readBytes(in));
@@ -158,7 +158,7 @@ public class Base64 {
 	 * 
 	 * @param file 被编码base64的文件
 	 * @return 被加密后的字符串
-	 * @since 4.0.9
+	 *
 	 */
 	public static String encode(File file) {
 		return Base64Encoder.encode(FileUtil.readBytes(file));
@@ -169,7 +169,7 @@ public class Base64 {
 	 * 
 	 * @param file 被编码base64的文件
 	 * @return 被加密后的字符串
-	 * @since 4.0.9
+	 *
 	 */
 	public static String encodeUrlSafe(File file) {
 		return Base64Encoder.encodeUrlSafe(FileUtil.readBytes(file));
@@ -194,7 +194,7 @@ public class Base64 {
 	 * @param source 被编码的base64字符串
 	 * @param charset 字符集
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 * @deprecated 编码参数无意义，作废
 	 */
 	@Deprecated
@@ -221,7 +221,7 @@ public class Base64 {
 	 * @param source 被编码的base64字符串
 	 * @param charset 字符集
 	 * @return 被加密后的字符串
-	 * @since 3.0.6
+	 *
 	 * @deprecated 编码参数无意义，作废
 	 */
 	@Deprecated
@@ -248,7 +248,7 @@ public class Base64 {
 	 * 
 	 * @param source 被解码的base64字符串
 	 * @return 被加密后的字符串
-	 * @since 4.3.2
+	 *
 	 */
 	public static String decodeStrGbk(CharSequence source) {
 		return Base64Decoder.decodeStr(source, CharsetUtil.CHARSET_GBK);
@@ -292,7 +292,7 @@ public class Base64 {
 	 * @param base64 被解码的base64字符串
 	 * @param destFile 目标文件
 	 * @return 目标文件
-	 * @since 4.0.9
+	 *
 	 */
 	public static File decodeToFile(CharSequence base64, File destFile) {
 		return FileUtil.writeBytes(Base64Decoder.decode(base64), destFile);
@@ -304,7 +304,7 @@ public class Base64 {
 	 * @param base64 被解码的base64字符串
 	 * @param out 写出到的流
 	 * @param isCloseOut 是否关闭输出流
-	 * @since 4.0.9
+	 *
 	 */
 	public static void decodeToStream(CharSequence base64, OutputStream out, boolean isCloseOut) {
 		IoUtil.write(out, isCloseOut, Base64Decoder.decode(base64));

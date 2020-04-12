@@ -1,5 +1,6 @@
 package com.pigic.hzeropigic.utils;
 
+import io.choerodon.core.exception.CommonException;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.CollectionUtils;
 
@@ -128,7 +129,7 @@ public class RedisUtil {
      */
     public static long incr(String key, long delta){
         if(delta<0){
-            throw new RuntimeException("递增因子必须大于0");
+            throw new CommonException("递增因子必须大于0");
         }
         return redisTemplate.opsForValue().increment(key, delta);
     }
@@ -141,7 +142,7 @@ public class RedisUtil {
      */
     public static long decr(String key, long delta){
         if(delta<0){
-            throw new RuntimeException("递减因子必须大于0");
+            throw new CommonException("递减因子必须大于0");
         }
         return redisTemplate.opsForValue().increment(key, -delta);
     }

@@ -26,7 +26,7 @@ import java.util.Map;
  * 如果监听的Path不存在，则递归创建空目录然后监听此空目录<br>
  * 递归监听目录时，并不会监听新创建的目录
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class WatchMonitor extends Thread implements Closeable, Serializable{

@@ -13,8 +13,8 @@ import java.lang.reflect.Type;
 /**
  * {@link Reference}转换器
  * 
- * @author Looly
- * @since 3.0.8
+ * @author guchang.pan@hand-china.com
+ *
  */
 @SuppressWarnings("rawtypes")
 public class ReferenceConverter extends AbstractConverter<Reference> {

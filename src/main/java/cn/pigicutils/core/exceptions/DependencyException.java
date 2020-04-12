@@ -1,14 +1,15 @@
 package cn.pigicutils.core.exceptions;
 
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 依赖异常
  * 
- * @author xiaoleilu
- * @since 4.0.10
+ * @author guchang.pan@hand-china.com
+ *
  */
-public class DependencyException extends RuntimeException {
+public class DependencyException extends CommonException {
 	private static final long serialVersionUID = 8247610319171014183L;
 
 	public DependencyException(Throwable e) {

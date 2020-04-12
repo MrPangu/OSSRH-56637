@@ -6,7 +6,7 @@ import cn.pigicutils.core.lang.MurmurHash;
  * Hash算法大全<br>
  * 推荐使用FNV1算法
  * 
- * @author Goodzzp,Looly
+ * @author guchang.pan@hand-china.com
  */
 public class HashUtil {
 
@@ -435,7 +435,7 @@ public class HashUtil {
 	 * 
 	 * @param obj 对象
 	 * @return hash值
-	 * @since 4.2.2
+	 *
 	 */
 	public static int identityHashCode(Object obj) {
 		return System.identityHashCode(obj);
@@ -446,7 +446,7 @@ public class HashUtil {
 	 * 
 	 * @param data 数据
 	 * @return hash值
-	 * @since 4.3.3
+	 *
 	 */
 	public static int murmur32(byte[] data) {
 		return MurmurHash.hash32(data);
@@ -457,7 +457,7 @@ public class HashUtil {
 	 * 
 	 * @param data 数据
 	 * @return hash值
-	 * @since 4.3.3
+	 *
 	 */
 	public static long murmur64(byte[] data) {
 		return MurmurHash.hash64(data);
@@ -468,7 +468,7 @@ public class HashUtil {
 	 * 
 	 * @param data 数据
 	 * @return hash值
-	 * @since 4.3.3
+	 *
 	 */
 	public static long[] murmur128(byte[] data) {
 		return MurmurHash.hash128(data);

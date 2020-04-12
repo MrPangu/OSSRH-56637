@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * CSV数据，包括头部信息和行数据，参考：FastCSV
  *
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public class CsvData implements Iterable<CsvRow>, Serializable {
 	private static final long serialVersionUID = 1L;

@@ -4,7 +4,7 @@ package cn.pigicutils.core.lang.caller;
  * 调用者接口<br>
  * 可以通过此接口的实现类方法获取调用者、多级调用者以及判断是否被调用
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public interface Caller {

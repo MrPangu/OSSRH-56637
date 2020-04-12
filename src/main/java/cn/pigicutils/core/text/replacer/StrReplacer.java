@@ -9,8 +9,8 @@ import java.io.Serializable;
  * 抽象字符串替换类<br>
  * 通过实现replace方法实现局部替换逻辑
  * 
- * @author looly
- * @since 4.1.5
+ * @author guchang.pan@hand-china.com
+ *
  */
 public abstract class StrReplacer implements Replacer<CharSequence>, Serializable{
 	private static final long serialVersionUID = 1L;

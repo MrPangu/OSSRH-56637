@@ -6,8 +6,8 @@ import java.util.TimeZone;
 /**
  * 日期基本信息获取接口
  * 
- * @author Looly
- * @since 2.16.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public interface DateBasic {
 	/**

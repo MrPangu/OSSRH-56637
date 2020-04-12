@@ -12,8 +12,8 @@ import java.util.concurrent.atomic.AtomicLong;
  * ThreadFactory创建器<br>
  * 参考：Guava的ThreadFactoryBuilder
  * 
- * @author looly
- * @since 4.1.9
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ThreadFactoryBuilder implements Builder<ThreadFactory>{
 	private static final long serialVersionUID = 1L;

@@ -7,8 +7,8 @@ import cn.pigicutils.core.util.StrUtil;
  * 文本相似度计算<br>
  * 工具类提供者：【杭州】fineliving
  * 
- * @author fanqun
- * @since 3.2.3
+ * @author guchang.pan@hand-china.com
+ *
  **/
 public class TextSimilarity {
 

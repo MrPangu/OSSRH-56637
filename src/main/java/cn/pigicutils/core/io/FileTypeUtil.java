@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 
  * <p>需要注意的是，xlsx、docx等Office2007格式，全部识别为zip，因为新版采用了OpenXML格式，这些格式本质上是XML文件打包为zip</p>
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public final class FileTypeUtil {

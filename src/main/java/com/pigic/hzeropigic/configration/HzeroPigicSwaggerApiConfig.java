@@ -8,7 +8,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * description
  *
- * @author like.zhang@hand-china.com 2019/01/10 16:28
+ * @author guchang.pan@hand-china.com
  */
 @Configuration
 public class HzeroPigicSwaggerApiConfig {

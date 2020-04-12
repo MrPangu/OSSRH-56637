@@ -7,7 +7,7 @@ import cn.pigicutils.core.util.StrUtil;
 /**
  * 字符转换器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class CharacterConverter extends AbstractConverter<Character> {

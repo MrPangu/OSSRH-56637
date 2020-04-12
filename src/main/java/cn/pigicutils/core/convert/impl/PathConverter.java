@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 
 /**
  * 字符串转换器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class PathConverter extends AbstractConverter<Path> {

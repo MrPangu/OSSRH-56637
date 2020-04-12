@@ -5,13 +5,10 @@ import cn.pigicutils.core.util.StrUtil;
 /**
  * 验证异常
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
 public class ValidateException extends StatefulException {
 	private static final long serialVersionUID = 6057602589533840889L;
-
-	public ValidateException() {
-	}
 
 	public ValidateException(String msg) {
 		super(msg);

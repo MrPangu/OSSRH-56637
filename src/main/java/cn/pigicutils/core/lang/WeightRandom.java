@@ -25,8 +25,8 @@ import java.util.TreeMap;
  * <p>
  * 
  * @param <T> 权重随机获取的对象类型
- * @author looly
- * @since 3.3.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class WeightRandom<T> implements Serializable {
 	private static final long serialVersionUID = -8244697995702786499L;
@@ -148,7 +148,7 @@ public class WeightRandom<T> implements Serializable {
 	/**
 	 * 带有权重的对象包装
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 * @param <T> 对象类型
 	 */

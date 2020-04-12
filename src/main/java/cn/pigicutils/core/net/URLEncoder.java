@@ -20,7 +20,7 @@ import java.util.BitSet;
  * 4.在每个 name=value 对之间放置 & 符号。
  * </pre>
  * 
- * @author looly,
+ * @author guchang.pan@hand-china.com
  *
  */
 public class URLEncoder implements Serializable{

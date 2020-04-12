@@ -18,7 +18,7 @@ import java.util.TimeZone;
 /**
  * 包装java.util.Date
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  *
  */
 public class DateTime extends Date {
@@ -88,7 +88,7 @@ public class DateTime extends Date {
 	 * 当前时间
 	 * 
 	 * @param timeZone 时区
-	 * @since 4.1.2
+	 *
 	 */
 	public DateTime(TimeZone timeZone) {
 		this(System.currentTimeMillis(), timeZone);
@@ -108,7 +108,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param date 日期
 	 * @param timeZone 时区
-	 * @since 4.1.2
+	 *
 	 */
 	public DateTime(Date date, TimeZone timeZone) {
 		this(date.getTime(), timeZone);
@@ -127,7 +127,7 @@ public class DateTime extends Date {
 	 * 给定日期毫秒数的构造
 	 * 
 	 * @param timeMillis 日期毫秒数
-	 * @since 4.1.2
+	 *
 	 */
 	public DateTime(long timeMillis) {
 		this(timeMillis, (TimeZone) null);
@@ -138,7 +138,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param timeMillis 日期毫秒数
 	 * @param timeZone 时区
-	 * @since 4.1.2
+	 *
 	 */
 	public DateTime(long timeMillis, TimeZone timeZone) {
 		super(timeMillis);
@@ -206,7 +206,7 @@ public class DateTime extends Date {
 	 * @param datePart 调整的部分 {@link DateField}
 	 * @param offset 偏移量，正数为向后偏移，负数为向前偏移
 	 * @return 如果此对象为可变对象，返回自身，否则返回新对象
-	 * @since 3.0.9
+	 *
 	 */
 	public DateTime offsetNew(DateField datePart, int offset) {
 		final Calendar cal = toCalendar();
@@ -484,7 +484,7 @@ public class DateTime extends Date {
 	 * 是否为周末，周末指周六或者周日
 	 * 
 	 * @return 是否为周末，周末指周六或者周日
-	 * @since 4.1.14
+	 *
 	 */
 	public boolean isWeekend() {
 		final int dayOfWeek = dayOfWeek();
@@ -553,7 +553,7 @@ public class DateTime extends Date {
 	 * 考虑到很多框架（例如Hibernate）的兼容性，提供此方法返回JDK原生的Date对象
 	 * 
 	 * @return {@link Date}
-	 * @since 3.2.2
+	 *
 	 */
 	public Date toJdkDate() {
 		return new Date(this.getTime());
@@ -617,7 +617,7 @@ public class DateTime extends Date {
 	 * @param beginDate 起始日期
 	 * @param endDate 结束日期
 	 * @return 是否在范围内
-	 * @since 3.0.8
+	 *
 	 */
 	public boolean isIn(Date beginDate, Date endDate) {
 		long beginMills = beginDate.getTime();
@@ -632,7 +632,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param date 日期
 	 * @return 是否在给定日期之前
-	 * @since 4.1.3
+	 *
 	 */
 	public boolean isBefore(Date date) {
 		if (null == date) {
@@ -646,7 +646,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param date 日期
 	 * @return 是否在给定日期之前或与给定日期相等
-	 * @since 3.0.9
+	 *
 	 */
 	public boolean isBeforeOrEquals(Date date) {
 		if (null == date) {
@@ -660,7 +660,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param date 日期
 	 * @return 是否在给定日期之后
-	 * @since 4.1.3
+	 *
 	 */
 	public boolean isAfter(Date date) {
 		if (null == date) {
@@ -674,7 +674,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param date 日期
 	 * @return 是否在给定日期之后或与给定日期相等
-	 * @since 3.0.9
+	 *
 	 */
 	public boolean isAfterOrEquals(Date date) {
 		if (null == date) {
@@ -745,7 +745,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param timeZone 时区
 	 * @return this
-	 * @since 4.1.2
+	 *
 	 */
 	public DateTime setTimeZone(TimeZone timeZone) {
 		this.timeZone = timeZone;
@@ -769,7 +769,7 @@ public class DateTime extends Date {
 	 * 时区使用当前地区的默认时区
 	 * 
 	 * @return "yyyy-MM-dd yyyy-MM-dd HH:mm:ss " 格式字符串
-	 * @since 4.1.14
+	 *
 	 */
 	public String toStringDefaultTimeZone() {
 		return toString(TimeZone.getDefault());
@@ -781,7 +781,7 @@ public class DateTime extends Date {
 	 * 
 	 * @param timeZone 时区
 	 * @return "yyyy-MM-dd yyyy-MM-dd HH:mm:ss " 格式字符串
-	 * @since 4.1.14
+	 *
 	 */
 	public String toString(TimeZone timeZone) {
 		if (null != timeZone) {
@@ -796,7 +796,7 @@ public class DateTime extends Date {
 	 * 转为"yyyy-MM-dd " 格式字符串
 	 * 
 	 * @return "yyyy-MM-dd " 格式字符串
-	 * @since 4.0.0
+	 *
 	 */
 	public String toDateStr() {
 		if (null != this.timeZone) {
@@ -811,7 +811,7 @@ public class DateTime extends Date {
 	 * 转为"HH:mm:ss" 格式字符串
 	 * 
 	 * @return "HH:mm:ss" 格式字符串
-	 * @since 4.1.4
+	 *
 	 */
 	public String toTimeStr() {
 		if (null != this.timeZone) {

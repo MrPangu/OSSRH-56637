@@ -9,8 +9,8 @@ import java.io.IOException;
 /**
  * 系统剪贴板工具类
  * 
- * @author looly
- * @since 3.2.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ClipboardUtil {
 
@@ -93,7 +93,7 @@ public class ClipboardUtil {
 	 * 
 	 * @param content
 	 * @return 文本
-	 * @since 4.5.6
+	 *
 	 */
 	public static String getStr(Transferable content) {
 		return (String) get(content, DataFlavor.stringFlavor);
@@ -122,7 +122,7 @@ public class ClipboardUtil {
 	 * 
 	 * @param content
 	 * @return 图片
-	 * @since 4.5.6
+	 *
 	 */
 	public static Image getImage(Transferable content) {
 		return (Image) get(content, DataFlavor.imageFlavor);
@@ -132,7 +132,7 @@ public class ClipboardUtil {
 	 * 监听剪贴板修改事件
 	 * 
 	 * @param listener 监听处理接口
-	 * @since 4.5.6
+	 *
 	 * @see ClipboardMonitor#listen(boolean)
 	 */
 	public static void listen(ClipboardListener listener) {
@@ -144,7 +144,7 @@ public class ClipboardUtil {
 	 * 
 	 * @param listener 监听处理接口
 	 * @param sync 是否同步阻塞
-	 * @since 4.5.6
+	 *
 	 * @see ClipboardMonitor#listen(boolean)
 	 */
 	public static void listen(ClipboardListener listener, boolean sync) {
@@ -158,7 +158,7 @@ public class ClipboardUtil {
 	 * @param delay 响应延迟，当从第二次开始，延迟一定毫秒数等待剪贴板可以获取
 	 * @param listener 监听处理接口
 	 * @param sync 是否同步阻塞
-	 * @since 4.5.6
+	 *
 	 * @see ClipboardMonitor#listen(boolean)
 	 */
 	public static void listen(int tryCount, long delay, ClipboardListener listener, boolean sync) {

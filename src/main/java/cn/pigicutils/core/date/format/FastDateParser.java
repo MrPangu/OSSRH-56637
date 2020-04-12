@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * {@link java.text.SimpleDateFormat} 的线程安全版本，用于解析日期字符串并转换为 {@link Date} 对象<br>
  * Thanks to Apache Commons Lang 3.5
  * 
- * @since 2.16.2
+ *
  * @see FastDatePrinter
  */
 class FastDateParser extends AbstractDateBasic implements DateParser {

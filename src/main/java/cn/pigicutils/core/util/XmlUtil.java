@@ -35,7 +35,7 @@ import java.util.Map.Entry;
  * 此工具使用w3c dom工具，不需要依赖第三方包。<br>
  * 工具类封装了XML文档的创建、读取、写出和部分XML操作
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  * 
  */
 public class XmlUtil {
@@ -83,7 +83,7 @@ public class XmlUtil {
 	 * 
 	 * @param pathOrContent 内容或路径
 	 * @return XML文档对象
-	 * @since 3.0.9
+	 *
 	 */
 	public static Document readXML(String pathOrContent) {
 		if (StrUtil.startWith(pathOrContent, '<')) {
@@ -99,7 +99,7 @@ public class XmlUtil {
 	 * @param inputStream XML流
 	 * @return XML文档对象
 	 * @throws UtilException IO异常或转换异常
-	 * @since 3.0.9
+	 *
 	 */
 	public static Document readXML(InputStream inputStream) throws UtilException {
 		return readXML(new InputSource(inputStream));
@@ -111,7 +111,7 @@ public class XmlUtil {
 	 * @param reader XML流
 	 * @return XML文档对象
 	 * @throws UtilException IO异常或转换异常
-	 * @since 3.0.9
+	 *
 	 */
 	public static Document readXML(Reader reader) throws UtilException {
 		return readXML(new InputSource(reader));
@@ -123,7 +123,7 @@ public class XmlUtil {
 	 * 
 	 * @param source {@link InputSource}
 	 * @return XML文档对象
-	 * @since 3.0.9
+	 *
 	 */
 	public static Document readXML(InputSource source) {
 		final DocumentBuilder builder = createDocumentBuilder();
@@ -167,7 +167,7 @@ public class XmlUtil {
 	 * @param xmlStr XML内容
 	 * @return 对象
 	 * @throws IOException IO异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static <T> T readObjectFromXml(String xmlStr) throws IOException {
 		return readObjectFromXml(new InputSource(StrUtil.getReader(xmlStr)));
@@ -180,7 +180,7 @@ public class XmlUtil {
 	 * @param source {@link InputSource}
 	 * @return 对象
 	 * @throws IOException IO异常
-	 * @since 3.2.0
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T readObjectFromXml(InputSource source) throws IOException {
@@ -215,7 +215,7 @@ public class XmlUtil {
 	 * @param doc XML文档
 	 * @param isPretty 是否格式化输出
 	 * @return XML字符串
-	 * @since 3.0.9
+	 *
 	 */
 	public static String toStr(Document doc, boolean isPretty) {
 		return toStr(doc, CharsetUtil.UTF_8, isPretty);
@@ -229,7 +229,7 @@ public class XmlUtil {
 	 * @param charset 编码
 	 * @param isPretty 是否格式化输出
 	 * @return XML字符串
-	 * @since 3.0.9
+	 *
 	 */
 	public static String toStr(Document doc, String charset, boolean isPretty) {
 		final StringWriter writer = StrUtil.getWriter();
@@ -246,7 +246,7 @@ public class XmlUtil {
 	 * 
 	 * @param doc {@link Document} XML文档
 	 * @return 格式化后的XML字符串
-	 * @since 4.4.5
+	 *
 	 */
 	public static String format(Document doc) {
 		return toStr(doc, true);
@@ -257,7 +257,7 @@ public class XmlUtil {
 	 * 
 	 * @param xmlStr XML字符串
 	 * @return 格式化后的XML字符串
-	 * @since 4.4.5
+	 *
 	 */
 	public static String format(String xmlStr) {
 		return format(parseXml(xmlStr));
@@ -305,7 +305,7 @@ public class XmlUtil {
 	 * @param writer 写出的Writer，Writer决定了输出XML的编码
 	 * @param charset 编码
 	 * @param indent 格式化输出中缩进量，小于1表示不格式化输出
-	 * @since 3.0.9
+	 *
 	 */
 	public static void write(Node node, Writer writer, String charset, int indent) {
 		transform(new DOMSource(node), new StreamResult(writer), charset, indent);
@@ -318,7 +318,7 @@ public class XmlUtil {
 	 * @param out 写出的Writer，Writer决定了输出XML的编码
 	 * @param charset 编码
 	 * @param indent 格式化输出中缩进量，小于1表示不格式化输出
-	 * @since 4.0.8
+	 *
 	 */
 	public static void write(Node node, OutputStream out, String charset, int indent) {
 		transform(new DOMSource(node), new StreamResult(out), charset, indent);
@@ -332,7 +332,7 @@ public class XmlUtil {
 	 * @param result 目标
 	 * @param charset 编码
 	 * @param indent 格式化输出中缩进量，小于1表示不格式化输出
-	 * @since 4.0.9
+	 *
 	 */
 	public static void transform(Source source, Result result, String charset, int indent) {
 		final TransformerFactory factory = TransformerFactory.newInstance();
@@ -357,7 +357,7 @@ public class XmlUtil {
 	 * 创建的XML默认是utf8编码，修改编码的过程是在toStr和toFile方法里，既XML在转为文本的时候才定义编码
 	 * 
 	 * @return XML文档
-	 * @since 4.0.8
+	 *
 	 */
 	public static Document createXml() {
 		return createDocumentBuilder().newDocument();
@@ -367,7 +367,7 @@ public class XmlUtil {
 	 * 创建 DocumentBuilder
 	 * 
 	 * @return DocumentBuilder
-	 * @since 4.1.2
+	 *
 	 */
 	public static DocumentBuilder createDocumentBuilder() {
 		final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -402,7 +402,7 @@ public class XmlUtil {
 	 * @param doc {@link Document}
 	 * @return 根节点
 	 * @see Document#getDocumentElement()
-	 * @since 3.0.8
+	 *
 	 */
 	public static Element getRootElement(Document doc) {
 		return (null == doc) ? null : doc.getDocumentElement();
@@ -540,7 +540,7 @@ public class XmlUtil {
 	 * Xpath相关文章：https://www.ibm.com/developerworks/cn/xml/x-javaxpathapi.html
 	 * 
 	 * @return {@link XPath}
-	 * @since 3.2.0
+	 *
 	 */
 	public static XPath createXPath() {
 		return XPathFactory.newInstance().newXPath();
@@ -553,7 +553,7 @@ public class XmlUtil {
 	 * @param expression XPath表达式
 	 * @param source 资源，可以是Docunent、Node节点等
 	 * @return 匹配返回类型的值
-	 * @since 4.0.9
+	 *
 	 */
 	public static Element getElementByXPath(String expression, Object source) {
 		return (Element) getNodeByXPath(expression, source);
@@ -566,7 +566,7 @@ public class XmlUtil {
 	 * @param expression XPath表达式
 	 * @param source 资源，可以是Docunent、Node节点等
 	 * @return NodeList
-	 * @since 4.0.9
+	 *
 	 */
 	public static NodeList getNodeListByXPath(String expression, Object source) {
 		return (NodeList) getByXPath(expression, source, XPathConstants.NODESET);
@@ -579,7 +579,7 @@ public class XmlUtil {
 	 * @param expression XPath表达式
 	 * @param source 资源，可以是Docunent、Node节点等
 	 * @return 匹配返回类型的值
-	 * @since 4.0.9
+	 *
 	 */
 	public static Node getNodeByXPath(String expression, Object source) {
 		return (Node) getByXPath(expression, source, XPathConstants.NODE);
@@ -593,7 +593,7 @@ public class XmlUtil {
 	 * @param source 资源，可以是Docunent、Node节点等
 	 * @param returnType 返回类型，{@link XPathConstants}
 	 * @return 匹配返回类型的值
-	 * @since 3.2.0
+	 *
 	 */
 	public static Object getByXPath(String expression, Object source, QName returnType) {
 		final XPath xPath = createXPath();
@@ -620,7 +620,7 @@ public class XmlUtil {
 	 * 
 	 * @param string 被替换的字符串
 	 * @return 替换后的字符串
-	 * @since 4.0.8
+	 *
 	 */
 	public static String escape(String string) {
 		final StringBuilder sb = new StringBuilder(string.length());
@@ -654,7 +654,7 @@ public class XmlUtil {
 	 *
 	 * @param xmlStr XML字符串
 	 * @return XML数据转换后的Map
-	 * @since 4.0.8
+	 *
 	 */
 	public static Map<String, Object> xmlToMap(String xmlStr) {
 		return xmlToMap(xmlStr, new HashMap<String, Object>());
@@ -665,7 +665,7 @@ public class XmlUtil {
 	 *
 	 * @param node XML节点
 	 * @return XML数据转换后的Map
-	 * @since 4.0.8
+	 *
 	 */
 	public static Map<String, Object> xmlToMap(Node node) {
 		return xmlToMap(node, new HashMap<String, Object>());
@@ -678,7 +678,7 @@ public class XmlUtil {
 	 * @param xmlStr XML字符串
 	 * @param result 结果Map类型
 	 * @return XML数据转换后的Map
-	 * @since 4.0.8
+	 *
 	 */
 	public static Map<String, Object> xmlToMap(String xmlStr, Map<String, Object> result) {
 		final Document doc = parseXml(xmlStr);
@@ -694,7 +694,7 @@ public class XmlUtil {
 	 * @param node XML节点
 	 * @param result 结果Map类型
 	 * @return XML数据转换后的Map
-	 * @since 4.0.8
+	 *
 	 */
 	public static Map<String, Object> xmlToMap(Node node, Map<String, Object> result) {
 		if (null == result) {
@@ -720,7 +720,7 @@ public class XmlUtil {
 	 *
 	 * @param data Map类型数据
 	 * @return XML格式的字符串
-	 * @since 4.0.8
+	 *
 	 */
 	public static String mapToXmlStr(Map<?, ?> data, String rootName) {
 		return toStr(mapToXml(data, rootName));
@@ -731,7 +731,7 @@ public class XmlUtil {
 	 *
 	 * @param data Map类型数据
 	 * @return XML
-	 * @since 4.0.9
+	 *
 	 */
 	public static Document mapToXml(Map<?, ?> data, String rootName) {
 		final Document doc = createXml();
@@ -746,7 +746,7 @@ public class XmlUtil {
 	 * 
 	 * @param node 节点
 	 * @return 是否为{@link Element} 类型节点
-	 * @since 4.0.8
+	 *
 	 */
 	public static boolean isElement(Node node) {
 		return (null == node) ? false : Node.ELEMENT_NODE == node.getNodeType();
@@ -758,7 +758,7 @@ public class XmlUtil {
 	 * @param node 节点
 	 * @param tagName 标签名
 	 * @return 子节点
-	 * @since 4.0.9
+	 *
 	 */
 	public static Element appendChild(Node node, String tagName) {
 		Document doc = (node instanceof Document) ? (Document) node : node.getOwnerDocument();
@@ -774,7 +774,7 @@ public class XmlUtil {
 	 * @param doc {@link Document}
 	 * @param element 节点
 	 * @param data Map类型数据
-	 * @since 4.0.8
+	 *
 	 */
 	private static void mapToXml(Document doc, Element element, Map<?, ?> data) {
 		Element filedEle;

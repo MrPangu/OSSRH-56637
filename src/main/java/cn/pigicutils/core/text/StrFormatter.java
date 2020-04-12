@@ -6,7 +6,7 @@ import cn.pigicutils.core.util.StrUtil;
 /**
  * 字符串格式化工具
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class StrFormatter {

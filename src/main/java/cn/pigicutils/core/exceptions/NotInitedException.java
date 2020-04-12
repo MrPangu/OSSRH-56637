@@ -1,13 +1,14 @@
 package cn.pigicutils.core.exceptions;
 
 import cn.pigicutils.core.util.StrUtil;
+import io.choerodon.core.exception.CommonException;
 
 /**
  * 未初始化异常
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  */
-public class NotInitedException extends RuntimeException {
+public class NotInitedException extends CommonException {
 	private static final long serialVersionUID = 8247610319171014183L;
 
 	public NotInitedException(Throwable e) {

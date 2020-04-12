@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
 /**
  * Base64解码实现
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Base64Decoder {
@@ -158,7 +158,7 @@ public class Base64Decoder {
 	/**
 	 * int包装，使之可变
 	 * 
-	 * @author looly
+	 * @author guchang.pan@hand-china.com
 	 *
 	 */
 	private static class IntWrapper {

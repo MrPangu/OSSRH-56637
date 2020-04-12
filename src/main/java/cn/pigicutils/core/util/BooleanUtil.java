@@ -5,8 +5,8 @@ import cn.pigicutils.core.convert.Convert;
 /**
  * Boolean类型相关工具类
  * 
- * @author looly
- * @since 4.1.16
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class BooleanUtil {
 
@@ -439,7 +439,7 @@ public class BooleanUtil {
 	 * 
 	 * @param clazz 类
 	 * @return 是否为Boolean或者boolean
-	 * @since 4.5.2
+	 *
 	 */
 	public static boolean isBoolean(Class<?> clazz) {
 		return (clazz == Boolean.class || clazz == boolean.class);

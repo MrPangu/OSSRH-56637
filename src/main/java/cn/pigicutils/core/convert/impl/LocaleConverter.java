@@ -10,8 +10,8 @@ import java.util.Locale;
  * {@link Locale}对象转换器<br>
  * 只提供String转换支持
  * 
- * @author Looly
- * @since 4.5.2
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class LocaleConverter extends AbstractConverter<Locale> {
 	private static final long serialVersionUID = 1L;

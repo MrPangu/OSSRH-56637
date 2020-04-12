@@ -1,7 +1,7 @@
 /**
  * BaseN以及BCD编码封装
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 package cn.pigicutils.core.codec;

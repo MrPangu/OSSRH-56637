@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 数组转换器，包括原始类型数组
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  */
 public class ArrayConverter extends AbstractConverter<Object> {
 	private static final long serialVersionUID = 1L;

@@ -8,16 +8,16 @@ import java.lang.reflect.Modifier;
 /**
  * 修饰符工具类
  * 
- * @author looly
- * @since 4.0.5
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class ModifierUtil {
 
 	/**
 	 * 修饰符枚举
 	 * 
-	 * @author looly
-	 * @since 4.0.5
+	 * @author guchang.pan@hand-china.com
+	 *
 	 */
 	public static enum ModifierType {
 		/** public修饰符，所有类都能访问 */
@@ -165,7 +165,7 @@ public class ModifierUtil {
 	 * 
 	 * @param field 字段
 	 * @return 是否是static
-	 * @since 4.0.8
+	 *
 	 */
 	public static boolean isStatic(Field field) {
 		return hasModifier(field, ModifierType.STATIC);
@@ -176,7 +176,7 @@ public class ModifierUtil {
 	 * 
 	 * @param method 方法
 	 * @return 是否是static
-	 * @since 4.0.8
+	 *
 	 */
 	public static boolean isStatic(Method method) {
 		return hasModifier(method, ModifierType.STATIC);
@@ -187,7 +187,7 @@ public class ModifierUtil {
 	 * 
 	 * @param clazz 类
 	 * @return 是否是static
-	 * @since 4.0.8
+	 *
 	 */
 	public static boolean isStatic(Class<?> clazz) {
 		return hasModifier(clazz, ModifierType.STATIC);

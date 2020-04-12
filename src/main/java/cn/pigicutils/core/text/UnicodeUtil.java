@@ -7,8 +7,8 @@ import cn.pigicutils.core.util.StrUtil;
 /**
  * 提供Unicode字符串和普通字符串之间的转换
  * 
- * @author 兜兜毛毛, looly
- * @since 4.0.0
+ * @author guchang.pan@hand-china.com
+ *
  *
  */
 public class UnicodeUtil {

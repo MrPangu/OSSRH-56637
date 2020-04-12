@@ -1,7 +1,7 @@
 package com.pigic.hzeropigic.configration;
 
 /**
- * @Author: 潘顾昌
+ * @author guchang.pan@hand-china.com
  * @Date: 2019/2/21 22:47
  */
 

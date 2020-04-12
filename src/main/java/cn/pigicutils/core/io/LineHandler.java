@@ -2,7 +2,7 @@ package cn.pigicutils.core.io;
 
 /**
  * 行处理器
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public interface LineHandler {

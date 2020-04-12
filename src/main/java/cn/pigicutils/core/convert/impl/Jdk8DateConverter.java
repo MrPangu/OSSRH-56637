@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
  * java.time.Instant
  * </pre>
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Jdk8DateConverter extends AbstractConverter<Object> {

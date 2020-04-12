@@ -12,7 +12,7 @@ import java.util.*;
 /*
  * 树结构处理
  * @date: 2019/6/23
- * @author: 潘顾昌 <guchang.pan@hand-china.com>
+ * @author guchang.pan@hand-china.com
  * @version: 0.0.1
  * @copyright Copyright (c) 2019, Hand
  */

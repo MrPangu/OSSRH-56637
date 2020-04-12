@@ -2,7 +2,7 @@ package cn.pigicutils.core.text.escape;
 
 /**
  * 内部Escape工具类
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 class InternalEscapeUtil {

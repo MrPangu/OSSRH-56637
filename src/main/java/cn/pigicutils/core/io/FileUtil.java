@@ -27,7 +27,7 @@ import java.util.zip.Checksum;
 /**
  * 文件工具类
  * 
- * @author xiaoleilu
+ * @author guchang.pan@hand-china.com
  *
  */
 public class FileUtil {
@@ -52,7 +52,7 @@ public class FileUtil {
 	 * 是否为Windows环境
 	 * 
 	 * @return 是否为Windows环境
-	 * @since 3.0.9
+	 *
 	 */
 	public static boolean isWindows() {
 		return WINDOWS_SEPARATOR == File.separatorChar;
@@ -145,7 +145,7 @@ public class FileUtil {
 	 * @param path 当前遍历文件或目录的路径
 	 * @param fileFilter 文件过滤规则对象，选择要保留的文件，只对文件有效，不过滤目录
 	 * @return 文件列表
-	 * @since 3.2.0
+	 *
 	 */
 	public static List<File> loopFiles(String path, FileFilter fileFilter) {
 		return loopFiles(file(path), fileFilter);
@@ -188,7 +188,7 @@ public class FileUtil {
 	 * 
 	 * @param path 当前遍历文件或目录的路径
 	 * @return 文件列表
-	 * @since 3.2.0
+	 *
 	 */
 	public static List<File> loopFiles(String path) {
 		return loopFiles(file(path));
@@ -262,7 +262,7 @@ public class FileUtil {
 	 * 
 	 * @param path 文件路径
 	 * @return File
-	 * @since 4.1.4
+	 *
 	 */
 	public static File newFile(String path) {
 		return new File(path);
@@ -315,7 +315,7 @@ public class FileUtil {
 	 * @param directory 父目录
 	 * @param names 元素名（多层目录名）
 	 * @return the file 文件
-	 * @since 4.0.6
+	 *
 	 */
 	public static File file(File directory, String... names) {
 		Assert.notNull(directory, "directorydirectory must not be null");
@@ -338,7 +338,7 @@ public class FileUtil {
 	 * 元素名（多层目录名）
 	 * 
 	 * @return the file 文件
-	 * @since 4.0.6
+	 *
 	 */
 	public static File file(String... names) {
 		if (ArrayUtil.isEmpty(names)) {
@@ -383,7 +383,7 @@ public class FileUtil {
 	 * 获取临时文件路径（绝对路径）
 	 * 
 	 * @return 临时文件路径
-	 * @since 4.0.6
+	 *
 	 */
 	public static String getTmpDirPath() {
 		return System.getProperty("java.io.tmpdir");
@@ -393,7 +393,7 @@ public class FileUtil {
 	 * 获取临时文件目录
 	 * 
 	 * @return 临时文件目录
-	 * @since 4.0.6
+	 *
 	 */
 	public static File getTmpDir() {
 		return file(getTmpDirPath());
@@ -403,7 +403,7 @@ public class FileUtil {
 	 * 获取用户路径（绝对路径）
 	 * 
 	 * @return 用户路径
-	 * @since 4.0.6
+	 *
 	 */
 	public static String getUserHomePath() {
 		return System.getProperty("user.home");
@@ -413,7 +413,7 @@ public class FileUtil {
 	 * 获取用户目录
 	 * 
 	 * @return 用户目录
-	 * @since 4.0.6
+	 *
 	 */
 	public static File getUserHomeDir() {
 		return file(getUserHomePath());
@@ -686,7 +686,7 @@ public class FileUtil {
 	 * @param path 文件对象
 	 * @return 成功与否
 	 * @throws IORuntimeException IO异常
-	 * @since 4.4.2
+	 *
 	 */
 	public static boolean del(Path path) throws IORuntimeException {
 		if (Files.notExists(path)) {
@@ -730,7 +730,7 @@ public class FileUtil {
 	 * @param dirPath 文件夹路径
 	 * @return 成功与否
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.8
+	 *
 	 */
 	public static boolean clean(String dirPath) throws IORuntimeException {
 		return clean(file(dirPath));
@@ -744,7 +744,7 @@ public class FileUtil {
 	 * @param directory 文件夹
 	 * @return 成功与否
 	 * @throws IORuntimeException IO异常
-	 * @since 3.0.6
+	 *
 	 */
 	public static boolean clean(File directory) throws IORuntimeException {
 		if (directory == null || directory.exists() == false || false == directory.isDirectory()) {
@@ -771,7 +771,7 @@ public class FileUtil {
 	 * @param directory 文件夹
 	 * @return 成功与否
 	 * @throws IORuntimeException IO异常
-	 * @since 4.5.5
+	 *
 	 */
 	public static boolean cleanEmpty(File directory) throws IORuntimeException {
 		if (directory == null || false == directory.exists() || false == directory.isDirectory()) {
@@ -1002,7 +1002,7 @@ public class FileUtil {
 	 * @param isOverride 是否覆盖目标文件
 	 * @return 目标目录或文件
 	 * @throws IORuntimeException IO异常
-	 * @since 4.1.5
+	 *
 	 */
 	public static File copyFilesFromDir(File src, File dest, boolean isOverride) throws IORuntimeException {
 		return FileCopier.create(src, dest).setCopyContentIfDir(true).setOnlyCopyFile(true).setOverride(isOverride).copy();
@@ -1068,7 +1068,7 @@ public class FileUtil {
 	 * @param isRetainExt 是否保留原文件的扩展名，如果保留，则newName不需要加扩展名
 	 * @param isOverride 是否覆盖目标文件
 	 * @return 目标文件
-	 * @since 3.0.9
+	 *
 	 */
 	public static File rename(File file, String newName, boolean isRetainExt, boolean isOverride) {
 		if (isRetainExt) {
@@ -1088,7 +1088,7 @@ public class FileUtil {
 	 * 
 	 * @param file 文件
 	 * @return 规范绝对路径，如果传入file为null，返回null
-	 * @since 4.1.4
+	 *
 	 */
 	public static String getCanonicalPath(File file) {
 		if (null == file) {
@@ -1215,7 +1215,7 @@ public class FileUtil {
 	 * @param path {@link Path}
 	 * @param isFollowLinks 是否追踪到软链对应的真实地址
 	 * @return 如果为目录true
-	 * @since 3.1.0
+	 *
 	 */
 	public static boolean isDirectory(Path path, boolean isFollowLinks) {
 		if (null == path) {
@@ -1297,7 +1297,7 @@ public class FileUtil {
 	 * @param file2 文件2
 	 * @return 两个文件内容一致返回true，否则false
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.6
+	 *
 	 */
 	public static boolean contentEquals(File file1, File file2) throws IORuntimeException {
 		boolean file1Exists = file1.exists();
@@ -1348,7 +1348,7 @@ public class FileUtil {
 	 * @param file2 文件2
 	 * @param charset 编码，null表示使用平台默认编码 两个文件内容一致返回true，否则false
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.6
+	 *
 	 */
 	public static boolean contentEqualsIgnoreEOL(File file1, File file2, Charset charset) throws IORuntimeException {
 		boolean file1Exists = file1.exists();
@@ -1390,7 +1390,7 @@ public class FileUtil {
 	 * @param file1 文件1
 	 * @param file2 文件2
 	 * @return 文件路径是否相同
-	 * @since 3.0.9
+	 *
 	 */
 	public static boolean pathEquals(File file1, File file2) {
 		if (isWindows()) {
@@ -1600,7 +1600,7 @@ public class FileUtil {
 	 * @param path 路径
 	 * @param index 路径节点位置，支持负数（负数从后向前计数）
 	 * @return 获取的子路径
-	 * @since 3.1.2
+	 *
 	 */
 	public static Path getPathEle(Path path, int index) {
 		return subPath(path, index, index == -1 ? path.getNameCount() : index + 1);
@@ -1611,7 +1611,7 @@ public class FileUtil {
 	 * 
 	 * @param path 路径
 	 * @return 获取的最后一个子路径
-	 * @since 3.1.2
+	 *
 	 */
 	public static Path getLastPathEle(Path path) {
 		return getPathEle(path, path.getNameCount() - 1);
@@ -1624,7 +1624,7 @@ public class FileUtil {
 	 * @param fromIndex 起始路径节点（包括）
 	 * @param toIndex 结束路径节点（不包括）
 	 * @return 获取的子路径
-	 * @since 3.1.2
+	 *
 	 */
 	public static Path subPath(Path path, int fromIndex, int toIndex) {
 		if (null == path) {
@@ -1668,7 +1668,7 @@ public class FileUtil {
 	 * 
 	 * @param file 文件
 	 * @return 文件名
-	 * @since 4.1.13
+	 *
 	 */
 	public static String getName(File file) {
 		return (null != file) ? file.getName() : null;
@@ -1679,7 +1679,7 @@ public class FileUtil {
 	 * 
 	 * @param filePath 文件
 	 * @return 文件名
-	 * @since 4.1.13
+	 *
 	 */
 	public static String getName(String filePath) {
 		if (null == filePath) {
@@ -1829,7 +1829,7 @@ public class FileUtil {
 	 * @param isFollowLinks 是否跟踪到软链对应的真实路径
 	 * @return {@link BasicFileAttributes}
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.0
+	 *
 	 */
 	public static BasicFileAttributes getAttributes(Path path, boolean isFollowLinks) throws IORuntimeException {
 		if (null == path) {
@@ -1851,7 +1851,7 @@ public class FileUtil {
 	 * @param path Path
 	 * @return 输入流
 	 * @throws IORuntimeException 文件未找到
-	 * @since 4.0.0
+	 *
 	 */
 	public static BufferedInputStream getInputStream(Path path) throws IORuntimeException {
 		try {
@@ -1904,7 +1904,7 @@ public class FileUtil {
 	 * @param path 文件Path
 	 * @return BufferedReader对象
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.0
+	 *
 	 */
 	public static BufferedReader getUtf8Reader(Path path) throws IORuntimeException {
 		return getReader(path, CharsetUtil.CHARSET_UTF_8);
@@ -1939,7 +1939,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return BufferedReader对象
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.0
+	 *
 	 */
 	public static BufferedReader getReader(Path path, Charset charset) throws IORuntimeException {
 		return IoUtil.getReader(getInputStream(path), charset);
@@ -2014,7 +2014,7 @@ public class FileUtil {
 	 * @param filePath 文件路径
 	 * @return 字节码
 	 * @throws IORuntimeException IO异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static byte[] readBytes(String filePath) throws IORuntimeException {
 		return readBytes(file(filePath));
@@ -2122,7 +2122,7 @@ public class FileUtil {
 	 * @param collection 集合
 	 * @return 文件中的每行内容的集合
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T extends Collection<String>> T readUtf8Lines(String path, T collection) throws IORuntimeException {
 		return readLines(path, CharsetUtil.CHARSET_UTF_8, collection);
@@ -2164,7 +2164,7 @@ public class FileUtil {
 	 * @param collection 集合
 	 * @return 文件中的每行内容的集合
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T extends Collection<String>> T readUtf8Lines(File file, T collection) throws IORuntimeException {
 		return readLines(file, CharsetUtil.CHARSET_UTF_8, collection);
@@ -2234,7 +2234,7 @@ public class FileUtil {
 	 * @param collection 集合
 	 * @return 文件中的每行内容的集合
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T extends Collection<String>> T readLines(URL url, Charset charset, T collection) throws IORuntimeException {
 		InputStream in = null;
@@ -2289,7 +2289,7 @@ public class FileUtil {
 	 * @param path 文件路径
 	 * @return 文件中的每行内容的集合List
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static List<String> readUtf8Lines(String path) throws IORuntimeException {
 		return readLines(path, CharsetUtil.CHARSET_UTF_8);
@@ -2314,7 +2314,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 文件中的每行内容的集合List
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static List<String> readLines(String path, Charset charset) throws IORuntimeException {
 		return readLines(path, charset, new ArrayList<String>());
@@ -2326,7 +2326,7 @@ public class FileUtil {
 	 * @param file 文件
 	 * @return 文件中的每行内容的集合List
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static List<String> readUtf8Lines(File file) throws IORuntimeException {
 		return readLines(file, CharsetUtil.CHARSET_UTF_8);
@@ -2386,7 +2386,7 @@ public class FileUtil {
 	 * @param charset 编码
 	 * @param lineHandler {@link LineHandler}行处理器
 	 * @throws IORuntimeException IO异常
-	 * @since 4.5.2
+	 *
 	 */
 	public static void readLines(RandomAccessFile file, Charset charset, LineHandler lineHandler) {
 		String line = null;
@@ -2406,7 +2406,7 @@ public class FileUtil {
 	 * @param charset 编码
 	 * @param lineHandler {@link LineHandler}行处理器
 	 * @throws IORuntimeException IO异常
-	 * @since 4.5.2
+	 *
 	 */
 	public static void readLine(RandomAccessFile file, Charset charset, LineHandler lineHandler) {
 		final String line = readLine(file, charset);
@@ -2422,7 +2422,7 @@ public class FileUtil {
 	 * @param charset 编码
 	 * @return 行内容
 	 * @throws IORuntimeException IO异常
-	 * @since 4.5.18
+	 *
 	 */
 	public static String readLine(RandomAccessFile file, Charset charset) {
 		String line = null;
@@ -2462,7 +2462,7 @@ public class FileUtil {
 	 * @param path 文件的绝对路径
 	 * @return 从文件中load出的数据
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T> T loadUtf8(String path, ReaderHandler<T> readerHandler) throws IORuntimeException {
 		return load(path, CharsetUtil.CHARSET_UTF_8, readerHandler);
@@ -2477,7 +2477,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 从文件中load出的数据
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T> T load(String path, String charset, ReaderHandler<T> readerHandler) throws IORuntimeException {
 		return FileReader.create(file(path), CharsetUtil.charset(charset)).read(readerHandler);
@@ -2492,7 +2492,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 从文件中load出的数据
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T> T load(String path, Charset charset, ReaderHandler<T> readerHandler) throws IORuntimeException {
 		return FileReader.create(file(path), charset).read(readerHandler);
@@ -2506,7 +2506,7 @@ public class FileUtil {
 	 * @param file 文件
 	 * @return 从文件中load出的数据
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T> T loadUtf8(File file, ReaderHandler<T> readerHandler) throws IORuntimeException {
 		return load(file, CharsetUtil.CHARSET_UTF_8, readerHandler);
@@ -2521,7 +2521,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 从文件中load出的数据
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.1
+	 *
 	 */
 	public static <T> T load(File file, Charset charset, ReaderHandler<T> readerHandler) throws IORuntimeException {
 		return FileReader.create(file, charset).read(readerHandler);
@@ -2627,7 +2627,7 @@ public class FileUtil {
 	 * @param isAppend 是否追加
 	 * @return 打印对象
 	 * @throws IORuntimeException IO异常
-	 * @since 4.1.1
+	 *
 	 */
 	public static PrintWriter getPrintWriter(String path, Charset charset, boolean isAppend) throws IORuntimeException {
 		return new PrintWriter(getWriter(path, charset, isAppend));
@@ -2656,7 +2656,7 @@ public class FileUtil {
 	 * </pre>
 	 * 
 	 * @return 换行符
-	 * @since 4.0.5
+	 *
 	 */
 	public static String getLineSeparator() {
 		return System.lineSeparator();
@@ -2750,7 +2750,7 @@ public class FileUtil {
 	 * @param path 文件路径
 	 * @return 写入的文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static File appendUtf8String(String content, String path) throws IORuntimeException {
 		return appendString(content, path, CharsetUtil.CHARSET_UTF_8);
@@ -2789,7 +2789,7 @@ public class FileUtil {
 	 * @param file 文件
 	 * @return 写入的文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static File appendUtf8String(String content, File file) throws IORuntimeException {
 		return appendString(content, file, CharsetUtil.CHARSET_UTF_8);
@@ -2829,7 +2829,7 @@ public class FileUtil {
 	 * @param path 绝对路径
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static <T> File writeUtf8Lines(Collection<T> list, String path) throws IORuntimeException {
 		return writeLines(list, path, CharsetUtil.CHARSET_UTF_8);
@@ -2843,7 +2843,7 @@ public class FileUtil {
 	 * @param file 绝对路径
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.2.0
+	 *
 	 */
 	public static <T> File writeUtf8Lines(Collection<T> list, File file) throws IORuntimeException {
 		return writeLines(list, file, CharsetUtil.CHARSET_UTF_8);
@@ -2886,7 +2886,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 4.2.0
+	 *
 	 */
 	public static <T> File writeLines(Collection<T> list, File file, String charset) throws IORuntimeException {
 		return writeLines(list, file, charset, false);
@@ -2901,7 +2901,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 4.2.0
+	 *
 	 */
 	public static <T> File writeLines(Collection<T> list, File file, Charset charset) throws IORuntimeException {
 		return writeLines(list, file, charset, false);
@@ -2915,7 +2915,7 @@ public class FileUtil {
 	 * @param file 文件
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static <T> File appendUtf8Lines(Collection<T> list, File file) throws IORuntimeException {
 		return appendLines(list, file, CharsetUtil.CHARSET_UTF_8);
@@ -2929,7 +2929,7 @@ public class FileUtil {
 	 * @param path 文件路径
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static <T> File appendUtf8Lines(Collection<T> list, String path) throws IORuntimeException {
 		return appendLines(list, path, CharsetUtil.CHARSET_UTF_8);
@@ -2958,7 +2958,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static <T> File appendLines(Collection<T> list, File file, String charset) throws IORuntimeException {
 		return writeLines(list, file, charset, true);
@@ -2987,7 +2987,7 @@ public class FileUtil {
 	 * @param charset 字符集
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 3.1.2
+	 *
 	 */
 	public static <T> File appendLines(Collection<T> list, File file, Charset charset) throws IORuntimeException {
 		return writeLines(list, file, charset, true);
@@ -3062,7 +3062,7 @@ public class FileUtil {
 	 * @param isAppend 是否追加
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.5
+	 *
 	 */
 	public static File writeUtf8Map(Map<?, ?> map, File file, String kvSeparator, boolean isAppend) throws IORuntimeException {
 		return FileWriter.create(file, CharsetUtil.CHARSET_UTF_8).writeMap(map, kvSeparator, isAppend);
@@ -3078,7 +3078,7 @@ public class FileUtil {
 	 * @param isAppend 是否追加
 	 * @return 目标文件
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.5
+	 *
 	 */
 	public static File writeMap(Map<?, ?> map, File file, Charset charset, String kvSeparator, boolean isAppend) throws IORuntimeException {
 		return FileWriter.create(file, charset).writeMap(map, kvSeparator, isAppend);
@@ -3205,7 +3205,7 @@ public class FileUtil {
 	 * @param destCharset 转码后的编码
 	 * @return 被转换编码的文件
 	 * @see CharsetUtil#convert(File, Charset, Charset)
-	 * @since 3.1.0
+	 *
 	 */
 	public static File convertCharset(File file, Charset srcCharset, Charset destCharset) {
 		return CharsetUtil.convert(file, srcCharset, destCharset);
@@ -3219,7 +3219,7 @@ public class FileUtil {
 	 * @param charset 编码
 	 * @param lineSeparator 换行符枚举{@link LineSeparator}
 	 * @return 被修改的文件
-	 * @since 3.1.0
+	 *
 	 */
 	public static File convertLineSeparator(File file, Charset charset, LineSeparator lineSeparator) {
 		final List<String> lines = readLines(file, charset);
@@ -3231,7 +3231,7 @@ public class FileUtil {
 	 * 
 	 * @param fileName 文件名（必须不包括路径，否则路径符将被替换）
 	 * @return 清理后的文件名
-	 * @since 3.3.1
+	 *
 	 */
 	public static String cleanInvalid(String fileName) {
 		return StrUtil.isBlank(fileName) ? fileName : ReUtil.delAll(FILE_NAME_INVALID_PATTERN_WIN, fileName);
@@ -3242,7 +3242,7 @@ public class FileUtil {
 	 * 
 	 * @param fileName 文件名（必须不包括路径，否则路径符将被替换）
 	 * @return 是否包含非法字符
-	 * @since 3.3.1
+	 *
 	 */
 	public static boolean containsInvalid(String fileName) {
 		return StrUtil.isBlank(fileName) ? false : ReUtil.contains(FILE_NAME_INVALID_PATTERN_WIN, fileName);
@@ -3254,7 +3254,7 @@ public class FileUtil {
 	 * @param file 文件，不能为目录
 	 * @return CRC32值
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.6
+	 *
 	 */
 	public static long checksumCRC32(File file) throws IORuntimeException {
 		return checksum(file, new CRC32()).getValue();
@@ -3267,7 +3267,7 @@ public class FileUtil {
 	 * @param checksum {@link Checksum}
 	 * @return Checksum
 	 * @throws IORuntimeException IO异常
-	 * @since 4.0.6
+	 *
 	 */
 	public static Checksum checksum(File file, Checksum checksum) throws IORuntimeException {
 		Assert.notNull(file, "File is null !");
@@ -3286,7 +3286,7 @@ public class FileUtil {
 	 * 原理是首先获取ClassPath路径，由于在web项目中ClassPath位于 WEB-INF/classes/下，故向上获取两级目录即可。
 	 * 
 	 * @return web root路径
-	 * @since 4.0.13
+	 *
 	 */
 	public static File getWebRoot() {
 		final String classPath = ClassUtil.getClassPath();
@@ -3309,7 +3309,7 @@ public class FileUtil {
 	 * @param filePath 目录或文件路径
 	 * @param level 层级
 	 * @return 路径File，如果不存在返回null
-	 * @since 4.1.2
+	 *
 	 */
 	public static String getParent(String filePath, int level) {
 		final File parent = getParent(file(filePath), level);
@@ -3333,7 +3333,7 @@ public class FileUtil {
 	 * @param file 目录或文件
 	 * @param level 层级
 	 * @return 路径File，如果不存在返回null
-	 * @since 4.1.2
+	 *
 	 */
 	public static File getParent(File file, int level) {
 		if (level < 1 || null == file) {
@@ -3384,7 +3384,7 @@ public class FileUtil {
 	 * 
 	 * @param filePath 文件路径或文件名
 	 * @return MimeType
-	 * @since 4.1.15
+	 *
 	 */
 	public static String getMimeType(String filePath) {
 		return URLConnection.getFileNameMap().getContentTypeFor(filePath);
@@ -3395,7 +3395,7 @@ public class FileUtil {
 	 * 
 	 * @param file 被检查的文件
 	 * @return 是否为符号链接文件
-	 * @since 4.4.2
+	 *
 	 */
 	public static boolean isSymlink(File file) throws IORuntimeException {
 		return Files.isSymbolicLink(file.toPath());
@@ -3407,7 +3407,7 @@ public class FileUtil {
 	 * @param parent 父目录
 	 * @param sub 子目录
 	 * @return 子目录是否为父目录的子目录
-	 * @since 4.5.4
+	 *
 	 */
 	public static boolean isSub(File parent, File sub) {
 		Assert.notNull(parent);
@@ -3421,7 +3421,7 @@ public class FileUtil {
 	 * @param path 文件Path
 	 * @param mode 模式，见{@link FileMode}
 	 * @return {@link RandomAccessFile}
-	 * @since 4.5.2
+	 *
 	 */
 	public static RandomAccessFile createRandomAccessFile(Path path, FileMode mode) {
 		return createRandomAccessFile(path.toFile(), mode);
@@ -3433,7 +3433,7 @@ public class FileUtil {
 	 * @param file 文件
 	 * @param mode 模式，见{@link FileMode}
 	 * @return {@link RandomAccessFile}
-	 * @since 4.5.2
+	 *
 	 */
 	public static RandomAccessFile createRandomAccessFile(File file, FileMode mode) {
 		try {

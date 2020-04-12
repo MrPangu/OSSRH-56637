@@ -7,8 +7,8 @@ import java.io.Serializable;
 /**
  * CSV基础配置项
  * 
- * @author looly
- * @since 4.0.5
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class CsvConfig implements Serializable{
 	private static final long serialVersionUID = -8069578249066158459L;

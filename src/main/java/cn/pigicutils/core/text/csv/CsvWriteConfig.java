@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * CSV写出配置项
  * 
- * @author looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class CsvWriteConfig extends CsvConfig implements Serializable {

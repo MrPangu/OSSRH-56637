@@ -11,7 +11,7 @@ import cn.pigicutils.core.util.StrUtil;
  * 3. 转金额形式，比如：壹佰贰拾壹整
  * </pre>
  * 
- * @author fanqun,looly
+ * @author guchang.pan@hand-china.com
  **/
 public class NumberChineseFormater {
 

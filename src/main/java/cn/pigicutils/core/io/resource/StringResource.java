@@ -11,8 +11,8 @@ import java.nio.charset.Charset;
 /**
  * 字符串资源，字符串做为资源
  * 
- * @author looly
- * @since 4.1.0
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class StringResource implements Resource, Serializable {
 	private static final long serialVersionUID = 1L;

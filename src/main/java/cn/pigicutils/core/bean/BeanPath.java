@@ -6,6 +6,7 @@ import cn.pigicutils.core.map.MapUtil;
 import cn.pigicutils.core.text.StrBuilder;
 import cn.pigicutils.core.util.ArrayUtil;
 import cn.pigicutils.core.util.CharUtil;
+import cn.pigicutils.core.util.NumberUtil;
 import cn.pigicutils.core.util.StrUtil;
 
 import java.io.Serializable;
@@ -29,8 +30,8 @@ import java.util.*;
  * ['person']['friends'][5]['name']
  * </pre>
  * 
- * @author Looly
- * @since 4.0.6
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class BeanPath implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -120,7 +121,12 @@ public class BeanPath implements Serializable{
 	private void set(Object bean, List<String> patternParts, Object value) {
 		Object subBean = get(patternParts, bean, true);
 		if(null == subBean) {
-			set(bean, patternParts.subList(0, patternParts.size() - 1), new HashMap<>());
+			String index = patternParts.get(patternParts.size() - 1);
+			if (NumberUtil.isNumber(index)){
+				set(bean, patternParts.subList(0, patternParts.size() - 1), new ArrayList<>());
+			}else{
+				set(bean, patternParts.subList(0, patternParts.size() - 1), new HashMap<>());
+			}
 			//set中有可能做过转换，因此此处重新获取bean
 			subBean = get(patternParts, bean, true);
 		}

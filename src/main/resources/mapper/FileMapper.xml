@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pigic.hzeropigic.infra.mapper.FileMapper">
+    <select id="selectFileByFileKey" resultType="cn.pigicutils.core.lang.Dict">
+        select hf.created_by,
+               iu.real_name created_name,
+               hf.file_size,
+               hf.directory,
+               hf.bucket_name,
+               hf.file_type,
+               hf.creation_date,
+               hf.file_id
+        from hzero_file.hfle_file hf
+        left join hzero_platform.iam_user iu on hf.created_by=iu.id
+        where hf.file_key=#{fileKey}
+    </select>
+    <select id="selectFileByFileId" resultType="cn.pigicutils.core.lang.Dict">
+        select hf.created_by,
+               iu.real_name created_name,
+               hf.file_size,
+               hf.directory,
+               hf.bucket_name,
+               hf.file_type,
+               hf.file_key,
+               hf.creation_date,
+               hf.file_id
+        from hzero_file.hfle_file hf
+        left join hzero_platform.iam_user iu on hf.created_by=iu.id
+        where hf.file_id=#{fileId}
+    </select>
+    <select id="getCompanyCodeById" resultType="string">
+        select hu.unit_code
+        from hzero_platform.hpfm_unit hu
+        where unit_id=#{companyId}
+    </select>
+    <select id="getUnitInfoByCode" resultType="cn.pigicutils.core.lang.Dict">
+        select unit_id,
+               unit_code,
+               company_id,
+               unit_name,
+               unit_type_code,
+               tenant_id,
+               description,
+               order_seq,
+               parent_unit_id,
+               unit_company_id,
+               supervisor_flag,
+               enabled_flag,
+               level_path,
+               object_version_number,
+               creation_date,
+               created_by,
+               last_updated_by,
+               last_update_date,
+               quick_index,
+               phoneticize,
+               attribute1,
+               attribute2,
+               attribute3,
+               attribute4,
+               attribute5,
+               attribute6,
+               attribute7,
+               attribute8,
+               attribute9,
+               attribute10,
+               attribute11,
+               attribute12,
+               attribute13,
+               attribute14,
+               attribute15
+        from hzero_platform.hpfm_unit
+        where unit_code = #{unitCode}
+    </select>
+</mapper>

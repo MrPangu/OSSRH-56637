@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 外部Jar的类加载器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class JarClassLoader extends URLClassLoader {
@@ -126,7 +126,7 @@ public class JarClassLoader extends URLClassLoader {
 	 * 如果为目录，此目录用于搜索class文件，如果为文件，需为jar文件
 	 * 
 	 * @param dir 目录
-	 * @since 4.4.2
+	 *
 	 */
 	public JarClassLoader addURL(File dir) {
 		super.addURL(URLUtil.getURL(dir));
@@ -154,7 +154,7 @@ public class JarClassLoader extends URLClassLoader {
 	 * 
 	 * @param file 文件
 	 * @return 是否为jar文件
-	 * @since 4.4.2
+	 *
 	 */
 	private static boolean isJarFile(File file) {
 		if (false == FileUtil.isFile(file)) {

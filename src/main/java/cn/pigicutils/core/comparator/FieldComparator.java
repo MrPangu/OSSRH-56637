@@ -13,7 +13,7 @@ import java.util.Comparator;
  * Bean字段排序器<br>
  * 参阅feilong-core中的PropertyComparator
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  * @param <T> 被比较的Bean
  */

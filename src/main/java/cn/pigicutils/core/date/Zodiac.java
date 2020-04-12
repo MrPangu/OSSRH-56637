@@ -6,8 +6,8 @@ import java.util.Date;
 /**
  * 星座 来自：https://blog.csdn.net/u010758605/article/details/48317881
  * 
- * @author looly
- * @since 4.4.3
+ * @author guchang.pan@hand-china.com
+ *
  */
 public class Zodiac {
 
@@ -46,7 +46,7 @@ public class Zodiac {
 	 * @param month 月，从0开始计数
 	 * @param day 天
 	 * @return 星座名
-	 * @since 4.5.0
+	 *
 	 */
 	public static String getZodiac(Month month, int day) {
 		return getZodiac(month.getValue(), day);

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 /**
  * 字段验证器
  * 
- * @author Looly
+ * @author guchang.pan@hand-china.com
  *
  */
 public class Validator {
@@ -62,7 +62,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否为<code>ture</code>
-	 * @since 4.4.5
+	 *
 	 */
 	public static boolean isTrue(boolean value) {
 		return value;
@@ -73,7 +73,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否不为<code>false</code>
-	 * @since 4.4.5
+	 *
 	 */
 	public static boolean isFalse(boolean value) {
 		return false == value;
@@ -87,7 +87,7 @@ public class Validator {
 	 * @param params 模板中变量替换后的值
 	 * @return 检查过后的值
 	 * @throws ValidateException 检查不满足条件抛出的异常
-	 * @since 4.4.5
+	 *
 	 */
 	public static boolean validateTrue(boolean value, String errorMsgTemplate, Object... params) throws ValidateException {
 		if (isFalse(value)) {
@@ -104,7 +104,7 @@ public class Validator {
 	 * @param params 模板中变量替换后的值
 	 * @return 检查过后的值
 	 * @throws ValidateException 检查不满足条件抛出的异常
-	 * @since 4.4.5
+	 *
 	 */
 	public static boolean validateFalse(boolean value, String errorMsgTemplate, Object... params) throws ValidateException {
 		if (isTrue(value)) {
@@ -142,7 +142,7 @@ public class Validator {
 	 * @param params 模板中变量替换后的值
 	 * @return 检查过后的值
 	 * @throws ValidateException 检查不满足条件抛出的异常
-	 * @since 4.4.5
+	 *
 	 */
 	public static <T> T validateNull(T value, String errorMsgTemplate, Object... params) throws ValidateException {
 		if (isNotNull(value)) {
@@ -429,7 +429,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否全部为字母组成，包括大写和小写字母和汉字
-	 * @since 3.3.0
+	 *
 	 */
 	public static boolean isLetter(CharSequence value) {
 		return StrUtil.isAllCharMatch(value, new cn.pigicutils.core.lang.Matcher<Character>() {
@@ -448,7 +448,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 3.3.0
+	 *
 	 */
 	public static <T extends CharSequence> T validateLetter(T value, String errorMsg) throws ValidateException {
 		if (false == isLetter(value)) {
@@ -462,7 +462,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否全部为大写字母
-	 * @since 3.3.0
+	 *
 	 */
 	public static boolean isUpperCase(CharSequence value) {
 		return StrUtil.isAllCharMatch(value, new cn.pigicutils.core.lang.Matcher<Character>() {
@@ -481,7 +481,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 3.3.0
+	 *
 	 */
 	public static <T extends CharSequence> T validateUpperCase(T value, String errorMsg) throws ValidateException {
 		if (false == isUpperCase(value)) {
@@ -495,7 +495,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否全部为小写字母
-	 * @since 3.3.0
+	 *
 	 */
 	public static boolean isLowerCase(CharSequence value) {
 		return StrUtil.isAllCharMatch(value, new cn.pigicutils.core.lang.Matcher<Character>() {
@@ -514,7 +514,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 3.3.0
+	 *
 	 */
 	public static <T extends CharSequence> T validateLowerCase(T value, String errorMsg) throws ValidateException {
 		if (false == isLowerCase(value)) {
@@ -553,7 +553,7 @@ public class Validator {
 	 * 
 	 * @param value 字符串内容
 	 * @return 是否是字母（包括大写和小写字母）
-	 * @since 4.1.8
+	 *
 	 */
 	public static boolean isWord(CharSequence value) {
 		return isMactchRegex(PatternPool.WORD, value);
@@ -567,7 +567,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 4.1.8
+	 *
 	 */
 	public static <T extends CharSequence> T validateWord(T value, String errorMsg) throws ValidateException {
 		if (false == isWord(value)) {
@@ -844,7 +844,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否为MAC地址
-	 * @since 4.1.3
+	 *
 	 */
 	public static boolean isMac(CharSequence value) {
 		return isMactchRegex(PatternPool.MAC_ADDRESS, value);
@@ -858,7 +858,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 4.1.3
+	 *
 	 */
 	public static <T extends CharSequence> T validateMac(T value, String errorMsg) throws ValidateException {
 		if (false == isMac(value)) {
@@ -872,7 +872,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否为中国车牌号
-	 * @since 3.0.6
+	 *
 	 */
 	public static boolean isPlateNumber(CharSequence value) {
 		return isMactchRegex(PLATE_NUMBER, value);
@@ -886,7 +886,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 3.0.6
+	 *
 	 */
 	public static <T extends CharSequence> T validatePlateNumber(T value, String errorMsg) throws ValidateException {
 		if (false == isPlateNumber(value)) {
@@ -1011,7 +1011,7 @@ public class Validator {
 	 * 
 	 * @param value 值
 	 * @return 是否为Hex（16进制）字符串
-	 * @since 4.3.3
+	 *
 	 */
 	public static boolean isHex(CharSequence value) {
 		return isMactchRegex(PatternPool.HEX, value);
@@ -1025,7 +1025,7 @@ public class Validator {
 	 * @param errorMsg 验证错误的信息
 	 * @return 验证后的值
 	 * @throws ValidateException 验证异常
-	 * @since 4.3.3
+	 *
 	 */
 	public static <T extends CharSequence> T validateHex(T value, String errorMsg) throws ValidateException {
 		if (false == isHex(value)) {
@@ -1041,7 +1041,7 @@ public class Validator {
 	 * @param min 最小值（包含）
 	 * @param max 最大值（包含）
 	 * @return 是否满足
-	 * @since 4.1.10
+	 *
 	 */
 	public static boolean isBetween(Number value, Number min, Number max) {
 		Assert.notNull(value);
@@ -1059,7 +1059,7 @@ public class Validator {
 	 * @param max 最大值（包含）
 	 * @param errorMsg 验证错误的信息
 	 * @throws ValidateException 验证异常
-	 * @since 4.1.10
+	 *
 	 */
 	public static void validateBetween(Number value, Number min, Number max, String errorMsg) throws ValidateException {
 		if (false == isBetween(value, min, max)) {

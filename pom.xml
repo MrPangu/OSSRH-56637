@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.mrpangu</groupId>
     <artifactId>hzero-plus</artifactId>
-    <version>0.0.16.RELEASE</version>
+    <version>0.0.17.RELEASE</version>
     <name>hzero-pigic</name>
     <packaging>jar</packaging>
     <url>https://github.com/MrPangu/OSSRH-56637</url>

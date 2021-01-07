@@ -2,7 +2,7 @@ package com.pigic.hzeropigic.utils;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/6/22 12:56
+ *
  */
 
 import io.choerodon.mybatis.code.Style;

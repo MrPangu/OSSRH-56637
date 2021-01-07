@@ -300,6 +300,7 @@ public class BeanUtil {
 	 * 
 	 * @param bean Bean对象，支持Map、List、Collection、Array
 	 * @param expression 表达式，例如：person.friend[5].name
+	 * @param value 值
 	 * @see BeanPath#get(Object)
 	 *
 	 */

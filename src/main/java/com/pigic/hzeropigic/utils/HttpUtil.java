@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/6/27 9:24
+ *
  */
 public class HttpUtil {
 

@@ -27,7 +27,7 @@ import sun.reflect.ReflectionFactory;
 
 /*
  * 反射插件
- * @date: 2019/6/7
+ *
  * @author guchang.pan@hand-china.com
  * @version: 0.0.2
  * @copyright Copyright (c) 2019, Hand

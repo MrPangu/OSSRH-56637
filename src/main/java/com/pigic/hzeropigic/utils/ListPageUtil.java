@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 对List进行分页
  * @author guchang.pan@hand-china.com
- * @Date: 2019/7/13 16:36
+ *
  */
 public final class ListPageUtil {
     private ListPageUtil(){

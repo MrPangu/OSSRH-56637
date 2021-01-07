@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/9/8 16:47
+ *
  */
 @Getter
 @Setter

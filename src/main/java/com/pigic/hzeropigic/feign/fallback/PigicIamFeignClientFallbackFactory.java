@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/9/10 10:39
+ *
  */
 @Component
 public class PigicIamFeignClientFallbackFactory implements FallbackFactory<PigicIamFeignClient> {

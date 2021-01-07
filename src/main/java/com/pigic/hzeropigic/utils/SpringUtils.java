@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Desciption 获取SpringBean工具类
  *             --- PS: 仅在非Spring管理的Class中使用-仅key获取本项目中的Bean
  * @author guchang.pan@hand-china.com
- * @Date 2019/5/30 15:09
+ *
  **/
 @Component
 @SuppressWarnings("unchecked")

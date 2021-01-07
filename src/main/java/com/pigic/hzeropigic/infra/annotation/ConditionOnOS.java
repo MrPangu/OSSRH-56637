@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/8/11 21:26
+ *
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})

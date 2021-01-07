@@ -5,8 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.hzero.boot.platform.lov.annotation.LovValue;
 import org.hzero.mybatis.domian.SecurityToken;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.hzero.iam.domain.entity.User;
+
 import javax.persistence.Transient;
 import java.time.LocalDate;
 import java.util.Date;
@@ -14,7 +13,7 @@ import java.util.List;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/9/10 13:59
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserVO implements SecurityToken {
@@ -54,9 +53,6 @@ public class UserVO implements SecurityToken {
     @JsonFormat(
             pattern = "yyyy-MM-dd"
     )
-    @DateTimeFormat(
-            pattern = "yyyy-MM-dd"
-    )
     private LocalDate birthday;
     private String nickname;
     private Integer gender;
@@ -67,6 +63,8 @@ public class UserVO implements SecurityToken {
     private String addressDetail;
     private String invitationCode;
     private Long employeeId;
+    private String employeeNum;
+    private String emploeeName;
     private Long textId;
     @LovValue(
             lovCode = "HIAM.SECURITY_LEVEL",
@@ -76,14 +74,8 @@ public class UserVO implements SecurityToken {
     @JsonFormat(
             pattern = "yyyy-MM-dd"
     )
-    @DateTimeFormat(
-            pattern = "yyyy-MM-dd"
-    )
     private LocalDate startDateActive;
     @JsonFormat(
-            pattern = "yyyy-MM-dd"
-    )
-    @DateTimeFormat(
             pattern = "yyyy-MM-dd"
     )
     private LocalDate endDateActive;
@@ -157,6 +149,22 @@ public class UserVO implements SecurityToken {
     private List<String> authorityTypeQueryParams;
 
     public UserVO() {
+    }
+
+    public String getEmployeeNum() {
+        return employeeNum;
+    }
+
+    public void setEmployeeNum(String employeeNum) {
+        this.employeeNum = employeeNum;
+    }
+
+    public String getEmploeeName() {
+        return emploeeName;
+    }
+
+    public void setEmploeeName(String emploeeName) {
+        this.emploeeName = emploeeName;
     }
 
     public static String generateCacheKey(String configCode, Long tenantId) {
@@ -754,10 +762,6 @@ public class UserVO implements SecurityToken {
 
     public void set_token(String tokenValue) {
         this._token = tokenValue;
-    }
-
-    public Class<? extends SecurityToken> associateEntityClass() {
-        return User.class;
     }
 
     public String getFavicon() {

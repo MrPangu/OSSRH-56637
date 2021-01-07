@@ -117,7 +117,7 @@ public class CommonUtils {
     /**
      * @Description: 对象值转换时忽略空值
      * @author guchang.pan@hand-china.com
-     * @Date: 2019/11/14
+     *
      */
     public static void copyPropertiesIgnoreNull(Object src, Object target){
         BeanUtils.copyProperties(src, target, getNullPropertyNames(src));

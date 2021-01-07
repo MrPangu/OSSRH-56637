@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/6/29 12:08
+ *
  */
 @ComponentScan(value = {"com.pigic.hzeropigic"})
 @EnableFeignClients({"com.pigic.hzeropigic"})

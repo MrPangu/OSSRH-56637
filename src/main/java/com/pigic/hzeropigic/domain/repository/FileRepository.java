@@ -4,7 +4,7 @@ import cn.pigicutils.core.lang.Dict;
 
 /**
  * @author guchang.pan@hand-china.com
- * @date: 2019/12/17 15:17
+ *
  */
 public interface FileRepository {
     /**

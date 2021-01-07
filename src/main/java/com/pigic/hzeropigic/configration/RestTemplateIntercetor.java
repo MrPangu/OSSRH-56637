@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/6/29 14:34
+ *
  */
 public class RestTemplateIntercetor implements ClientHttpRequestInterceptor {
     private static Logger logger = LoggerFactory.getLogger(RestTemplateIntercetor.class);

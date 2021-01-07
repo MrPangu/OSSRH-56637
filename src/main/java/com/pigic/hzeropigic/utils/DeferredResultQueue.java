@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/1/16 14:16
+ *
  */
 public class DeferredResultQueue {
 

@@ -4,7 +4,7 @@ package cn.pigicutils.core.tree.bean;
  * 树节点对象，必须实现这个interface，并且实现theId、theParentId方法！
  * 分别返回节点的id，和父节点id
  * @author guchang.pan@hand-china.com
- * @Date: 2019/10/11 8:37
+ *
  */
 public interface Nodeable {
     /**

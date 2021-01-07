@@ -3,6 +3,7 @@ package cn.pigicutils.core.convert;
 import cn.pigicutils.core.bean.BeanUtil;
 import cn.pigicutils.core.convert.impl.*;
 import cn.pigicutils.core.date.DateTime;
+import cn.pigicutils.core.lang.Console;
 import cn.pigicutils.core.util.ClassUtil;
 import cn.pigicutils.core.util.ObjectUtil;
 import cn.pigicutils.core.util.ReflectUtil;
@@ -167,13 +168,14 @@ public class ConverterRegistry implements Serializable{
 		if (TypeUtil.isUnknow(type)) {
 			type = defaultValue.getClass();
 		}
-		
+		if (value instanceof BigDecimal && String.class.isAssignableFrom((Class<?>) type)){
+			return (T)((BigDecimal) value).stripTrailingZeros().toPlainString();
+		}
 		// 标准转换器
 		final Converter<T> converter = getConverter(type, isCustomFirst);
 		if (null != converter) {
 			return converter.convert(value, defaultValue);
 		}
-
 		Class<T> rowType = (Class<T>) TypeUtil.getClass(type);
 		if (null == rowType) {
 			if (null != defaultValue) {

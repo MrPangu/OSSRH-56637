@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/2/22 10:54
+ *
  */
 @Component
 public class CustomKeyGenerator implements KeyGenerator {

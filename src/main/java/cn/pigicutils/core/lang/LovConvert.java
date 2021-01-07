@@ -6,7 +6,7 @@ import lombok.experimental.FieldNameConstants;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/10/11 15:47
+ *
  */
 @Getter
 @Setter

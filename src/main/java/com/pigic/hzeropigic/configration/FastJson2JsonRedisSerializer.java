@@ -2,7 +2,7 @@ package com.pigic.hzeropigic.configration;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/2/21 22:47
+ *
  */
 
 import com.alibaba.fastjson.JSON;

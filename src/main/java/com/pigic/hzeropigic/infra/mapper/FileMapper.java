@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * @author guchang.pan@hand-china.com
- * @date: 2019/12/17 15:22
+ *
  */
 public interface FileMapper {
     Dict selectFileByFileKey(

@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/8/12 9:19
+ *
  */
 public class ConditionOnOSCondition implements Condition {
     @Override

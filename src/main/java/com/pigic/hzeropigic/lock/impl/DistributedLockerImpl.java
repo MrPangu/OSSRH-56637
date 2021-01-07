@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/1/25 12:45
+ *
  */
 
 public class DistributedLockerImpl implements DistributedLocker {

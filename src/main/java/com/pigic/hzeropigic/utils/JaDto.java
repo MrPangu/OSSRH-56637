@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  * @author guchang.pan@hand-china.com
- * @date 2019/12/16 15:10
+ *
  */
 
 @Getter

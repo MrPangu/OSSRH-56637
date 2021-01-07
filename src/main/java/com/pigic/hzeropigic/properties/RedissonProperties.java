@@ -2,7 +2,7 @@ package com.pigic.hzeropigic.properties;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/1/27 0:22
+ *
  */
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

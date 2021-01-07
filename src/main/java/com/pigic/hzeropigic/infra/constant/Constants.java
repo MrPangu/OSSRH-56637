@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/6/25 13:35
+ *
  */
 public interface Constants extends BaseConstants {
     interface Common{
@@ -49,6 +49,10 @@ public interface Constants extends BaseConstants {
          * 邮箱账户编码
          */
         String SERVERCODE="EMAIL-PLUS";
+        /**
+         * 邮箱账户编码
+         */
+        String SMS_CODE="CIEC";
 
         /**
          * 语言

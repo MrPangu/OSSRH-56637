@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author guchang.pan@hand-china.com
- * @date: 2019/12/17 15:22
+ *
  */
 @Component
 public class FileRepositoryImpl implements FileRepository {

@@ -2,7 +2,7 @@ package cn.pigicutils.core.tree.bean;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/10/11 8:38
+ *
  */
 
 import java.util.LinkedList;

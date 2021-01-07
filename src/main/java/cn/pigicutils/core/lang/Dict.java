@@ -8,6 +8,7 @@ import cn.pigicutils.core.convert.Convert;
 import cn.pigicutils.core.exceptions.UtilException;
 import cn.pigicutils.core.getter.BasicTypeGetter;
 import cn.pigicutils.core.lang.func.ConvertFun;
+import cn.pigicutils.core.lang.func.Func;
 import cn.pigicutils.core.util.ObjectUtil;
 import cn.pigicutils.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
@@ -21,6 +22,8 @@ import com.pigic.hzeropigic.feign.PigicPlatFormFeignClient;
 import com.pigic.hzeropigic.infra.constant.Constants;
 import com.pigic.hzeropigic.utils.SpringUtils;
 import io.choerodon.core.exception.CommonException;
+import org.hzero.boot.platform.plugin.hr.EmployeeHelper;
+import org.hzero.boot.platform.plugin.hr.entity.Employee;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -28,6 +31,8 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -65,6 +70,17 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	 */
 	public static <T> Dict parse(T bean) {
 		return create().parseBean(bean);
+	}
+
+	/**
+	 * 循环将PO对象转为Dict
+	 *
+	 * @param <T> Bean类型
+	 * @param bean Bean对象
+	 * @return Vo
+	 */
+	public static <T> Dict parseCycle(T bean) {
+		return create().parseBeanCycle(bean);
 	}
 
 	// --------------------------------------------------------------- Static method end
@@ -234,6 +250,21 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	public <T> Dict parseBean(T bean) {
 		Assert.notNull(bean, "Bean class must be not null");
 		this.putAll(BeanUtil.beanToMap(bean));
+		return this;
+	}
+
+	/**
+	 * 循环将值对象转换为Dict<br>
+	 * 类名会被当作表名，小写第一个字母
+	 *
+	 * @param <T> Bean类型
+	 * @param bean 值对象
+	 * @return 自己
+	 */
+	public <T> Dict parseBeanCycle(T bean) {
+		String toJSONString = JSONObject.toJSONString(bean);
+		Dict dict = Dict.parseJsonObject(toJSONString);
+		this.putAll(dict);
 		return this;
 	}
 
@@ -717,6 +748,42 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return this;
 	}
 
+	/**
+	 * 转换字段key为小写
+	 * @return 转换后的Dict
+	 */
+	public Dict convertFieldLowerCase(){
+		Iterator<String> keys = this.keySet().iterator();
+		Dict dict = Dict.create();
+		while (keys.hasNext()){
+			String sk = keys.next();
+			String camelCase = sk.toLowerCase();
+			dict.set(sk, camelCase);
+		}
+		Dict dict1 = convertFieldLR(() -> dict);
+		return dict1;
+	}
+
+	/**
+	 * 转换字段Key为大写
+	 * @return 转换后的Dict
+	 */
+	public Dict convertFieldUpperCase(){
+		Iterator<String> keys = this.keySet().iterator();
+		Dict dict = Dict.create();
+		while (keys.hasNext()){
+			String sk = keys.next();
+			String camelCase = sk.toUpperCase();
+			dict.set(sk, camelCase);
+		}
+		Dict dict1 = convertFieldLR(() -> dict);
+		return dict1;
+	}
+
+	/**
+	 * 转换字段Key转换成驼峰
+	 * @return 转换后的Dict
+	 */
 	public Dict convertFieldCamelCase(){
 		Iterator<String> keys = this.keySet().iterator();
 		Dict dict = Dict.create();
@@ -729,6 +796,10 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return dict1;
 	}
 
+	/**
+	 * 转换字段Key转换成下划线
+	 * @return 转换后的Dict
+	 */
 	public Dict convertFieldUnderLine(){
 		Iterator<String> keys = this.keySet().iterator();
 		Dict dict = Dict.create();
@@ -910,11 +981,24 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return objects;
 	}
 
+	/**
+	 * 获取当前用户信息
+	 * @return
+	 */
 	public static UserVO getCurrentUser(){
 		PigicIamFeignClient feignClient = SpringUtils.getBean(PigicIamFeignClient.class);
 		UserVO userVO = feignClient.selectSelf();
 		UserVO userVO1 = feignClient.selectSelfDetail();
 		BeanUtil.copyProperties(userVO1,userVO,CopyOptions.create().ignoreNullValue());
+		Employee employee = EmployeeHelper.getEmployee(userVO.getId(), userVO.getTenantId());
+		if (ObjectUtil.isNotEmpty(employee)){
+			Long employeeId = employee.getEmployeeId();
+			String employeeNum = employee.getEmployeeNum();
+			String name = employee.getName();
+			userVO.setEmployeeId(employeeId);
+			userVO.setEmployeeNum(employeeNum);
+			userVO.setEmploeeName(name);
+		}
 		return userVO;
 	}
 
@@ -928,8 +1012,7 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 		return profileVal;
 	}
 
-	public static String getCommonProfileValue(String profileName){
-		Long organizationId = Constants.Common.TENANTID;
+	public static String getCommonProfileValue(Long organizationId, String profileName){
 		Long id = -1L;
 		Long roleId = -1L;
 		PigicPlatFormFeignClient platFormFeignClient = SpringUtils.getBean(PigicPlatFormFeignClient.class);
@@ -968,13 +1051,26 @@ public class Dict extends LinkedHashMap<String, Object> implements BasicTypeGett
 	public static Lov getLovInfo(String lovCode, String value){
 		List<Lov> lovList = getLovList(lovCode);
 		Assert.notNull(lovList,"找不对该值集编码：{}",lovCode);
-		Assert.isTrue(lovList.size()>0,"值集编码：{}，没有数据",lovCode);
 		for (Lov lov: lovList){
 			if (lov.getValue().equals(value)){
 				return lov;
 			}
 		}
-		throw new CommonException("值集：{}，找不到对应的值：{}", lovCode, value);
+		return null;
+	}
+
+	public static Boolean checkEquals(List<Dict> dictList, BiFunction<Dict, Dict, Boolean> function){
+		TreeSet<Dict> treeSet = new TreeSet<>((key1, key2) -> {
+			if (function.apply(key1, key2)) {
+				// 相等
+				return 0;
+			} else {
+				// 不相等
+				return -1;
+			}
+		});
+		treeSet.addAll(dictList);
+		return treeSet.size()==1;
 	}
 
 	public Dict handleDate(String format){

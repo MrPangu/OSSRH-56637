@@ -16,6 +16,8 @@ import io.choerodon.mybatis.annotation.VersionAudit;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.List;
+
 /**
  * 外部接口监控
  *
@@ -82,6 +84,7 @@ public class InterfaceMonitor extends AuditDomain {
     @ApiModelProperty(value = "弹性域6")
     private String attribute6;
 
+    private List<InterfaceRegister> interfaceRegisterList;
 	//
     // 非数据库字段
     // ------------------------------------------------------------------------------

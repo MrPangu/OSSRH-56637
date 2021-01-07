@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/7/1 16:52
+ *
  */
 public class TempUtils {
     private static ThreadLocal<Map<String,Object>> container=new ThreadLocal<Map<String,Object>>(){

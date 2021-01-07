@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/9/27 14:34
+ *
  */
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

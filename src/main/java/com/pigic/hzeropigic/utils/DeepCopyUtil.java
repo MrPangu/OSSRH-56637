@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/7/1 21:18
+ *
  */
 public class DeepCopyUtil {
     public static Object copy(Object orig) throws NotSerializableException {

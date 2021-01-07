@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 邮件发送工具类
  * @author guchang.pan@hand-china.com
- * @date: 2019/12/19 22:55
+ *
  */
 public class MessageUtils {
 
@@ -76,6 +76,13 @@ public class MessageUtils {
         );
     }
 
+    /**
+     * 发送站内消息
+     * @param templateCode
+     * @param param
+     * @param userIds
+     * @return
+     */
     public static Message sendWebMessage(String templateCode, Dict param, Long... userIds) {
         List<Receiver> receiverList = new ArrayList<>();
         for (int i = 0; i < userIds.length; i++) {
@@ -89,6 +96,32 @@ public class MessageUtils {
                 Constants.DEFAULT_TENANT_ID,
                 templateCode,
                 Constants.EmailConfig.LANG,
+                receiverList,
+                param.toMapStr()
+        );
+    }
+
+
+    /**
+     * 发送短信
+     * @param templateCode
+     * @param param
+     * @param phones
+     * @return
+     */
+    public static Message sendSms(String templateCode, Dict param, String... phones) {
+        List<Receiver> receiverList = new ArrayList<>();
+        for (int i = 0; i < phones.length; i++) {
+            Receiver receiver = new Receiver();
+            receiver.setPhone(phones[i]);
+            receiver.setTargetUserTenantId(Constants.DEFAULT_TENANT_ID);
+            receiverList.add(receiver);
+        }
+        MessageClient messageClient = SpringUtils.getBean(MessageClient.class);
+        return messageClient.sendSms(
+                Constants.DEFAULT_TENANT_ID,
+                Constants.EmailConfig.SMS_CODE,
+                templateCode,
                 receiverList,
                 param.toMapStr()
         );

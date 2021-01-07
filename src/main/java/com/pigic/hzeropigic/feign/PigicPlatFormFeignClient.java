@@ -13,10 +13,7 @@ import java.util.Map;
 
 /**
  * @ClassName HzeroPlatFormFeignClient
- * @Description TODO
  * @author guchang.pan@hand-china.com
- * @Date 2019/5/29 15:33
- * @Email dianzhang.zhou@hand-china.com
  **/
 @FeignClient(name = "hzero-platform")
 public interface PigicPlatFormFeignClient {

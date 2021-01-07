@@ -2,7 +2,7 @@ package com.pigic.hzeropigic.utils;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/1/26 10:22
+ *
  */
 
 

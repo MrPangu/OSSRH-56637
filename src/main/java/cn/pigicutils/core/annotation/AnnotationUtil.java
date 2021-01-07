@@ -6,10 +6,11 @@ import cn.pigicutils.core.lang.Filter;
 import cn.pigicutils.core.util.ArrayUtil;
 import cn.pigicutils.core.util.ReflectUtil;
 import com.pigic.hzeropigic.domain.dto.PIGIC;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.lang.annotation.*;
-import java.lang.reflect.*;
+import java.lang.reflect.AccessibleObject;
+import java.lang.reflect.AnnotatedElement;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class AnnotationUtil {
 	 * 将指定的被注解的元素转换为组合注解元素
 	 * 
 	 * @param annotationEle 注解元素
-	 * @return 组合注解元素
+	 * @return  组合注解元素
 	 */
 	public static CombinationAnnotationElement toCombination(AnnotatedElement annotationEle) {
 		if(annotationEle instanceof CombinationAnnotationElement) {
@@ -42,7 +43,7 @@ public class AnnotationUtil {
 	 * 查询所有注解
 	 * @param annotationEle 可以是Class、Method、Field、Constructor、ReflectPermission
 	 * @param isCombination 是否递归查询
-	 * @return
+	 * @return 注解
 	 */
 	public static Annotation[] getAnnotations(AnnotatedElement annotationEle, boolean isCombination) {
 		return (null == annotationEle) ? null : (isCombination ? toCombination(annotationEle) : annotationEle).getAnnotations();

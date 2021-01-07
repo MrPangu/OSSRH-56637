@@ -5,7 +5,7 @@ import lombok.experimental.FieldNameConstants;
 
 /**
  * @author guchang.pan@hand-china.com
- * @date 2019/12/17 13:27
+ *
  */
 @ToString
 @Getter

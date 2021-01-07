@@ -8,7 +8,7 @@ import java.util.Date;
  * @ClassName DateUtils
  * @Description TODO
  * @author guchang.pan@hand-china.com
- * @Date 2019/5/24 14:12
+ *
  * @Email dianzhang.zhou@hand-china.com
  **/
 public class DateUtils {

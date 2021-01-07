@@ -17,7 +17,7 @@ import java.util.Map;
 
 /*
  * iam的接口
- * @date: 2019/9/10
+ *
  * @author guchang.pan@hand-china.com
  * @version: 0.0.1
  * @copyright Copyright (c) 2019, Hand

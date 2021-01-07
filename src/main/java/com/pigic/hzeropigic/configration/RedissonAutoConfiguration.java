@@ -2,7 +2,7 @@ package com.pigic.hzeropigic.configration;
 
 /**
  * @author guchang.pan@hand-china.com
- * @Date: 2019/1/26 10:20
+ *
  */
 
 import com.pigic.hzeropigic.lock.DistributedLocker;
